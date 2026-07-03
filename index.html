@@ -142,8 +142,8 @@
   /* Mobile nav overlay */
   .mobile-nav {
     display: none; background: var(--navy);
-    position: fixed; inset: 60px 0 0 0; overflow-y: auto;
-    z-index: 99; padding-bottom: 32px;
+    position: fixed; left: 0; right: 0; bottom: 0; top: 0; overflow-y: auto;
+    z-index: 500; padding-bottom: 32px;
   }
   .mobile-nav.open { display: block; }
   .mobile-section { border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -315,7 +315,7 @@
   .ratings-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; table-layout: fixed; }
   .ratings-table th { background: var(--foam); color: var(--navy); padding: 8px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); }
   .ratings-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; word-wrap: break-word; }
-  .ratings-table tr:last-child td { border: none; }
+  .ratings-table tr:last-child td { border-bottom: 1px solid var(--border); }
   .ratings-table tr:hover td { background: var(--foam); }
   .ratings-table th:nth-child(1), .ratings-table td:nth-child(1) { width: 18%; }
   .ratings-table th:nth-child(2), .ratings-table td:nth-child(2) { width: 26%; }
@@ -435,7 +435,7 @@
     <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-logo" onclick="showPage('home')">⛵ Cal <span>Sailing</span></div>
+    <div class="nav-logo" onclick="showPage('home')">⛵ Cal <span>Sailing Club</span></div>
     <div class="nav-links">
 
       <div class="nav-item" id="nav-about">
@@ -755,28 +755,29 @@
     <section class="alt">
       <div class="container">
         <div class="section-label">What we offer</div>
-        <h2 class="section-title">Three Ways to Get on the Water</h2>
+        <h2 class="section-title">Two Ways to Get Started</h2>
         <div class="cards">
           <div class="card">
             <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: dinghy sailing</div>
             <h3>Dinghy Sailing</h3>
-            <p>Small, responsive sailboats — fast, athletic, and hands-on. The best way to build strong sailing skills. Great for beginners and experienced sailors alike.</p>
+            <p>Small, responsive sailboats -- fast, athletic, and hands-on. The best way to build strong sailing skills. Great for beginners and experienced sailors alike.</p>
             <a href="#" class="card-link">Learn about dinghy sailing →</a>
-          </div>
-          <div class="card">
-            <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: keelboat sailing</div>
-            <h3>Keelboat Sailing</h3>
-            <p>Larger sailboats with enclosed cabins — more stable for cruising and longer trips. Available after earning a Junior dinghy rating.</p>
-            <a href="#" class="card-link">Learn about keelboats →</a>
           </div>
           <div class="card">
             <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: windsurfing</div>
             <h3>Windsurfing</h3>
-            <p>Stand on a board and control a sail in the wind. Athletic and exhilarating — best April through October when the Bay winds are strongest.</p>
+            <p>Stand on a board and control a sail in the wind. Athletic and exhilarating -- best April through October when the Bay winds are strongest.</p>
             <a href="#" class="card-link">Learn about windsurfing →</a>
           </div>
         </div>
-        <div style="margin-top:16px;padding:12px 20px;background:var(--foam);border-radius:8px;font-size:0.85rem;color:var(--muted);">Members also have access to <strong>kayaks and stand-up paddleboards (SUPs)</strong> — no extra fee.
+
+        <div style="margin-top:28px;">
+          <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.1rem;margin-bottom:12px;">Also available</h3>
+          <div style="display:grid;gap:6px;">
+            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">🚢</span><div><strong style="color:var(--navy);">Keelboat sailing</strong> <span style="color:var(--muted);">-- available once you earn a Junior dinghy rating</span></div></div>
+            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">🛶</span><div><strong style="color:var(--navy);">Kayaks and SUPs</strong> <span style="color:var(--muted);">-- available to members at no extra cost</span></div></div>
+            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">☀️</span><div><strong style="color:var(--navy);">The bench</strong> <span style="color:var(--muted);">-- the club is a social place; hanging out and getting to know fellow members is part of the experience</span></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1251,6 +1252,15 @@
 
   <div style="padding:32px 0;">
     <div class="container">
+      <div style="background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:12px 18px;font-size:0.85rem;color:var(--muted);margin-bottom:20px;">
+        <strong style="color:var(--navy);">Note on duplicate fields:</strong>
+        <ul style="margin-top:8px;display:grid;gap:4px;padding-left:20px;">
+          <li>Novice Dinghy rigging and written tests are duplicates of Junior Dinghy's</li>
+          <li>Senior project rows appear in both Senior Dinghy and Senior Keelboat</li>
+          <li>Cruising First Aid appears in both Cruising Dinghy and Cruising Keelboat</li>
+        </ul>
+        <p style="margin-top:8px;">These should be duplicates of one another so if you enter one, it populates both.</p>
+      </div>
 
       <!-- DINGHY SECTION -->
       <div class="ratings-section">
@@ -1260,8 +1270,8 @@
           <thead>
             <tr>
               <th>Category</th>
-              <th>Requirement</th>
-              <th>Resources</th>
+              <th>Component</th>
+              <th>Links</th>
               <th>Approved by</th>
               <th>Date</th>
             </tr>
@@ -1269,13 +1279,13 @@
           <tbody>
             <tr>
               <td rowspan="3" class="cat-label"><a href="#" style="color:var(--navy);">Novice</a></td>
-              <td>Rigging test</td>
-              <td><a href="#" class="tbl-link">Take skills self-assessment &amp; request test</a></td>
+              <td>Rigging test <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Junior rigging test)</span></td>
+              <td><a href="#" class="tbl-link">Request test</a></td>
               <td class="check">J. Smith</td>
               <td>Mar 9, 2024</td>
             </tr>
             <tr>
-              <td>Written test</td>
+              <td>Written test <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Junior written test)</span></td>
               <td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td>
               <td class="check">Online test</td>
               <td>Feb 28, 2024</td>
@@ -1288,13 +1298,13 @@
             </tr>
             <tr style="background:#f0fff4;">
               <td rowspan="3" class="cat-label" style="color:#2E7D32;"><a href="#" style="color:#2E7D32;">Junior ← Current</a></td>
-              <td>Rigging test</td>
+              <td>Rigging test <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Novice rigging test)</span></td>
               <td><a href="#" class="tbl-link">Request test</a></td>
               <td class="check">J. Smith</td>
               <td>Mar 9, 2024</td>
             </tr>
             <tr style="background:#f0fff4;">
-              <td>Written test</td>
+              <td>Written test <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Novice written test)</span></td>
               <td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td>
               <td class="check">Online test</td>
               <td>Feb 28, 2024</td>
@@ -1306,52 +1316,51 @@
               <td>Nov 16, 2024</td>
             </tr>
             <tr>
-              <td rowspan="7" class="cat-label"><a href="#" style="color:var(--navy);">Senior Dinghy</a></td>
-              <td>Senior project – ExCom approval</td>
-              <td></td>
+              <td rowspan="8" class="cat-label"><a href="#" style="color:var(--navy);">Senior Dinghy</a></td>
+              <td>Senior project ExComm approval <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Senior Keelboat Senior project ExComm approval)</span></td>
               <td class="empty">—</td>
-              <td class="empty">—</td>
-            </tr>
-            <tr>
-              <td>Senior project completion</td>
-              <td></td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>Dinghy written test</td>
-              <td><a href="#" class="tbl-link">Take test</a></td>
+              <td>Senior project completion <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Senior Keelboat project completion)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>Senior Rigging test</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td>Dinghy Senior written test</td>
+              <td><a href="#" class="tbl-link">See study guide</a> · <a href="#" class="tbl-link">Take test</a></td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+            </tr>
+            <tr>
+              <td>Grandfathered in: written test prior to separation of Dinghy vs. Keelboat <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Keelboat grandfathered-in written test)</span></td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+            </tr>
+            <tr>
+              <td>Dinghy Senior Rigging Test</td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>Practical (on-the-water) test 1</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>Practical (on-the-water) test 2</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>ExComm approval</td>
-              <td></td>
               <td class="empty">—</td>
-              <td class="empty">—</td>
-            </tr>
-            <tr>
-              <td class="cat-label"><a href="#" style="color:var(--navy);">Racing</a></td>
-              <td>Racing rules written test</td>
-              <td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1363,14 +1372,21 @@
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>First Aid course</td>
-              <td></td>
+              <td>First Aid <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Cruising Keelboat First Aid)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>ExComm approval</td>
-              <td></td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+            </tr>
+            <tr>
+              <td class="cat-label"><a href="#" style="color:var(--navy);">Racing</a></td>
+              <td>Racing rules written test</td>
+              <td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1389,7 +1405,7 @@
             </tr>
             <tr>
               <td>Venture SE on-the-water test <span style="font-size:0.75rem;color:var(--muted);">(Junior required)</span></td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1401,13 +1417,13 @@
             </tr>
             <tr>
               <td>Laser <span style="font-size:0.75rem;color:var(--muted);">(Junior required)</span></td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>UFO <span style="font-size:0.75rem;color:var(--muted);">(Junior required)</span></td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1425,19 +1441,19 @@
             </tr>
             <tr>
               <td>RS500 <span style="font-size:0.75rem;color:var(--muted);">(Senior required)</span></td>
-              <td></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>RS800 <span style="font-size:0.75rem;color:var(--muted);">(Senior required)</span></td>
-              <td></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>International 420 (i420) on-the-water test <span style="font-size:0.75rem;color:var(--muted);">(Senior required)</span></td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1452,7 +1468,7 @@
         <div style="overflow-x:auto;">
         <table class="ratings-table">
           <thead>
-            <tr><th>Category</th><th>Requirement</th><th>Resources</th><th>Approved by</th><th>Date</th></tr>
+            <tr><th>Category</th><th>Component</th><th>Links</th><th>Approved by</th><th>Date</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -1462,51 +1478,57 @@
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
-            <tr><td>Level 1 – Dockside</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Level 2 – Basic Sailing</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Level 3 – Problems Outside</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Level 4 – Sailing Close Quarters</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Level 5 – Intermediate Maneuvers</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Level 1 – Dockside</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Level 2 – Basic Sailing</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Level 3 – Problems Outside</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Level 4 – Sailing Close Quarters</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Level 5 – Intermediate Maneuvers</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr>
-              <td rowspan="7" class="cat-label"><a href="#" style="color:var(--navy);">Senior Keelboat</a></td>
-              <td>Senior project – ExComm approval</td>
-              <td></td>
+              <td rowspan="8" class="cat-label"><a href="#" style="color:var(--navy);">Senior Keelboat</a></td>
+              <td>Senior project ExComm approval <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Senior Dinghy Senior project ExComm approval)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>Senior project completion</td>
-              <td></td>
+              <td>Senior project completion <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Senior Dinghy project completion)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>Keelboat written test</td>
+              <td>Keelboat Senior written test</td>
               <td><a href="#" class="tbl-link">See study guide</a> · <a href="#" class="tbl-link">Take test</a></td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>Senior Rigging test</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td>Grandfathered in: written test prior to separation of Dinghy vs. Keelboat <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Dinghy grandfathered-in written test)</span></td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+              <td class="empty">—</td>
+            </tr>
+            <tr>
+              <td>Keelboat Senior Rigging Test</td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>Practical (on-the-water) test 1</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>Practical (on-the-water) test 2</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>ExComm approval</td>
-              <td></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1518,27 +1540,27 @@
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>First Aid course</td>
-              <td></td>
+              <td>First Aid <span style="font-size:0.75rem;color:var(--muted);">(duplicate of Cruising Dinghy First Aid)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td>ExComm approval</td>
-              <td></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
               <td rowspan="2" class="cat-label"><a href="#" style="color:var(--navy);">Advanced Keelboat Opportunities</a></td>
-              <td>J80 – Basic</td>
-              <td><a href="#" class="tbl-link">Take test</a></td>
+              <td>J80 – Basic <span style="font-size:0.75rem;color:var(--muted);">(on-the-water test)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
             <tr>
-              <td>J80 – Gennaker</td>
-              <td><a href="#" class="tbl-link">Take test</a></td>
+              <td>J80 – Gennaker <span style="font-size:0.75rem;color:var(--muted);">(on-the-water test)</span></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
@@ -1553,7 +1575,7 @@
         <div style="overflow-x:auto;">
         <table class="ratings-table">
           <thead>
-            <tr><th>Category</th><th>Requirement</th><th>Resources</th><th>Approved by</th><th>Date</th></tr>
+            <tr><th>Category</th><th>Component</th><th>Links</th><th>Approved by</th><th>Date</th></tr>
           </thead>
           <tbody>
             <tr style="background:#f0fff4;">
@@ -1565,13 +1587,13 @@
             </tr>
             <tr style="background:#f0fff4;">
               <td>Sail handling (on-the-water)</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="check">L. Chen</td>
               <td>Apr 12, 2025</td>
             </tr>
             <tr style="background:#f0fff4;">
               <td>Self rescue (on-the-water)</td>
-              <td><a href="#" class="tbl-link">Request test</a></td>
+              <td class="empty">—</td>
               <td class="check">L. Chen</td>
               <td>Apr 12, 2025</td>
             </tr>
@@ -1582,9 +1604,9 @@
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
-            <tr><td>Equipment inspection</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Basic rigging</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Sailing test</td><td><a href="#" class="tbl-link">Request test</a></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Equipment inspection</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Basic rigging</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Sailing test</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr>
               <td rowspan="4" class="cat-label"><a href="#" style="color:var(--navy);">Junior+</a></td>
               <td>Written test</td>
@@ -1592,21 +1614,21 @@
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
-            <tr><td>Complete sail rigging</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Board repair</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Sailing test</td><td><a href="#" class="tbl-link">Request test</a></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Complete sail rigging</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Board repair</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Sailing test</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr>
               <td rowspan="6" class="cat-label"><a href="#" style="color:var(--navy);">Senior</a></td>
               <td>Senior project – ExComm approval</td>
-              <td></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
-            <tr><td>Senior project completion</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Senior teaching</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Senior rigging</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Senior project completion</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Senior teaching</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Senior rigging</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr><td>Written test</td><td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Sailing test</td><td><a href="#" class="tbl-link">Request test</a></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Sailing test</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr>
               <td rowspan="2" class="cat-label"><a href="#" style="color:var(--navy);">Advanced Windsurfing Add-ons</a><br><span style="font-size:0.75rem;font-weight:400;color:var(--muted);">Junior+ or above</span></td>
               <td>Windsurf foiler</td>
@@ -1625,51 +1647,38 @@
         </div>
       </div>
 
-      <!-- DAY LEADER SECTION -->
-      <div class="ratings-section">
-        <div class="ratings-section-title">Day Leader</div>
-        <div style="overflow-x:auto;">
-        <table class="ratings-table">
-          <thead>
-            <tr><th>Category</th><th>Requirement</th><th>Resources</th><th>Approved by</th><th>Date</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td rowspan="5" class="cat-label">Day Leader</td>
-              <td>California Boater Card</td>
-              <td><a href="#" class="tbl-link">Info</a></td>
-              <td class="empty">—</td><td class="empty">—</td>
-            </tr>
-            <tr><td>Day Leader Operation Written test</td><td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Skiff Basics &amp; Rescues (on-the-water)</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Office Procedures</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td>Day Leader Harassment Training</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-          </tbody>
-        </table>
-        </div>
-      </div>
-
       <!-- ADDITIONAL DESIGNATIONS SECTION -->
       <div class="ratings-section">
         <div class="ratings-section-title">Additional Designations</div>
         <div style="overflow-x:auto;">
         <table class="ratings-table">
           <thead>
-            <tr><th>Category</th><th>Requirement</th><th>Resources</th><th>Approved by</th><th>Date</th></tr>
+            <tr><th>Category</th><th>Component</th><th>Links</th><th>Approved by</th><th>Date</th></tr>
           </thead>
           <tbody>
-            <tr><td class="cat-label">Assistant Day Leader</td><td>TBD — pending consensus on requirements</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr>
+              <td rowspan="6" class="cat-label">Day Leader</td>
+              <td>California Boater Card</td>
+              <td><a href="#" class="tbl-link">Info</a></td>
+              <td class="empty">—</td><td class="empty">—</td>
+            </tr>
+            <tr><td>Day Leader Operation Written test</td><td><a href="#" class="tbl-link">See PDF</a> · <a href="#" class="tbl-link">Take test</a></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Skiff Basics &amp; Rescues (on-the-water)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Office Procedures</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Day Leader Harassment Training</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Management Harassment Training</td><td><a href="#" class="tbl-link">Online training</a></td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label">Assistant Day Leader</td><td>TBD — pending consensus on requirements</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr>
               <td rowspan="2" class="cat-label">Lessons Coordinator</td>
               <td>Shadow a coordinator</td>
-              <td></td>
+              <td class="empty">—</td>
               <td class="empty">—</td>
               <td class="empty">—</td>
             </tr>
-            <tr><td>Saturday Lessons Chairperson approval</td><td></td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">Management Harassment Training</td><td>Online training</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">ExComm Member</td><td style="color:var(--muted);font-style:italic;">Hidden unless held</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">Committee Chair</td><td style="color:var(--muted);font-style:italic;">Hidden unless held</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td>Saturday Lessons Chairperson approval</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label">ExComm Member</td><td style="color:var(--muted);font-style:italic;">Hidden unless held (could show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label">Committee Chair</td><td style="color:var(--muted);font-style:italic;">Hidden unless held (could show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label" style="color:var(--muted);font-style:italic;">Add other possible attributes here</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
           </tbody>
         </table>
         </div>
@@ -2585,7 +2594,7 @@
                   <div style="background:var(--navy);color:var(--white);min-width:48px;display:flex;align-items:center;justify-content:center;font-family:'Bitter',serif;font-size:1.3rem;font-weight:700;">1</div>
                   <div style="padding:16px 20px;flex:1;">
                     <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Senior Project</h4>
-                    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:10px;">Propose and complete a project that benefits the club — teaching a series of lessons, repairing equipment, creating instructional materials, or similar. Requires ExCom approval before and after completion.</p>
+                    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:10px;">Propose and complete a project that benefits the club — teaching a series of lessons, repairing equipment, creating instructional materials, or similar. Requires ExComm approval before and after completion.</p>
                     <div style="display:flex;gap:8px;flex-wrap:wrap;">
                       <a href="#" class="btn btn-sky" style="font-size:0.78rem;padding:5px 12px;">Propose a project</a>
                     </div>
@@ -2629,7 +2638,7 @@
                 <div style="display:flex;align-items:stretch;">
                   <div style="background:var(--navy);color:var(--white);min-width:48px;display:flex;align-items:center;justify-content:center;font-family:'Bitter',serif;font-size:1.3rem;font-weight:700;">5</div>
                   <div style="padding:16px 20px;flex:1;">
-                    <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">ExCom Approval</h4>
+                    <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">ExComm Approval</h4>
                     <p style="font-size:0.85rem;color:var(--muted);">Final approval by the Executive Committee after all tests and project are complete.</p>
                   </div>
                 </div>
@@ -2958,7 +2967,8 @@
       </div>
       <div class="ph-section">
         <h3>Scope &amp; Neighbors</h3>
-        <p>Mention other unaffiliated organizations that might suit some people better (e.g. Modern Sailing, UC Aquatic Center).</p>
+        <p>Mention other unaffiliated organizations that might suit some people better.</p>
+        <p style="font-size:0.85rem;color:var(--muted);border-left:3px solid var(--border);padding-left:12px;margin-top:8px;">"The most important and potentially useful one is Cal Adventures. I think they're a better fit for people who need a more structured program of instruction. We might (or might not) want to go into why something like Modern Sailing would be better for some people. They do the ASA program, which is useful if you want to charter, they teach stuff we don't (related to chartering, mainly), our skill expectations are higher, and they don't require you to learn on a dinghy." -- jjbongio, GitHub issue #1</p>
       </div>
       <div class="ph-section">
         <h3>Recognition</h3>
@@ -3005,12 +3015,7 @@
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: History &amp; Mission</div>
       <div class="ph-section">
         <h3>Mission</h3>
-        <p>Pulled from CSC Constitution, Article II (club objectives).</p>
-      </div>
-      <div class="ph-section">
-        <h3>Governance &amp; Board Overview</h3>
-        <p>Officer structure, Executive Committee, elections.</p>
-        <div class="ph-links"><a href="#">→ Bylaws</a><a href="#">→ Constitution</a></div>
+        <p>Pulled from CSC Constitution, Article II (club objectives). Include a brief mention that CSC is a nonprofit.</p>
       </div>
       <div class="ph-section">
         <h3>History</h3>
@@ -3018,7 +3023,7 @@
       </div>
       <div class="ph-section">
         <h3>Historical Photos &amp; Archives</h3>
-        <p>Photos from CSC's history. Waterfront-related archive (1990s–2000s) is a broader Berkeley Waterfront Commission resource, not CSC-specific — link as "wider context," not as CSC's own archive.</p>
+        <p>Photos from CSC's history. Waterfront-related archive (1990s–2000s) is a broader Berkeley Waterfront Commission resource, not CSC-specific -- link as "wider context," not as CSC's own archive.</p>
       </div>
     </div>
   </section>
@@ -3113,12 +3118,8 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Contact</div>
       <div class="ph-section">
-        <h3>General Contact</h3>
-        <p>Contact form / officer contacts go here.</p>
-      </div>
-      <div class="ph-section">
-        <h3>Windsurfing Damage Reports</h3>
-        <p>Note: previously a separate "Contact Windsurfing Vices" form — now combined here. Instructions to submit damage reports to windsurfing vice-commodores.</p>
+        <h3>Contact</h3>
+        <p>No contact form. List relevant email addresses for officers/roles here. Also include windsurfing vice-commodore email(s) for damage reports (previously a separate form).</p>
       </div>
     </div>
   </section>
@@ -4170,9 +4171,14 @@ document.addEventListener('click', function(e) {
 function toggleMobileNav() {
   const nav = document.getElementById('mobile-nav');
   const ham = document.getElementById('hamburger');
+  const navBar = document.querySelector('nav');
   const isOpen = nav.classList.contains('open');
+  if (!isOpen && navBar) {
+    nav.style.top = navBar.getBoundingClientRect().bottom + 'px';
+  }
   nav.classList.toggle('open', !isOpen);
   ham.classList.toggle('open', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
 }
 
 function closeMobileNav() {
@@ -4180,6 +4186,7 @@ function closeMobileNav() {
   const ham = document.getElementById('hamburger');
   if (nav) nav.classList.remove('open');
   if (ham) ham.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function toggleMobileSection(btn) {
