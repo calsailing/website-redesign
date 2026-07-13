@@ -50,7 +50,6 @@
   .nav-logo {
     font-family: 'Bitter', serif; font-size: 1.15rem; font-weight: 700;
     color: var(--white); white-space: nowrap; margin-right: 20px; cursor: pointer;
-    display: flex; align-items: center; gap: 8px;
   }
   .nav-logo span { color: var(--bay); }
   .nav-links { display: flex; gap: 2px; flex: 1; overflow: visible; }
@@ -150,23 +149,66 @@
   .mobile-section-btn {
     display: flex; justify-content: space-between; align-items: center;
     width: 100%; background: none; border: none; cursor: pointer;
-    color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600;
-    padding: 14px 24px; text-align: left;
+    color: var(--white); font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700;
+    padding: 16px 24px; text-align: left; letter-spacing: 0.01em;
   }
   .mobile-section-btn .m-arrow { font-size: 0.7rem; transition: transform 0.2s; }
   .mobile-section-btn.open .m-arrow { transform: rotate(180deg); }
-  .mobile-sub { display: none; padding: 0 0 8px 0; }
+  .mobile-sub { display: none; padding: 0 0 12px 0; }
   .mobile-sub.open { display: block; }
-  .mobile-sub a, .mobile-sub button {
+
+  /* Top-level items (Overview, Dinghy Lessons, Keelboat Lessons, etc.) */
+  .mobile-sub .m-item {
     display: block; width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-    color: rgba(255,255,255,0.72); font-family: 'Inter', sans-serif; font-size: 0.88rem;
-    padding: 9px 24px 9px 36px;
+    color: rgba(255,255,255,0.8); font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 400;
+    padding: 9px 24px 9px 32px; text-decoration: none;
   }
-  .mobile-sub a:hover, .mobile-sub button:hover { color: var(--white); text-decoration: none; }
-  .mobile-sub .divider { border-top: 1px solid rgba(255,255,255,0.08); margin: 4px 0; }
+  .mobile-sub .m-item:hover { color: var(--white); }
+  /* Ratings toggle button — same style as other m-items */
+  .m-ratings-btn {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.8); font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 400;
+    padding: 9px 24px 9px 32px;
+  }
+  .m-ratings-btn:hover { color: var(--white); }
+  .m-ratings-btn .m-arrow { font-size: 0.65rem; opacity: 0.5; }
+  .m-ratings-btn.open { color: var(--white); }
+  .m-ratings-btn.open .m-arrow { transform: rotate(180deg); opacity: 1; }
+  /* Collapsed by default */
+  .m-ratings-sub { display: none; }
+  .m-ratings-sub.open { display: block; }
+  /* Sub-pages under Ratings — indented, light blue */
+  .mobile-sub .m-sub {
+    display: block; width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    color: var(--bay); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 400;
+    padding: 7px 24px 7px 48px; text-decoration: none;
+  }
+  .mobile-sub .m-sub:hover { color: var(--white); }
+
+  /* Section group headers (Dinghy Ratings, Keelboat Ratings) */
+  .mobile-sub .m-group {
+    padding: 10px 24px 4px; font-size: 0.68rem; font-weight: 600;
+    color: var(--bay); text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* Sub-items under a group header */
+  .mobile-sub .m-sub {
+    display: block; width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.6); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 400;
+    padding: 7px 24px 7px 40px; text-decoration: none;
+  }
+  .mobile-sub .m-sub:hover { color: rgba(255,255,255,0.9); }
+
+  .mobile-sub .m-divider { border-top: 1px solid rgba(255,255,255,0.08); margin: 8px 24px; }
+  /* Nested collapsible (e.g. Dinghy Ratings inside Sailing) */
+  .m-nested-btn { display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.85) !important; }
+  .m-nested-btn.open { color: var(--bay) !important; }
+  .m-nested-btn.open .m-arrow { transform: rotate(180deg); }
+  .m-nested { padding: 0 0 4px 0; background: rgba(0,0,0,0.15); }
   .mobile-auth { padding: 20px 24px; display: flex; gap: 10px; }
 
-  .nav-right { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+  .nav-right { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
   .nav-status-pill {
     background: rgba(74,175,207,0.2); border: 1px solid var(--bay);
     color: var(--bay); font-size: 0.72rem; font-weight: 600;
@@ -225,7 +267,7 @@
   .member-greeting h2 { font-size: 1.4rem; font-family: 'Bitter', serif; }
   .member-greeting p { opacity: 0.8; font-size: 0.9rem; }
   .status-badge { padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-  .status-active { background: rgba(74,175,207,0.25); border: 1px solid var(--bay); color: var(--bay); }
+  .status-active { background: rgba(46,204,113,0.2); border: 1px solid #2ecc71; color: #2ecc71; }
   .status-expired { background: rgba(192,57,43,0.2); border: 1px solid var(--alert); color: #ff6b5b; }
   .quick-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
   .quick-link { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; }
@@ -235,9 +277,9 @@
   section { padding: 56px 0; }
   section.alt { background: var(--foam); }
   section.sand { background: var(--sand); }
-  .section-label { color: var(--sky); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
-  .section-title { font-size: clamp(1.4rem, 3vw, 2rem); color: var(--navy); margin-bottom: 12px; }
-  .section-sub { color: var(--muted); max-width: 560px; }
+  .section-label { color: var(--muted); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .section-title { font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--navy); margin-bottom: 16px; font-weight: 700; }
+  .section-sub { color: var(--muted); max-width: 600px; line-height: 1.65; margin-bottom: 0; }
 
   /* ── Cards grid ── */
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; margin-top: 32px; }
@@ -263,7 +305,6 @@
   /* ── Pricing table ── */
   .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 28px; }
   .pricing-card { background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 24px; }
-  .pricing-card.featured { border-color: var(--sky); }
   .pricing-card .tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sky); margin-bottom: 8px; }
   .pricing-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 12px; }
   .pricing-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 5px 0; border-bottom: 1px solid var(--border); }
@@ -281,10 +322,13 @@
   .cal-date .wd { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; }
   .cal-info h4 { font-size: 0.9rem; color: var(--navy); }
   .cal-info p { font-size: 0.78rem; color: var(--muted); }
-  .cal-pill { margin-left: auto; font-size: 0.7rem; padding: 3px 8px; border-radius: 12px; white-space: nowrap; font-weight: 600; }
+  .cal-pill { margin-left: auto; font-size: 0.7rem; padding: 3px 8px; border-radius: 12px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
   .pill-sail { background: #E3F0FB; color: var(--sky); }
   .pill-wind { background: #E8F5E9; color: #2E7D32; }
   .pill-social { background: #FFF3E0; color: #E65100; }
+  .pill-racing { background: #FDE8E8; color: #C62828; }
+  .pill-lessons { background: #EDE7F6; color: #6A1B9A; }
+  .pill-keelboat { background: #E0F2F1; color: #00695C; }
 
   /* ── Status box ── */
   .status-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -341,14 +385,15 @@
   .ph-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--foam); padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; }
   .ai-banner { background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 8px; padding: 12px 18px; font-size: 0.85rem; color: #78350F; margin-bottom: 20px; display: flex; gap: 10px; align-items: flex-start; }
   .ai-banner strong { color: #78350F; }
-  .mem-card-header { background: var(--navy); color: var(--white); padding: 18px 24px; }
+  .mem-card-header { background: var(--navy); color: var(--white); padding: 14px 24px; text-align: center; }
   .mem-card-body { padding: 20px 24px; }
   .mem-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
   .mem-row:last-child { border: none; }
   .mem-row .label { color: var(--muted); }
   .mem-row .value { font-weight: 600; }
   .progress-section { margin-top: 24px; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px; }
+  .progress-label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 0.82rem; margin-bottom: 6px; }
+  .progress-label span:last-child { white-space: nowrap; flex-shrink: 0; font-weight: 600; }
   .progress-bar { height: 10px; background: var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
   .progress-fill { height: 100%; border-radius: 10px; transition: width 0.5s; }
   .fill-green { background: linear-gradient(90deg, var(--bay), #2ecc71); }
@@ -397,6 +442,8 @@
     .hero { padding: 50px 20px 60px; }
     .steps { grid-template-columns: 1fr; }
     .step::after { display: none; }
+    .col-layout { grid-template-columns: 1fr !important; }
+    .pricing-grid { grid-template-columns: 1fr !important; }
   }
 
   /* ── Utility ── */
@@ -435,7 +482,7 @@
     <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-logo" onclick="showPage('home')">⛵ Cal <span>Sailing Club</span></div>
+    <div class="nav-logo" onclick="showPage('home')">⛵ <span>Cal</span> Sailing <span>Club</span></div>
     <div class="nav-links">
 
       <div class="nav-item" id="nav-about">
@@ -519,15 +566,14 @@
         <button class="nav-btn" onclick="toggleDropdown('nav-calendar')">Calendar <span class="arrow">▾</span></button>
         <div class="dropdown">
           <button onclick="showPage('calendar-events')">Events Calendar</button>
-          <button onclick="showPage('tide-schedule')">Monthly Tide Schedule</button>
+          <button onclick="showPage('tide-schedule')">Open/Close Times</button>
         </div>
       </div>
 
       <div class="nav-item" id="nav-status">
         <button class="nav-btn" onclick="toggleDropdown('nav-status')">Status <span class="arrow">▾</span></button>
         <div class="dropdown">
-          <button onclick="showPage('club-status')">Club Status</button>
-          <button onclick="showPage('weather')">Weather</button>
+          <button onclick="showPage('club-status')">Club Status &amp; Weather</button>
           <button onclick="showPage('boat-status')">Boat Status</button>
         </div>
       </div>
@@ -556,12 +602,16 @@
     </div><!-- /nav-links -->
 
     <div class="nav-right">
+      <div id="search-widget" style="display:flex;align-items:center;gap:4px;">
+        <button id="search-icon-btn" onclick="toggleSearch()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.7);font-size:1rem;padding:4px 6px;border-radius:50%;line-height:1;" title="Search">🔍</button>
+        <input id="search-input" type="text" placeholder="Search..." style="display:none;font-size:0.78rem;padding:4px 10px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,0.12);color:var(--white);width:130px;outline:none;" onblur="collapseSearch(this)">
+      </div>
       <div class="nav-status-pill" onclick="showPage('home')">Open · 9am–8pm</div>
-      <div class="guest-only">
+      <div class="guest-only" style="display:flex;gap:6px;align-items:center;">
         <a href="#" class="btn btn-outline" style="font-size:0.78rem;padding:6px 12px;">Log in</a>
         <a href="#" class="btn btn-primary" style="font-size:0.78rem;padding:6px 12px;" onclick="showPage('join');return false;">Join</a>
       </div>
-      <div class="member-only" style="display:none">
+      <div class="member-only" style="display:none;">
         <a href="#" class="btn btn-outline" style="font-size:0.78rem;padding:6px 12px;">Log out</a>
       </div>
     </div>
@@ -573,95 +623,102 @@
   <div class="mobile-section">
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">About <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
-      <button onclick="navTo('about-overview')">Overview</button>
-      <button onclick="navTo('getting-started')">Getting Started <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('open-house')">Open House</button>
-      <button onclick="navTo('history-mission')">History &amp; Mission</button>
-      <button onclick="navTo('store')">Store / Merch</button>
-      <button onclick="navTo('donations')">Donations</button>
-      <button onclick="navTo('faqs')">FAQs</button>
-      <button onclick="navTo('contact')">Contact</button>
+      <button class="m-item" onclick="navTo('about-overview')">Overview</button>
+      <button class="m-item" onclick="navTo('getting-started')">Getting Started <span style="color:#D32F2F;">★</span></button>
+      <button class="m-item" onclick="navTo('open-house')">Open House</button>
+      <button class="m-item" onclick="navTo('history-mission')">History &amp; Mission</button>
+      <button class="m-item" onclick="navTo('store')">Store / Merch</button>
+      <button class="m-item" onclick="navTo('donations')">Donations</button>
+      <button class="m-item" onclick="navTo('faqs')">FAQs</button>
+      <button class="m-item" onclick="navTo('contact')">Contact</button>
     </div>
   </div>
   <div class="mobile-section">
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Sailing <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
-      <button onclick="navTo('sailing-overview')">Overview</button>
-      <div class="divider"></div>
-      <button onclick="navTo('dinghy-lessons')">Dinghy Lessons <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('dinghy-unrated')" style="padding-left:48px;">↳ Unrated</button>
-      <button onclick="navTo('dinghy-novice')" style="padding-left:48px;">↳ Novice</button>
-      <button onclick="navTo('junior-dinghy')" style="padding-left:48px;">↳ Junior <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('dinghy-senior')" style="padding-left:48px;">↳ Senior</button>
-      <button onclick="navTo('dinghy-cruising-senior')" style="padding-left:48px;">↳ Cruising Senior</button>
-      <button onclick="navTo('dinghy-advanced')" style="padding-left:48px;">↳ Advanced Dinghies</button>
-      <button onclick="navTo('dinghy-resources')">Dinghy Resources</button>
-      <div class="divider"></div>
-      <button onclick="navTo('keelboat-lessons')">Keelboat Lessons</button>
-      <button onclick="navTo('keelboat-unrated')" style="padding-left:48px;">↳ Unrated <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('keelboat-senior')" style="padding-left:48px;">↳ Senior</button>
-      <button onclick="navTo('keelboat-cruising-senior')" style="padding-left:48px;">↳ Cruising Senior</button>
-      <button onclick="navTo('keelboat-advanced')" style="padding-left:48px;">↳ Advanced Keelboats</button>
-      <button onclick="navTo('keelboat-resources')">Keelboat Resources</button>
-      <div class="divider"></div>
-      <button onclick="navTo('fasttrack')">Fast-Track Program</button>
-      <button onclick="navTo('advanced-dinghy-clinic')">Advanced Dinghy Clinic</button>
-      <button onclick="navTo('racing')">Racing</button>
-      <div class="divider"></div>
-      <button onclick="navTo('cruising')">Cruising</button>
-      <button onclick="navTo('womens-sailing')">Women's Sailing</button>
+      <button class="m-item" onclick="navTo('sailing-overview')">Overview</button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('dinghy-lessons')">Dinghy Lessons <span style="color:#D32F2F;">★</span></button>
+      <button class="m-ratings-btn" onclick="toggleRatings(this)">Dinghy Ratings <span class="m-arrow">▾</span></button>
+      <div class="m-ratings-sub">
+        <button class="m-sub" onclick="navTo('dinghy-unrated')">Unrated</button>
+        <button class="m-sub" onclick="navTo('dinghy-novice')">Novice</button>
+        <button class="m-sub" onclick="navTo('junior-dinghy')">Junior <span style="color:#D32F2F;">★</span></button>
+        <button class="m-sub" onclick="navTo('dinghy-senior')">Senior</button>
+        <button class="m-sub" onclick="navTo('dinghy-cruising-senior')">Cruising Senior</button>
+        <button class="m-sub" onclick="navTo('dinghy-advanced')">Advanced Dinghies</button>
+      </div>
+      <button class="m-item" onclick="navTo('dinghy-resources')">Dinghy Resources</button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('keelboat-lessons')">Keelboat Lessons</button>
+      <button class="m-ratings-btn" onclick="toggleRatings(this)">Keelboat Ratings <span class="m-arrow">▾</span></button>
+      <div class="m-ratings-sub">
+        <button class="m-sub" onclick="navTo('keelboat-unrated')">Unrated <span style="color:#D32F2F;">★</span></button>
+        <button class="m-sub" onclick="navTo('keelboat-senior')">Senior</button>
+        <button class="m-sub" onclick="navTo('keelboat-cruising-senior')">Cruising Senior</button>
+        <button class="m-sub" onclick="navTo('keelboat-advanced')">Advanced Keelboats</button>
+      </div>
+      <button class="m-item" onclick="navTo('keelboat-resources')">Keelboat Resources</button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('fasttrack')">Fast-Track Program</button>
+      <button class="m-item" onclick="navTo('advanced-dinghy-clinic')">Advanced Dinghy Clinic</button>
+      <button class="m-item" onclick="navTo('racing')">Racing</button>
+      <button class="m-item" onclick="navTo('cruising')">Cruising</button>
+      <button class="m-item" onclick="navTo('womens-sailing')">Women's Sailing</button>
     </div>
   </div>
   <div class="mobile-section">
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Windsurfing <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
-      <button onclick="navTo('windsurf-overview')">Overview</button>
-      <div class="divider"></div>
-      <button onclick="navTo('windsurf-lessons')">Lessons</button>
-      <button onclick="navTo('windsurf-unrated')" style="padding-left:48px;">↳ Unrated</button>
-      <button onclick="navTo('windsurf-novice')" style="padding-left:48px;">↳ Novice</button>
-      <button onclick="navTo('windsurf-junior')" style="padding-left:48px;">↳ Junior</button>
-      <button onclick="navTo('windsurf-juniorplus')" style="padding-left:48px;">↳ Junior+</button>
-      <button onclick="navTo('windsurf-senior')" style="padding-left:48px;">↳ Senior <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('windsurf-addons')" style="padding-left:48px;">↳ Advanced Add-Ons</button>
-      <button onclick="navTo('windsurf-resources')">Resources</button>
-      <div class="divider"></div>
-      <button onclick="navTo('youth-windsurfing')">Youth Windsurfing</button>
-      <button onclick="navTo('fasttrack')">Fast-Track Program</button>
+      <button class="m-item" onclick="navTo('windsurf-overview')">Overview</button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('windsurf-lessons')">Lessons</button>
+      <button class="m-ratings-btn" onclick="toggleRatings(this)">Ratings <span class="m-arrow">▾</span></button>
+      <div class="m-ratings-sub">
+        <button class="m-sub" onclick="navTo('windsurf-unrated')">Unrated</button>
+        <button class="m-sub" onclick="navTo('windsurf-novice')">Novice</button>
+        <button class="m-sub" onclick="navTo('windsurf-junior')">Junior</button>
+        <button class="m-sub" onclick="navTo('windsurf-juniorplus')">Junior+</button>
+        <button class="m-sub" onclick="navTo('windsurf-senior')">Senior <span style="color:#D32F2F;">★</span></button>
+        <button class="m-sub" onclick="navTo('windsurf-addons')">Advanced Add-Ons</button>
+      </div>
+      <button class="m-item" onclick="navTo('windsurf-resources')">Resources</button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('youth-windsurfing')">Youth Windsurfing</button>
+      <button class="m-item" onclick="navTo('fasttrack')">Fast-Track Program</button>
     </div>
   </div>
   <div class="mobile-section">
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Calendar <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
-      <button onclick="navTo('calendar-events')">Events Calendar</button>
-      <button onclick="navTo('tide-schedule')">Monthly Tide Schedule</button>
+      <button class="m-item" onclick="navTo('calendar-events')">Events Calendar</button>
+      <button class="m-item" onclick="navTo('tide-schedule')">Open/Close Times</button>
     </div>
   </div>
   <div class="mobile-section">
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Status <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
-      <button onclick="navTo('club-status')">Club Status</button>
-      <button onclick="navTo('weather')">Weather</button>
-      <button onclick="navTo('boat-status')">Boat Status</button>
+      <button class="m-item" onclick="navTo('club-status')">Club Status &amp; Weather</button>
+      <button class="m-item" onclick="navTo('boat-status')">Boat Status</button>
     </div>
   </div>
   <div class="mobile-section member-only" style="display:none">
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Member Tools <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
-      <button onclick="navTo('my-profile')">My Profile</button>
-      <button onclick="navTo('membership')">My Membership <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('ratings')">My Ratings Dashboard <span style="color:#D32F2F;">★</span></button>
-      <button onclick="navTo('volunteer-hours')">Volunteer Hours <span style="color:#D32F2F;">★</span></button>
-      <div class="divider"></div>
-      <button onclick="navTo('slack-comms')">Slack &amp; Communications</button>
-      <button onclick="navTo('photo-gallery')">Photo Gallery</button>
-      <button onclick="navTo('expense-reimbursement')">Expense Reimbursement</button>
-      <button onclick="navTo('incident-report')">Incident Report</button>
-      <button onclick="navTo('governance-policies')">Governance &amp; Policies</button>
-      <div class="divider"></div>
-      <button onclick="navTo('dayleader-portal')">Day Leader Portal</button>
-      <button onclick="navTo('excomm-portal')">ExComm Portal</button>
-      <button onclick="navTo('test-admin-portal')">Test Administrator Portal</button>
+      <button class="m-item" onclick="navTo('my-profile')">My Profile</button>
+      <button class="m-item" onclick="navTo('membership')">My Membership <span style="color:#D32F2F;">★</span></button>
+      <button class="m-item" onclick="navTo('ratings')">My Ratings Dashboard <span style="color:#D32F2F;">★</span></button>
+      <button class="m-item" onclick="navTo('volunteer-hours')">Volunteer Hours <span style="color:#D32F2F;">★</span></button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('slack-comms')">Slack &amp; Communications</button>
+      <button class="m-item" onclick="navTo('photo-gallery')">Photo Gallery</button>
+      <button class="m-item" onclick="navTo('expense-reimbursement')">Expense Reimbursement</button>
+      <button class="m-item" onclick="navTo('incident-report')">Incident Report</button>
+      <button class="m-item" onclick="navTo('governance-policies')">Governance &amp; Policies</button>
+      <div class="m-divider"></div>
+      <button class="m-item" onclick="navTo('dayleader-portal')">Day Leader Portal</button>
+      <button class="m-item" onclick="navTo('excomm-portal')">ExComm Portal</button>
+      <button class="m-item" onclick="navTo('test-admin-portal')">Test Administrator Portal</button>
     </div>
   </div>
   <div class="mobile-auth guest-only">
@@ -680,12 +737,13 @@
   <div class="guest-only">
     <div class="hero">
       <div class="hero-content">
-        <div class="hero-eyebrow">Berkeley Marina · Est. 1964</div>
+        <div class="hero-eyebrow">Est. 1964</div>
         <h1>Sail &amp; Windsurf on<br>San Francisco Bay</h1>
-        <p>Cal Sailing Club is a non-profit, volunteer-run sailing and windsurfing club. We offer lessons, recreation, and programs for all levels — year-round.</p>
+        <p style="margin-bottom:14px;">Cal Sailing Club is a non-profit, volunteer-run sailing and windsurfing club. We offer year-round lessons, recreation, and programs for all levels.</p>
+        <div class="hero-eyebrow" style="margin-bottom:24px;">Located at the Berkeley Marina</div>
         <div class="hero-btns">
-          <a href="#how-it-works" class="btn btn-primary" onclick="scrollToHowitworks()">Learn how it works ↓</a>
-          <a href="#" class="btn btn-outline" onclick="showPage('join');return false;">Join today</a>
+          <a href="#how-it-works" class="btn btn-outline" style="color:var(--white);" onclick="scrollToHowitworks()">Learn how it works ↓</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('join');return false;">Join today</a>
         </div>
       </div>
     </div>
@@ -694,10 +752,10 @@
     </svg>
 
     <!-- VIDEO -->
-    <section style="padding: 40px 0;">
-      <div class="container text-center">
-        <div class="section-label">See the club in action</div>
-        <div style="position:relative;padding-bottom:44%;max-width:700px;margin:20px auto 0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+    <section style="padding:48px 0;">
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">See the Club in Action</h2>
+        <div style="position:relative;padding-bottom:44%;max-width:700px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
           <iframe src="https://www.youtube.com/embed/lymUxgywFDY" style="position:absolute;inset:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
@@ -705,78 +763,61 @@
 
     <!-- HOW IT WORKS -->
     <section class="alt" id="how-it-works">
-      <div class="container">
+      <div class="container" style="text-align:center;">
         <div class="section-label">How it works</div>
         <h2 class="section-title">Getting Started is Simple</h2>
-        <p class="section-sub">No prior experience needed. Learn at your own pace in a supportive community.</p>
-        <div class="steps" style="margin-top:32px;">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h4>Join &amp; Show Up</h4>
-            <p>Join online, then come to a lesson. No reservation needed for dinghy lessons.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h4>Take Lessons</h4>
-            <p>Learn from experienced volunteer members. Go at your own pace.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h4>Earn Ratings</h4>
-            <p>Ratings unlock solo sailing, advanced boats, outside lesson times, and more.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <h4>Get Involved</h4>
-            <p>Volunteer, teach, race, cruise, and make friends for life on the water.</p>
-          </div>
+        <p class="section-sub" style="margin:0 auto 32px;">No prior experience needed. Learn at your own pace in a supportive community.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><h4>Join &amp; Show Up</h4><p>Join online, then come to a lesson. No reservation needed for dinghy lessons.</p></div>
+          <div class="step"><div class="step-num">2</div><h4>Take Lessons</h4><p>Learn from experienced volunteer members. Go at your own pace.</p></div>
+          <div class="step"><div class="step-num">3</div><h4>Earn Ratings</h4><p>Ratings unlock solo sailing, advanced boats, outside lesson times, and more.</p></div>
+          <div class="step"><div class="step-num">4</div><h4>Get Involved</h4><p>Volunteer, teach, race, cruise, and make friends for life on the water.</p></div>
         </div>
       </div>
     </section>
 
     <!-- WHAT RATINGS UNLOCK -->
     <section>
-      <div class="container">
+      <div class="container" style="text-align:center;">
         <div class="section-label">As you progress</div>
         <h2 class="section-title">What Ratings Unlock</h2>
-        <p class="section-sub">Earning ratings opens up more of what the club has to offer:</p>
-        <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:20px;list-style:none;">
-          <li style="font-size:0.9rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--foam);border-radius:8px;padding:12px 14px;"><span style="color:var(--bay);">→</span>Sail or windsurf independently</li>
-          <li style="font-size:0.9rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--foam);border-radius:8px;padding:12px 14px;"><span style="color:var(--bay);">→</span>Cover a wider area on the water</li>
-          <li style="font-size:0.9rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--foam);border-radius:8px;padding:12px 14px;"><span style="color:var(--bay);">→</span>Sail or windsurf outside of lesson times</li>
-          <li style="font-size:0.9rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--foam);border-radius:8px;padding:12px 14px;"><span style="color:var(--bay);">→</span>Use advanced sailboats and windsurfing gear</li>
-          <li style="font-size:0.9rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--foam);border-radius:8px;padding:12px 14px;"><span style="color:var(--bay);">→</span>Teach lessons</li>
-          <li style="font-size:0.9rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--foam);border-radius:8px;padding:12px 14px;"><span style="color:var(--bay);">→</span>Bring guests</li>
-        </ul>
+        <p class="section-sub" style="margin:0 auto 24px;">Earning ratings opens up more of what the club has to offer:</p>
+        <div style="display:grid;gap:8px;max-width:480px;margin:0 auto;text-align:left;">
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Sail or windsurf independently</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Cover a wider area on the water</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Sail or windsurf outside of lesson times</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Use advanced sailboats and windsurfing gear</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Teach lessons</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Bring guests</div>
+        </div>
       </div>
     </section>
 
     <!-- WHAT WE OFFER -->
     <section class="alt">
-      <div class="container">
+      <div class="container" style="text-align:center;">
         <div class="section-label">What we offer</div>
         <h2 class="section-title">Two Ways to Get Started</h2>
-        <div class="cards">
+        <div class="cards" style="margin-top:8px;text-align:left;">
           <div class="card">
             <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: dinghy sailing</div>
             <h3>Dinghy Sailing</h3>
-            <p>Small, responsive sailboats -- fast, athletic, and hands-on. The best way to build strong sailing skills. Great for beginners and experienced sailors alike.</p>
-            <a href="#" class="card-link">Learn about dinghy sailing →</a>
+            <p>Small, responsive sailboats — fast, athletic, and hands-on. The best way to build strong sailing skills. Great for beginners and experienced sailors alike.</p>
+            <a href="#" onclick="showPage('dinghy-lessons');return false;" class="card-link">Learn about dinghy sailing →</a>
           </div>
           <div class="card">
             <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: windsurfing</div>
             <h3>Windsurfing</h3>
-            <p>Stand on a board and control a sail in the wind. Athletic and exhilarating -- best April through October when the Bay winds are strongest.</p>
-            <a href="#" class="card-link">Learn about windsurfing →</a>
+            <p>Stand on a board and control a sail in the wind. Athletic and exhilarating — best April through October when the Bay winds are strongest.</p>
+            <a href="#" onclick="showPage('windsurf-lessons');return false;" class="card-link">Learn about windsurfing →</a>
           </div>
         </div>
-
-        <div style="margin-top:28px;">
-          <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.1rem;margin-bottom:12px;">Also available</h3>
-          <div style="display:grid;gap:6px;">
-            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">🚢</span><div><strong style="color:var(--navy);">Keelboat sailing</strong> <span style="color:var(--muted);">-- available once you earn a Junior dinghy rating</span></div></div>
-            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">🛶</span><div><strong style="color:var(--navy);">Kayaks and SUPs</strong> <span style="color:var(--muted);">-- available to members at no extra cost</span></div></div>
-            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">☀️</span><div><strong style="color:var(--navy);">The bench</strong> <span style="color:var(--muted);">-- the club is a social place; hanging out and getting to know fellow members is part of the experience</span></div></div>
+        <div style="margin-top:32px;text-align:left;max-width:560px;margin-left:auto;margin-right:auto;">
+          <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Also available</h3>
+          <div style="display:grid;gap:8px;">
+            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">🚢</span><div><strong style="color:var(--navy);">Keelboat sailing</strong> <span style="color:var(--muted);">— available once you earn a Junior dinghy rating</span></div></div>
+            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">🛶</span><div><strong style="color:var(--navy);">Kayaks and SUPs</strong> <span style="color:var(--muted);">— available to members at no extra cost</span></div></div>
+            <div style="display:flex;gap:12px;align-items:baseline;font-size:0.9rem;"><span style="font-size:1.1rem;">☀️</span><div><strong style="color:var(--navy);">The bench</strong> <span style="color:var(--muted);">— the club is a social place; hanging out is part of the experience</span></div></div>
           </div>
         </div>
       </div>
@@ -784,110 +825,93 @@
 
     <!-- MEMBERSHIP & COST -->
     <section class="sand">
-      <div class="container">
+      <div class="container" style="text-align:center;">
         <div class="section-label">Membership &amp; cost</div>
         <h2 class="section-title">An Affordable Way to Sail the Bay</h2>
-        <p class="section-sub">Membership includes lessons, use of all boats and gear, social events, cruising, women's sailing, youth programs, and more — all for one low fee.</p>
-        <div class="pricing-grid" style="margin-top:28px;">
-          <div class="pricing-card">
-            <div class="tag">Quarterly Membership</div>
-            <h3>3-Month Access</h3>
-            <div class="pricing-row"><span class="label">Adult</span><span class="price">$150</span></div>
-            <div class="pricing-row"><span class="label">Student / Senior 65+</span><span class="price">$119</span></div>
-            <div class="pricing-row"><span class="label">Youth</span><span class="price">$90</span></div>
-            <div class="pricing-row"><span class="label">Family</span><span class="price">$219</span></div>
-            <div class="pricing-row"><span class="label">Volunteer instead</span><span class="price">12 hrs</span></div>
-          </div>
-          <div class="pricing-card featured">
-            <div class="tag">Annual Membership</div>
-            <h3>Full Year Access</h3>
-            <div class="pricing-row"><span class="label">Adult</span><span class="price">$450</span></div>
-            <div class="pricing-row"><span class="label">Renew with volunteering</span><span class="price">38 hrs</span></div>
-            <div class="pricing-row" style="border:none;padding-top:12px;">
-              <span style="font-size:0.8rem;color:var(--muted);font-style:italic;">All members: 2 volunteer hrs/quarter required</span>
-            </div>
-          </div>
-          <div class="pricing-card">
-            <div class="tag">What's Included</div>
-            <h3>Everything you need</h3>
-            <ul style="list-style:none;font-size:0.85rem;color:var(--muted);">
-              <li style="padding:4px 0;">✅ Lessons from volunteer instructors</li>
-              <li style="padding:4px 0;">✅ All boats &amp; gear — no extra fees</li>
-              <li style="padding:4px 0;">✅ Kayaks &amp; SUPs</li>
-              <li style="padding:4px 0;">✅ Cruising opportunities</li>
-              <li style="padding:4px 0;">✅ Social events &amp; community</li>
-              <li style="padding:4px 0;">✅ Volunteer projects</li>
-              <li style="padding:4px 0;">✅ Women's sailing program</li>
-              <li style="padding:4px 0;">✅ Youth windsurfing program</li>
-              <li style="padding:4px 0;">✅ And more!</li>
-            </ul>
-          </div>
+        <p class="section-sub" style="margin:0 auto 28px;">Membership includes lessons, use of all boats and gear, social events, cruising, women's sailing, youth programs, and more — all for one low fee.</p>
+
+        <div style="overflow-x:auto;max-width:760px;margin:0 auto 28px;text-align:left;">
+          <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.88rem;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);">
+            <thead>
+              <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:12px 16px;text-align:center;font-size:1.05rem;font-weight:700;">What does membership cost?</th></tr>
+              <tr style="background:var(--navy);">
+                <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Membership type</th>
+                <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Quarterly</th>
+                <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Annual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:var(--white);"><td style="padding:10px 16px;font-weight:600;color:var(--navy);">Adult</td><td style="padding:10px 16px;">$150 or 10 volunteer hours</td><td style="padding:10px 16px;">$450 or 30 hours (25% discount)</td></tr>
+              <tr style="background:var(--foam);"><td style="padding:10px 16px;font-weight:600;color:var(--navy);">Student / Senior age 65+</td><td style="padding:10px 16px;">$119 or 10 volunteer hours</td><td style="padding:10px 16px;">—</td></tr>
+              <tr style="background:var(--white);"><td style="padding:10px 16px;font-weight:600;color:var(--navy);">Minor (under 18)</td><td style="padding:10px 16px;">$90 or 10 volunteer hours</td><td style="padding:10px 16px;">—</td></tr>
+              <tr style="background:var(--foam);"><td style="padding:10px 16px;font-weight:600;color:var(--navy);">Family</td><td style="padding:10px 16px;">$215</td><td style="padding:10px 16px;">—</td></tr>
+            </tbody>
+          </table>
         </div>
 
-        <p style="margin-top:24px;max-width:680px;">Cal Sailing Club is more than lessons. Members teach each other, sail together, volunteer together, and enjoy meals in the boat yard together.</p>
-        <p style="margin-top:10px;max-width:680px;">Whether you're completely new to the water or experienced, you'll find people excited to help you learn and get involved.</p>
+        <a href="#" onclick="showPage('join');return false;" class="btn btn-primary" style="padding:12px 32px;font-size:1rem;">Become a Member</a>
+      </div>
+    </section>
 
-        <div class="text-center mt-8">
-          <a href="#" class="btn btn-primary" style="padding:12px 32px;font-size:1rem;">Become a Member</a>
+    <!-- VOLUNTEER CULTURE -->
+    <section class="alt">
+      <div class="container" style="text-align:center;max-width:760px;">
+        <div class="section-label">Volunteer culture</div>
+        <h2 class="section-title">Powered by Volunteer Energy</h2>
+        <p class="section-sub" style="margin:0 auto 14px;">Cal Sailing Club runs on volunteer energy. Teaching, fixing boats, supporting Open Houses, and helping at events are all part of what makes the club affordable, welcoming, and hands-on.</p>
+        <p class="section-sub" style="margin:0 auto 28px;">Most members find volunteering is one of the best parts of the club — it's how people learn faster, meet friends, and become part of the community.</p>
+
+        <div style="overflow-x:auto;text-align:left;">
+          <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.88rem;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);">
+            <thead>
+              <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:12px 16px;text-align:center;font-size:1.05rem;font-weight:700;">Additional requirement for all members<br>(must be completed in order to renew membership)</th></tr>
+              <tr style="background:var(--navy);">
+                <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Rating type</th>
+                <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Quarterly</th>
+                <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Annual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:var(--white);"><td style="padding:10px 16px;font-weight:600;color:var(--navy);">Most members (Unrated, Novice, Junior, J+)</td><td style="padding:10px 16px;">2 volunteer hours</td><td style="padding:10px 16px;">8 volunteer hours</td></tr>
+              <tr style="background:#dce8f0;"><td style="padding:10px 16px;font-weight:600;color:var(--navy);">Senior-rated members</td><td style="padding:10px 16px;">10 volunteer hours</td><td style="padding:10px 16px;">40 volunteer hours</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <!-- COMMUNITY -->
-    <section class="alt">
-      <div class="container text-center">
+    <section>
+      <div class="container" style="text-align:center;max-width:760px;">
         <div class="section-label">More than lessons</div>
         <h2 class="section-title">A Community on the Water</h2>
-        <p class="section-sub" style="max-width:600px;margin:0 auto;">Members teach each other, sail together, volunteer together, and share meals in the boat yard. Whether you're brand new or have years of experience, you'll find people glad to help you learn and get involved.</p>
-        <div class="img-placeholder" style="height:220px;max-width:700px;margin:28px auto 0;"><span class="img-icon">🖼️</span>Photo: club community / social slideshow</div>
-      </div>
-    </section>
-
-    <!-- VOLUNTEER CULTURE -->
-    <section>
-      <div class="container" style="max-width:760px;">
-        <div class="section-label">Volunteer culture</div>
-        <h2 class="section-title">More Than a Membership Fee</h2>
-        <p class="section-sub">Cal Sailing Club runs on volunteer energy. Teaching, fixing boats, supporting Open Houses, and helping at events are all part of what makes the club affordable, welcoming, and hands-on.</p>
-        <p class="section-sub" style="margin-top:10px;">Most members find volunteering is one of the best parts of the club — it's how people learn faster, meet friends, and become part of the community.</p>
-        <div style="margin-top:20px;background:var(--sand);border-radius:10px;padding:18px 24px;">
-          <h4 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:8px;font-size:1rem;">Volunteering Requirement</h4>
-          <p style="font-size:0.9rem;color:var(--muted);">2 volunteer hours every quarter (3 months), or 8 hours annually.</p>
-        </div>
+        <p class="section-sub" style="margin:0 auto 28px;">Members teach each other, sail together, volunteer together, and share meals in the boat yard. Whether you're brand new or have years of experience, you'll find people glad to help you learn and get involved.</p>
+        <div class="img-placeholder" style="height:220px;"><span class="img-icon">🖼️</span>Photo: club community / social slideshow</div>
       </div>
     </section>
 
     <!-- GET STARTED -->
-    <section>
+    <section class="alt">
       <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;" class="flex-wrap">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;" class="col-layout">
           <div>
             <div class="section-label">Get on the water</div>
             <h2 class="section-title" style="font-size:1.6rem;">The Easiest Way to Start</h2>
-            <div style="display:grid;gap:16px;margin-top:20px;">
+            <div style="display:grid;gap:20px;margin-top:20px;">
               <div style="display:flex;align-items:flex-start;gap:16px;">
                 <div class="step-num-inline">1</div>
-                <div style="padding-top:6px;">
-                  <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Join online or at the clubhouse</h4>
-                  <p style="font-size:0.85rem;color:var(--muted);">Sign up takes just a few minutes.</p>
-                </div>
+                <div style="padding-top:4px;"><h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Join online or at the clubhouse</h4><p style="font-size:0.85rem;color:var(--muted);margin:0;">Sign up takes just a few minutes.</p></div>
               </div>
               <div style="display:flex;align-items:flex-start;gap:16px;">
                 <div class="step-num-inline">2</div>
-                <div style="padding-top:6px;">
-                  <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Show up for a lesson</h4>
-                  <p style="font-size:0.85rem;color:var(--muted);">No reservation needed for dinghy lessons — just put your name on the list.</p>
-                </div>
+                <div style="padding-top:4px;"><h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Show up for a lesson</h4><p style="font-size:0.85rem;color:var(--muted);margin:0;">No reservation needed for dinghy lessons — just put your name on the list.</p></div>
               </div>
               <div style="display:flex;align-items:flex-start;gap:16px;">
                 <div class="step-num-inline">3</div>
-                <div style="padding-top:6px;">
-                  <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Start sailing or windsurfing!</h4>
-                  <p style="font-size:0.85rem;color:var(--muted);">Members are usually happy to show you around anytime we're open.</p>
-                </div>
+                <div style="padding-top:4px;"><h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Start sailing or windsurfing!</h4><p style="font-size:0.85rem;color:var(--muted);margin:0;">Members are usually happy to show you around anytime we're open.</p></div>
               </div>
             </div>
-            <a href="#" class="btn btn-sky mt-6" style="display:inline-block;">Join today →</a>
+            <a href="#" onclick="showPage('join');return false;" class="btn btn-sky" style="display:inline-block;margin-top:28px;">Join today →</a>
           </div>
           <div>
             <div class="section-label">Typical hours</div>
@@ -896,14 +920,14 @@
               <div class="status-body" style="padding:16px 20px;">
                 <div class="status-row"><span>Mon–Fri</span><span class="value">Noon → Sunset</span></div>
                 <div class="status-row"><span>Sat–Sun</span><span class="value">9am → Sunset</span></div>
-                <div class="status-row" style="border:none;font-size:0.8rem;color:var(--muted);">Hours depend on tides. <a href="#">Check the calendar</a> for exact times.</div>
+                <div class="status-row" style="border:none;font-size:0.8rem;color:var(--muted);">Hours depend on tides. <a href="#" onclick="showPage('calendar-events');return false;">Check the calendar</a> for exact times.</div>
               </div>
             </div>
-            <div style="margin-top:16px;">
+            <div style="margin-top:20px;">
               <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:10px;">Typical lesson times</h4>
-              <div style="font-size:0.85rem;color:var(--muted);display:grid;gap:8px;">
+              <div style="font-size:0.85rem;color:var(--muted);display:grid;gap:10px;">
                 <div><strong style="color:var(--navy);">Dinghy Sailing</strong> — Year-round, drop-in<br>Sat 10am–1pm · Mon &amp; Thu 1–4pm (1–5pm DST)</div>
-                <div><strong style="color:var(--navy);">Windsurfing</strong> — April–October, sign-up required<br>Sat &amp; Sun (times vary) · <a href="#">Check the calendar</a></div>
+                <div><strong style="color:var(--navy);">Windsurfing</strong> — April–October, sign-up required<br>Sat &amp; Sun (times vary) · <a href="#" onclick="showPage('calendar-events');return false;">Check the calendar</a></div>
               </div>
             </div>
           </div>
@@ -912,41 +936,41 @@
     </section>
 
     <!-- UPCOMING EVENTS -->
-    <section class="alt">
-      <div class="container">
+    <section>
+      <div class="container" style="text-align:center;">
         <div class="section-label">What's coming up</div>
-        <h2 class="section-title">Upcoming Events &amp; Open Houses</h2>
-        <div class="cal-strip mt-6" style="max-width:680px;">
-          <div class="cal-strip-header"><span>Upcoming Events</span><a href="#" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="cal-strip" style="max-width:680px;margin:20px auto 0;text-align:left;">
+          <div class="cal-strip-header"><span>Upcoming</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="cal-event">
             <div class="cal-date"><div class="day">29</div><div class="wd">Mon</div></div>
-            <div class="cal-info"><h4>Open House — Free Public Sailing!</h4><p>Public event · Get on the water with an instructor</p></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('open-house');return false;" style="color:var(--navy);text-decoration:none;">Open House — Free Public Sailing!</a></h4><p>Public event · Get on the water with an instructor</p></div>
             <span class="cal-pill pill-social">Open House</span>
           </div>
           <div class="cal-event">
             <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4>Dinghy Lessons</h4><p>10:00am – 1:00pm · Drop-in welcome</p></div>
-            <span class="cal-pill pill-sail">Sailing</span>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm · Drop-in welcome</p></div>
+            <span class="cal-pill pill-lessons">Lessons</span>
           </div>
           <div class="cal-event">
             <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4>Novice 1 + Refresher: Intro to Windsurfing</h4><p>11:00am – 2:00pm · Sign-up required</p></div>
-            <span class="cal-pill pill-wind">Windsurf</span>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('windsurf-lessons');return false;" style="color:var(--navy);text-decoration:none;">Novice 1 + Refresher: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
+            <span class="cal-pill pill-wind">Windsurfing</span>
           </div>
           <div class="cal-event">
             <div class="cal-date"><div class="day">5</div><div class="wd">Sun</div></div>
-            <div class="cal-info"><h4>Sunday Dinghy Racing</h4><p>10:00am – 2:00pm · All welcome</p></div>
-            <span class="cal-pill pill-sail">Racing</span>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm · All welcome</p></div>
+            <span class="cal-pill pill-racing">Racing</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- READY TO GET STARTED -->
-    <section class="alt" style="text-align:center;">
-      <div class="container">
+    <section class="alt">
+      <div class="container" style="text-align:center;">
         <h2 class="section-title">Ready to Get Started?</h2>
-        <p class="section-sub" style="margin:0 auto 20px;">Join today and start learning to sail or windsurf on San Francisco Bay!</p>
+        <p class="section-sub" style="margin:0 auto 24px;">Join today and start learning to sail or windsurf on San Francisco Bay!</p>
         <a href="#" class="btn btn-primary" style="padding:12px 32px;font-size:1rem;" onclick="showPage('join');return false;">Join →</a>
       </div>
     </section>
@@ -958,18 +982,22 @@
       <div class="container member-hero-inner">
         <div class="member-greeting">
           <h2>Great to see you, Alex!</h2>
-          <div class="member-status-msg"></div>
-          <div class="quick-links mt-4">
-            <span class="section-label" style="color:rgba(255,255,255,0.6);margin:0;align-self:center;font-size:0.7rem;">Quick links:</span>
-            <a href="#" class="quick-link">🟢 Club Status</a>
-            <a href="#" class="quick-link">🌤 Weather</a>
-            <a href="#" class="quick-link">📅 Calendar</a>
-            <a href="#" class="quick-link" onclick="showPage('ratings');return false;">📋 My Ratings</a>
-            <a href="#" class="quick-link" onclick="showPage('volunteer-hours');return false;">🛠 Volunteer Hours</a>
-            <a href="#" class="quick-link">💬 Slack</a>
-          </div>
+          <p class="member-status-msg">Thanks for being an active member of Cal Sailing Club!</p>
         </div>
         <div id="member-status-badge"></div>
+      </div>
+    </div>
+
+    <div style="background:var(--foam);border-bottom:1px solid var(--border);padding:10px 0;">
+      <div class="container">
+        <div class="quick-links" style="margin-top:0;">
+          <span class="section-label" style="color:var(--muted);margin:0;align-self:center;font-size:0.7rem;">Quick links:</span>
+          <a href="#" onclick="showPage('club-status');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">🟢 Club Status &amp; Weather</a>
+          <a href="#" onclick="showPage('calendar-events');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">📅 Calendar</a>
+          <a href="#" onclick="showPage('ratings');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">📋 My Ratings</a>
+          <a href="#" onclick="showPage('volunteer-hours');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">🛠 Volunteer Hours</a>
+          <a href="#" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">💬 Slack</a>
+        </div>
       </div>
     </div>
 
@@ -977,29 +1005,42 @@
       <div class="container" style="max-width:760px;">
 
         <!-- CLUB STATUS -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.1rem;">Club Status</h3>
-        <div class="status-box" style="margin-bottom:28px;">
-          <div class="status-header">
-            <div class="status-dot dot-green"></div>
-            <h3>Open Today</h3>
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">Club Status</h2>
+        <!-- CLUB STATUS: top row - open today + wind side by side -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;" class="col-layout">
+          <div class="status-box">
+            <div class="status-header">
+              <div class="status-dot dot-green"></div>
+              <h3>Open Now</h3>
+            </div>
+            <div class="status-body">
+              <div class="status-row"><span>Club opens</span><span class="value">9:00am</span></div>
+              <div class="status-row"><span>High tide</span><span class="value">5.1 @ 11:42am</span></div>
+              <div class="status-row"><span>Low tide</span><span class="value">2.9 @ 4:30pm</span></div>
+              <div class="status-row"><span>Dock time (closes)</span><span class="value">8:02pm</span></div>
+              <div class="status-row"><span>Sunset</span><span class="value">8:32pm</span></div>
+            </div>
           </div>
-          <div class="status-body">
-            <div class="status-row"><span>Right now</span><span class="value">Open until 8:02pm</span></div>
-            <div class="status-row"><span>Sunset</span><span class="value">8:32pm</span></div>
-            <div class="status-row"><span>Low tide</span><span class="value">2.9 @ 4:30pm</span></div>
-          </div>
-          <div style="border-top:1px solid var(--border);padding:14px 18px;">
-            <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;">Whiteboard webcam</div>
-            <div class="img-placeholder" style="height:140px;"><span class="img-icon">🖼️</span>Webcam: day leader's whiteboard</div>
-          </div>
-          <div style="border-top:1px solid var(--border);padding:14px 18px;">
-            <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;">Today's schedule</div>
-            <div class="img-placeholder" style="height:90px;"><span class="img-icon">🖼️</span>Visual: today's hours / schedule</div>
+          <div class="status-box" style="display:flex;flex-direction:column;justify-content:center;padding:14px 18px;">
+            <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;">Wind</div>
+            <div class="img-placeholder" style="height:100%;min-height:80px;"><span class="img-icon">🖼️</span>Small version of Nicho's wind meter</div>
           </div>
         </div>
 
+        <!-- Today's open/close times -->
+        <div class="status-box" style="margin-bottom:12px;padding:14px 18px;">
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;">Today's open/close times</div>
+          <div class="img-placeholder" style="height:80px;"><span class="img-icon">🖼️</span>Today's open/close times (1 line from the club open/close times page, as shown when clicking "today's hours")</div>
+        </div>
+
+        <!-- Whiteboard webcam -->
+        <div class="status-box" style="margin-bottom:28px;padding:14px 18px;">
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;">Whiteboard webcam</div>
+          <div class="img-placeholder" style="height:140px;"><span class="img-icon">🖼️</span>Webcam: day leader's whiteboard</div>
+        </div>
+
         <!-- EXCOMM ANNOUNCEMENTS -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:12px;font-size:1.1rem;">ExComm Announcements</h3>
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:12px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">ExComm Announcements</h2>
         <div class="announce-item">
           <div class="announce-date">June 9, 2026</div>
           <h4>New requirement: emergency contacts</h4>
@@ -1012,7 +1053,7 @@
         </div>
 
         <!-- ALL ANNOUNCEMENTS -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin:24px 0 12px;font-size:1.1rem;">All Announcements</h3>
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin:24px 0 12px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">All Announcements</h2>
         <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;">All four official announcement groups (general, dinghy, keelboat, windsurf):</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;">
           <a href="#" class="btn btn-outline" style="font-size:0.82rem;color:var(--navy);border-color:var(--border);">View on Slack →</a>
@@ -1020,89 +1061,75 @@
         </div>
 
         <!-- HAPPENING TODAY -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.1rem;">Happening Today</h3>
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">Happening Today</h2>
         <div class="cal-strip" style="margin-bottom:28px;">
-          <div class="cal-strip-header"><span>Today, Jun 28</span><a href="#" style="color:var(--bay);font-size:0.8rem;">Full calendar →</a></div>
+          <div class="cal-strip-header"><span>Today, Jul 12</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">Full calendar →</a></div>
           <div class="cal-event">
-            <div class="cal-date"><div class="day">28</div><div class="wd">Sun</div></div>
-            <div class="cal-info"><h4>Dinghy Lessons</h4><p>10:00am – 1:00pm</p></div>
-            <span class="cal-pill pill-sail">Join →</span>
+            <div class="cal-date"><div class="day">12</div><div class="wd">Sun</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm</p></div>
+            <span class="cal-pill pill-lessons">Dinghy Lessons</span>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><div class="day">28</div><div class="wd">Sun</div></div>
-            <div class="cal-info"><h4>Sunday Dinghy Racing</h4><p>10:00am – 2:00pm</p></div>
-            <span class="cal-pill pill-sail">Info →</span>
+            <div class="cal-date"><div class="day">12</div><div class="wd">Sun</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm</p></div>
+            <span class="cal-pill pill-racing">Racing</span>
           </div>
         </div>
 
-        <!-- UPCOMING (week/month view) -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.1rem;">Upcoming</h3>
+        <!-- UPCOMING (month view) -->
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">Upcoming</h2>
         <div class="cal-strip" style="margin-bottom:28px;">
           <div class="cal-strip-header">
-            <span>This Month</span>
+            <span>July 2026</span>
             <div style="display:flex;gap:6px;">
               <button style="font-size:0.75rem;padding:3px 10px;border-radius:14px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;">Week</button>
               <button style="font-size:0.75rem;padding:3px 10px;border-radius:14px;border:1px solid var(--sky);background:var(--sky);color:var(--white);cursor:pointer;">Month</button>
             </div>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><div class="day">29</div><div class="wd">Mon</div></div>
-            <div class="cal-info"><h4>Open House — Free Public Sailing!</h4><p>Public event · Get on the water with an instructor</p></div>
+            <div class="cal-date"><div class="day">13</div><div class="wd">Mon</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('open-house');return false;" style="color:var(--navy);text-decoration:none;">Open House — Free Public Sailing!</a></h4><p>Public event · Get on the water with an instructor</p></div>
             <span class="cal-pill pill-social">Open House</span>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4>Dinghy Lessons</h4><p>10:00am – 1:00pm</p></div>
-            <span class="cal-pill pill-sail">Join →</span>
+            <div class="cal-date"><div class="day">19</div><div class="wd">Sat</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm</p></div>
+            <span class="cal-pill pill-lessons">Dinghy Lessons</span>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4>Novice 1: Intro to Windsurfing</h4><p>11:00am – 2:00pm</p></div>
-            <span class="cal-pill pill-wind">Sign up →</span>
+            <div class="cal-date"><div class="day">19</div><div class="wd">Sat</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('windsurf-lessons');return false;" style="color:var(--navy);text-decoration:none;">Novice 1: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm</p></div>
+            <span class="cal-pill pill-wind">Windsurf Lessons</span>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><div class="day">5</div><div class="wd">Sun</div></div>
-            <div class="cal-info"><h4>Sunday Dinghy Racing</h4><p>10:00am – 2:00pm</p></div>
-            <span class="cal-pill pill-sail">Info →</span>
+            <div class="cal-date"><div class="day">20</div><div class="wd">Sun</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm</p></div>
+            <span class="cal-pill pill-racing">Racing</span>
           </div>
         </div>
 
         <!-- START SAILING / START WINDSURFING -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">Get on the Water</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;" class="col-layout">
           <div class="card" style="text-align:center;cursor:pointer;">
             <h4 style="font-family:'Bitter',serif;color:var(--navy);margin:8px 0 4px;">Start Sailing</h4>
             <p style="font-size:0.82rem;color:var(--muted);">Dinghy &amp; Keelboat lessons</p>
-            <a href="#" class="card-link">Go to Lessons →</a>
+            <a href="#" onclick="showPage('dinghy-lessons');return false;" class="card-link">Go to Lessons →</a>
           </div>
           <div class="card" style="text-align:center;cursor:pointer;">
             <h4 style="font-family:'Bitter',serif;color:var(--navy);margin:8px 0 4px;">Start Windsurfing</h4>
             <p style="font-size:0.82rem;color:var(--muted);">Lessons &amp; sign-ups</p>
-            <a href="#" class="card-link">Go to Lessons →</a>
+            <a href="#" onclick="showPage('windsurf-lessons');return false;" class="card-link">Go to Lessons →</a>
           </div>
         </div>
 
-        <!-- CLUB HOURS -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.1rem;">Club Hours</h3>
-        <div class="status-box" style="margin-bottom:28px;">
+        <!-- TYPICAL CLUB HOURS -->
+        <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">Typical Club Hours</h2>
+        <div class="status-box" style="margin-bottom:28px;max-width:360px;">
           <div class="status-body" style="padding-top:16px;">
             <div class="status-row"><span>Monday – Friday</span><span class="value">Noon – sunset</span></div>
             <div class="status-row"><span>Saturday – Sunday</span><span class="value">9am – sunset</span></div>
-            <div style="margin-top:8px;font-size:0.78rem;color:var(--muted);">See calendar for any tide-related closings.</div>
-          </div>
-        </div>
-
-        <!-- MY ACCOUNT -->
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.1rem;">My Account</h3>
-        <div class="status-box">
-          <div class="status-body" style="padding-top:16px;">
-            <div class="status-row"><span>Member since</span><span>2023</span></div>
-            <div class="status-row"><span>Dinghy rating</span><span><strong style="color:var(--sky);">Junior</strong></span></div>
-            <div class="status-row"><span>Windsurf rating</span><span><strong style="color:var(--sky);">Novice</strong></span></div>
-            <div class="status-row"><span>Volunteer hrs</span><span>6 / 8 required</span></div>
-            <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-              <button onclick="showPage('ratings')" class="btn btn-sky" style="width:100%;font-size:0.82rem;">My Ratings Dashboard</button>
-              <button onclick="showPage('membership')" class="btn btn-outline" style="width:100%;color:var(--navy);border-color:var(--border);font-size:0.82rem;">My Membership →</button>
-            </div>
+            <div style="margin-top:8px;font-size:0.78rem;color:var(--muted);">Hours vary with tides. <a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);">See calendar →</a></div>
           </div>
         </div>
 
@@ -1124,6 +1151,10 @@
 
   <section>
     <div class="container" style="max-width:700px;">
+      <div style="background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:12px 18px;font-size:0.85rem;color:var(--muted);margin-bottom:20px;">
+        <strong style="color:var(--navy);">Note:</strong> This page needs to be reviewed and edited by a human.
+      </div>
+
       <p style="margin-bottom:24px;">Welcome to the club! Here's what to do next.</p>
 
       <div style="display:grid;gap:16px;margin-bottom:28px;">
@@ -1131,7 +1162,7 @@
           <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--bay);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">1</div>
           <div>
             <strong style="color:var(--navy);">Join the club.</strong>
-            <div style="margin-top:4px;"><button onclick="navTo('join')" style="background:none;border:none;color:var(--bay);text-decoration:underline;cursor:pointer;font-size:0.92rem;padding:0;display:inline;">Join Cal Sailing Club →</button></div>
+            <div style="margin-top:4px;"><a href="#" onclick="navTo('join');return false;">Join Cal Sailing Club →</a></div>
           </div>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;">
@@ -1164,7 +1195,7 @@
       <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.05rem;margin-bottom:10px;">Optional additional reading: Gear</h3>
       <ul style="display:grid;gap:8px;margin-bottom:28px;">
         <li><a href="#" onclick="showPage('wetsuit-howto');return false;">Wetsuit instructions</a> — how to put on, how to put away</li>
-        <li><a href="#" onclick="showPage('pfd-fowlie-howto');return false;">PFD and Fowlie instructions</a> — how to put on, how to put away</li>
+        <li><a href="#" onclick="showPage('pfd-foulie-howto');return false;">PFD (life jacket) and foulie (foul weather gear)</a> — how to put on, how to put away</li>
         <li><a href="#" onclick="showPage('gear-guide');return false;">Gear to purchase</a> (optional)</li>
       </ul>
 
@@ -1676,8 +1707,8 @@
               <td class="empty">—</td>
             </tr>
             <tr><td>Saturday Lessons Chairperson approval</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">ExComm Member</td><td style="color:var(--muted);font-style:italic;">Hidden unless held (could show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">Committee Chair</td><td style="color:var(--muted);font-style:italic;">Hidden unless held (could show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label">ExComm Member</td><td style="color:var(--muted);font-style:italic;">Hidden unless applicable (show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label">Committee Chair</td><td style="color:var(--muted);font-style:italic;">Hidden unless applicable (show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
             <tr><td class="cat-label" style="color:var(--muted);font-style:italic;">Add other possible attributes here</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
           </tbody>
         </table>
@@ -1724,57 +1755,95 @@
           <div class="mem-row"><span class="label">Membership Type</span><span class="value" id="mem-type">Adult – Annual</span></div>
           <div class="mem-row"><span class="label">Status</span><span class="value" id="mem-status-display">—</span></div>
           <div class="mem-row"><span class="label">Expiration Date</span><span class="value" id="mem-exp">—</span></div>
-          <div class="mem-row" style="border:none;">
+          <div class="mem-row" style="border:none;align-items:center;">
             <span class="label">Membership Card</span>
             <a href="#" class="btn btn-sky" style="font-size:0.8rem;padding:5px 12px;">Download Card</a>
           </div>
         </div>
       </div>
 
-      <!-- VOLUNTEER REQUIREMENTS CARD -->
+      <!-- MEMBERSHIP COST TABLE -->
+      <div style="overflow-x:auto;margin-bottom:28px;">
+        <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.85rem;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);">
+          <thead>
+            <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:10px 14px;text-align:center;font-size:0.85rem;font-weight:600;">Membership Cost</th></tr>
+            <tr style="background:var(--navy);">
+              <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Membership type</th>
+              <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Quarterly</th>
+              <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Annual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--white);"><td style="padding:9px 14px;font-weight:600;color:var(--navy);">Adult</td><td style="padding:9px 14px;">$150 or 10 volunteer hours</td><td style="padding:9px 14px;">$450 or 30 hours (25% discount)</td></tr>
+            <tr style="background:var(--foam);"><td style="padding:9px 14px;font-weight:600;color:var(--navy);">Student / Senior age 65+</td><td style="padding:9px 14px;">$119 or 10 volunteer hours</td><td style="padding:9px 14px;">—</td></tr>
+            <tr style="background:var(--white);"><td style="padding:9px 14px;font-weight:600;color:var(--navy);">Minor (under 18)</td><td style="padding:9px 14px;">$90 or 10 volunteer hours</td><td style="padding:9px 14px;">—</td></tr>
+            <tr style="background:var(--foam);"><td style="padding:9px 14px;font-weight:600;color:var(--navy);">Family</td><td style="padding:9px 14px;">$215</td><td style="padding:9px 14px;">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- VOLUNTEER OBLIGATION TABLE -->
+      <div style="overflow-x:auto;margin-bottom:28px;">
+        <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.85rem;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);">
+          <thead>
+            <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:10px 14px;text-align:center;font-size:0.85rem;font-weight:600;">Additional requirement for all members<br>(must be completed in order to renew membership)</th></tr>
+            <tr style="background:var(--navy);">
+              <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Rating type</th>
+              <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Quarterly</th>
+              <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Annual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--white);"><td style="padding:9px 14px;font-weight:600;color:var(--navy);">Most members (Unrated, Novice, Junior, J+)</td><td style="padding:9px 14px;">2 volunteer hours</td><td style="padding:9px 14px;">8 volunteer hours</td></tr>
+            <tr style="background:#dce8f0;"><td style="padding:9px 14px;font-weight:600;color:var(--navy);">Senior-rated members</td><td style="padding:9px 14px;">10 volunteer hours</td><td style="padding:9px 14px;">40 volunteer hours</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PROGRESS BARS -->
       <div class="mem-card">
         <div class="mem-card-header">
-          <h3 style="font-family:'Bitter',serif;font-size:1.05rem;">Volunteer Hours</h3>
+          <h3 style="font-family:'Bitter',serif;font-size:1.05rem;">Your Progress</h3>
         </div>
         <div class="mem-card-body">
-          <div style="font-size:0.85rem;color:var(--muted);margin-bottom:20px;">All members must contribute <strong>2 volunteer hours per quarter</strong> to remain in good standing. You can also use volunteer hours to pay for your membership renewal.
+          <p style="font-size:0.83rem;color:var(--muted);margin-bottom:20px;">You have <strong>6 approved, unused volunteer hours.</strong></p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="col-layout">
+            <div>
+              <p style="font-size:0.78rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;">Quarterly</p>
+              <div class="progress-section">
+                <div class="progress-label">
+                  <span>Volunteer obligation (2 hours needed)</span>
+                  <span style="color:#2ecc71;font-weight:600;">2 / 2 ✓</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill fill-green" style="width:100%;"></div></div>
+
+                <div class="progress-label" style="margin-top:12px;">
+                  <span>Renew with hours instead of money (10 hours needed)</span>
+                  <span>4 / 10</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill fill-gold" style="width:40%;"></div></div>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.78rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;">Annual</p>
+              <div class="progress-section">
+                <div class="progress-label">
+                  <span>Volunteer obligation (8 hours needed)</span>
+                  <span>6 / 8</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill fill-green" style="width:75%;"></div></div>
+
+                <div class="progress-label" style="margin-top:12px;">
+                  <span>Renew with hours instead of money (30 hours needed)</span>
+                  <span>0 / 30</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill fill-gold" style="width:0%;"></div></div>
+              </div>
+            </div>
           </div>
 
-          <div class="progress-section">
-            <div class="progress-label">
-              <span>Quarterly requirement (renew with $) — 2 hrs needed</span>
-              <span id="prog-q-label">6 / 2 hrs </span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill fill-green" id="prog-q" style="width:100%;"></div>
-            </div>
-
-            <div class="progress-label">
-              <span>Quarterly renewal with volunteer hours — 14 hrs needed</span>
-              <span id="prog-qv-label">6 / 14 hrs</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill fill-gold" id="prog-qv" style="width:43%;"></div>
-            </div>
-
-            <div class="progress-label">
-              <span>Annual requirement (renew with $) — 8 hrs needed</span>
-              <span id="prog-a-label">6 / 8 hrs</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill fill-green" id="prog-a" style="width:75%;"></div>
-            </div>
-
-            <div class="progress-label">
-              <span>Annual renewal with volunteer hours — 38 hrs needed</span>
-              <span id="prog-av-label">6 / 38 hrs</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill fill-gold" id="prog-av" style="width:16%;"></div>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
             <a href="#" class="btn btn-sky" style="font-size:0.83rem;" onclick="showPage('volunteer-hours');return false;">Enter volunteer hours</a>
           </div>
         </div>
@@ -1934,64 +2003,50 @@
 </div>
 <footer id="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div style="font-family:'Bitter',serif;color:var(--white);font-size:1.1rem;margin-bottom:8px;">Cal Sailing Club</div>
-        <div style="font-size:0.82rem;margin-bottom:12px;">124 University Avenue<br>Berkeley Marina, CA 94710</div>
-        <a href="#">Contact Us</a>
-        <a href="#">Privacy Policy</a>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/calsailingclub/" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/CalSailingClub" target="_blank">Facebook</a>
-          <a href="https://www.youtube.com/c/CalSailingClub" target="_blank">YouTube</a>
+
+    <!-- Top row: logo + supporters + social -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.1);align-items:start;" class="col-layout">
+
+      <!-- Logo + address + contact -->
+      <div>
+        <div style="font-family:'Bitter',serif;color:var(--white);font-size:1.15rem;font-weight:700;margin-bottom:8px;">⛵ <span style="color:var(--bay);">Cal</span> Sailing <span style="color:var(--bay);">Club</span></div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-bottom:12px;line-height:1.8;">
+          124 University Ave<br>
+          Berkeley, CA 94710<br>
+          Berkeley Marina
+        </div>
+        <a href="#" onclick="showPage('contact');return false;" style="display:block;color:rgba(255,255,255,0.65);font-size:0.82rem;margin-bottom:4px;">Contacts</a>
+      </div>
+
+      <!-- Supporters -->
+      <div>
+        <div style="font-family:'Bitter',serif;color:var(--white);font-size:0.85rem;font-weight:600;margin-bottom:14px;">Our Supporters</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <img src="https://static.cal-sailing.org/images/Support/DBW.png" alt="Department of Boating and Waterways" style="height:28px;opacity:0.75;filter:brightness(0) invert(1);object-fit:contain;object-position:left;">
+          <img src="https://static.cal-sailing.org/images/Support/westcoastsailing.png" alt="West Coast Sailing" style="height:24px;opacity:0.75;filter:brightness(0) invert(1);object-fit:contain;object-position:left;">
+          <img src="https://static.cal-sailing.org/images/Support/sailworks.png" alt="Sailworks" style="height:24px;opacity:0.75;filter:brightness(0) invert(1);object-fit:contain;object-position:left;">
         </div>
       </div>
-      <div class="footer-col">
-        <h4>About</h4>
-        <a href="#" onclick="showPage('about-overview');return false;">Overview</a>
-        <a href="#" onclick="showPage('getting-started');return false;">Getting Started</a>
-        <a href="#" onclick="showPage('faqs');return false;">FAQs</a>
-        <a href="#" onclick="showPage('history-mission');return false;">History &amp; Mission</a>
+
+      <!-- Social -->
+      <div>
+        <div style="font-family:'Bitter',serif;color:var(--white);font-size:0.85rem;font-weight:600;margin-bottom:12px;">Follow Us</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-bottom:10px;">@calsailingclub</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <a href="https://www.instagram.com/calsailingclub/" target="_blank" style="color:rgba(255,255,255,0.65);font-size:0.82rem;">Instagram</a>
+          <a href="https://www.facebook.com/CalSailingClub" target="_blank" style="color:rgba(255,255,255,0.65);font-size:0.82rem;">Facebook</a>
+          <a href="https://www.youtube.com/c/CalSailingClub" target="_blank" style="color:rgba(255,255,255,0.65);font-size:0.82rem;">YouTube</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Sailing &amp; Windsurfing</h4>
-        <a href="#" onclick="showPage('dinghy-lessons');return false;">Dinghy Lessons</a>
-        <a href="#" onclick="showPage('keelboat-lessons');return false;">Keelboat Lessons</a>
-        <a href="#" onclick="showPage('windsurf-lessons');return false;">Windsurfing Lessons</a>
-        <a href="#" onclick="showPage('junior-dinghy');return false;">Ratings</a>
-        <a href="#" onclick="showPage('racing');return false;">Racing</a>
-      </div>
-      <div class="footer-col">
-        <h4>Activities</h4>
-        <a href="#" onclick="showPage('calendar-events');return false;">Calendar</a>
-        <a href="#" onclick="showPage('open-house');return false;">Open House</a>
-        <a href="#" onclick="showPage('cruising');return false;">Cruising</a>
-        <a href="#" onclick="showPage('womens-sailing');return false;">Women's Sailing</a>
-        <a href="#" onclick="showPage('donations');return false;">Donations</a>
-      </div>
-      <div class="footer-col">
-        <h4>Member Tools</h4>
-        <a href="#" onclick="showPage('my-profile');return false;">My Profile</a>
-        <a href="#" onclick="showPage('membership');return false;">My Membership</a>
-        <a href="#" onclick="showPage('ratings');return false;">My Ratings</a>
-        <a href="#" onclick="showPage('volunteer-hours');return false;">Volunteer Hours</a>
-        <a href="#" onclick="showPage('slack-comms');return false;">Slack &amp; Email</a>
-      </div>
+
     </div>
 
-    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;margin-bottom:16px;">
-      <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:10px;">Our Supporters</div>
-      <div class="supporters">
-        <img src="https://static.cal-sailing.org/images/Support/DBW.png" alt="DBW">
-        <img src="https://static.cal-sailing.org/images/Support/westcoastsailing.png" alt="West Coast Sailing">
-        <img src="https://static.cal-sailing.org/images/Support/sailworks.png" alt="Sailworks">
-      </div>
-    </div>
-
+    <!-- Bottom bar -->
     <div class="footer-bottom">
       <span>© 2026 Cal Sailing Club · 501(c)(3) Non-Profit</span>
-      <span><a href="#" style="color:inherit;">Contact Webmaster</a></span>
+      <a href="#" style="color:rgba(255,255,255,0.5);font-size:0.78rem;">Contact Webmaster / Website Feedback</a>
     </div>
+
   </div>
 </footer>
 
@@ -2031,7 +2086,7 @@
 
   <div style="padding:40px 0 64px;">
     <div class="container" style="max-width:900px;">
-      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;" class="col-layout">
 
         <!-- MAIN CONTENT -->
         <div>
@@ -2309,7 +2364,7 @@
 
   <div style="padding:40px 0 64px;">
     <div class="container" style="max-width:900px;">
-      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;" class="col-layout">
         <div>
 
           <!-- OVERVIEW -->
@@ -2426,7 +2481,7 @@
               </div>
               <div style="background:var(--foam);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
                 <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.95rem;margin-bottom:6px;">Continue Dinghy Sailing</h4>
-                <p style="font-size:0.84rem;color:var(--muted);">Your Junior dinghy rating remains active — continue sailing dinghies independently while working toward your keelboat rating.</p>
+                <p style="font-size:0.84rem;color:var(--muted);">Your Junior dinghy rating remains active — continue sailing dinghies independently while working toward your keelboat rating. You may also attend dinghy cruises.</p>
               </div>
               <div style="background:var(--foam);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
                 <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.95rem;margin-bottom:6px;">Track Your Progress</h4>
@@ -2545,7 +2600,7 @@
 
   <div style="padding:40px 0 64px;">
     <div class="container" style="max-width:900px;">
-      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;" class="col-layout">
         <div>
 
           <!-- SKILLS -->
@@ -2760,7 +2815,7 @@
 
   <div style="padding:40px 0 64px;">
     <div class="container" style="max-width:900px;">
-      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;" class="col-layout">
         <div>
 
           <!-- GETTING STARTED BOX -->
@@ -2889,16 +2944,16 @@
                 <div><div style="font-weight:600;font-size:0.9rem;color:var(--navy);">Novice</div><div style="font-size:0.8rem;color:var(--muted);">Solo sailing in the novice area during open times</div></div>
                 <span style="color:var(--sky);font-size:0.8rem;">View →</span>
               </a>
-              <a href="#" onclick="showPage('junior-dinghy')" style="display:flex;justify-content:space-between;align-items:center;background:var(--foam);border:1px solid var(--sky);border-radius:10px;padding:14px 20px;color:inherit;text-decoration:none;">
-                <div><div style="font-weight:600;font-size:0.9rem;color:var(--sky);">Junior</div><div style="font-size:0.8rem;color:var(--muted);">Full sailing area, outside lesson times, keelboat access</div></div>
+              <a href="#" onclick="showPage('junior-dinghy')" style="display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 20px;color:inherit;text-decoration:none;">
+                <div><div style="font-weight:600;font-size:0.9rem;color:var(--navy);">Junior <span style="color:#D32F2F;">★</span></div><div style="font-size:0.8rem;color:var(--muted);">Full sailing area, outside lesson times, keelboat access, teach lessons, bring guests</div></div>
                 <span style="color:var(--sky);font-size:0.8rem;">View →</span>
               </a>
               <a href="#" style="display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 20px;color:inherit;text-decoration:none;">
-                <div><div style="font-weight:600;font-size:0.9rem;color:var(--navy);">Senior</div><div style="font-size:0.8rem;color:var(--muted);">Teach lessons, bring guests, advanced boats</div></div>
+                <div><div style="font-weight:600;font-size:0.9rem;color:var(--navy);">Senior</div><div style="font-size:0.8rem;color:var(--muted);">Larger sailing area, sail when club is not open for general sailing, advanced boats</div></div>
                 <span style="color:var(--sky);font-size:0.8rem;">View →</span>
               </a>
               <a href="#" style="display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 20px;color:inherit;text-decoration:none;">
-                <div><div style="font-weight:600;font-size:0.9rem;color:var(--navy);">Cruising Senior</div><div style="font-size:0.8rem;color:var(--muted);">Extended cruising beyond normal sailing areas</div></div>
+                <div><div style="font-weight:600;font-size:0.9rem;color:var(--navy);">Cruising Senior</div><div style="font-size:0.8rem;color:var(--muted);">Even larger sailing area, run dinghy cruises to other destinations</div></div>
                 <span style="color:var(--sky);font-size:0.8rem;">View →</span>
               </a>
             </div>
@@ -2997,6 +3052,10 @@
         <h3>Calendar (filtered)</h3>
         <p>Upcoming Open House dates, filtered from the main events calendar.</p>
         <div class="ph-links"><a href="#" onclick="showPage('calendar-events');return false;">→ Full Calendar</a></div>
+      </div>
+      <div class="ph-section">
+        <h3>Volunteer Sign-Up</h3>
+        <p>Link for members to sign up to volunteer at Open House events.</p>
       </div>
     </div>
   </section>
@@ -3168,7 +3227,7 @@
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Unrated</div>
       <div class="ph-section"><h3>Skills Required</h3><p>Points of sail, basic sailing concepts, rigging information, terminology.</p></div>
       <div class="ph-section"><h3>How to Put On a Wetsuit</h3><p>Link to standalone wetsuit how-to (shared across Dinghy/Keelboat/Windsurf).</p><div class="ph-links"><a href="#" onclick="showPage('wetsuit-howto');return false;">→ Wetsuit How-To</a></div></div>
-      <div class="ph-section"><h3>PFD &amp; Fowlie How-To</h3><p>How to put on/put away a PFD and Fowlie.</p><div class="ph-links"><a href="#" onclick="showPage('pfd-fowlie-howto');return false;">→ PFD &amp; Fowlie How-To</a></div></div>
+      <div class="ph-section"><h3>PFD &amp; Foulie How-To</h3><p>How to put on/put away a PFD and Foulie.</p><div class="ph-links"><a href="#" onclick="showPage('pfd-foulie-howto');return false;">→ PFD &amp; Foulie How-To</a></div></div>
       <div class="ph-section"><h3>Process to Get This Rating</h3><p>(N/A — Unrated is the starting tier.)</p></div>
       <div class="ph-section"><h3>Allowed Activities</h3><p>What an unrated member can do at the club.</p></div>
       <div class="ph-section"><h3>Educational Resources</h3><p>Links to relevant guides.</p></div>
@@ -3672,28 +3731,28 @@
   </section>
 </div>
 
-<div id="page-pfd-fowlie-howto" class="page">
+<div id="page-pfd-foulie-howto" class="page">
   <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
     <div class="container">
       <div class="section-label" style="color:var(--bay);">Gear</div>
-      <h1 style="font-size:2rem;">PFD &amp; Fowlie How-To</h1>
+      <h1 style="font-size:2rem;">PFD &amp; Foulie How-To</h1>
     </div>
   </div>
   <section>
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: PFD &amp; Fowlie How-To</div>
+      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: PFD &amp; Foulie How-To</div>
       <div class="ph-section">
         <span class="ph-tag">Dinghy &amp; Keelboat only — not used in windsurfing</span>
         <h3>How to Put On a PFD</h3>
         <p>TBD</p>
       </div>
       <div class="ph-section">
-        <h3>How to Put On a Fowlie</h3>
+        <h3>How to Put On a Foulie</h3>
         <p>TBD</p>
       </div>
       <div class="ph-section">
-        <h3>How to Put Away PFD &amp; Fowlie</h3>
+        <h3>How to Put Away PFD &amp; Foulie</h3>
         <p>TBD</p>
       </div>
     </div>
@@ -3718,7 +3777,7 @@
         <div class="ph-section">
           <h3>Dinghy</h3>
           <p><strong>Starter:</strong> gloves, sunglasses strap, hat clip / hat with chin strap.</p>
-          <p><strong>Bigger purchases:</strong> dinghy booties, polarized sunglasses, own PFD, own wetsuit, own Fowlie.</p>
+          <p><strong>Bigger purchases:</strong> dinghy booties, polarized sunglasses, own PFD, own wetsuit, own Foulie.</p>
         </div>
         <div class="ph-section">
           <h3>Windsurfing</h3>
@@ -3761,13 +3820,13 @@
   <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
     <div class="container">
       <div class="section-label" style="color:var(--bay);">Calendar</div>
-      <h1 style="font-size:2rem;">Monthly Tide Schedule</h1>
+      <h1 style="font-size:2rem;">Open/Close Times</h1>
     </div>
   </div>
   <section>
     <div class="container" style="max-width:900px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Monthly Tide Schedule</div>
+      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Open/Close Times</div>
       <div class="ph-section">
         <h3>Open/Close Times by Tide</h3>
         <p>Keep the current visual format (the "club times" page) in addition to showing this info in the events calendar.</p>
@@ -3782,39 +3841,21 @@
   <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
     <div class="container">
       <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
-      <h1 style="font-size:2rem;">Club Status</h1>
+      <h1 style="font-size:2rem;">Club Status &amp; Weather</h1>
     </div>
   </div>
   <section>
     <div class="container" style="max-width:900px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Club Status</div>
-      <div class="ph-section"><h3>Open/Closed Status</h3><p>"Open until __(time)", "Closed", etc. — from Nicho's widget.</p></div>
+      <div class="ph-section"><h3>Wind Speed Indicator</h3><p>Nicho's wind speed indicator — current speed, direction, gusts.</p></div>
+      <div class="ph-section"><h3>Nicho's Graph (Hours/Schedule)</h3><p>Tide graph overlaid with club open/close times. Suggestion: make the "now" flag taller/bigger than the rest.</p></div>
+      <div class="ph-section"><h3>12-Hour Wind/Gust Speed Graph</h3><p>Make horizontal gridlines correspond to Y-axis numbers.</p></div>
       <div class="ph-section"><h3>Whiteboard Webcam</h3><p>Webcam of the day leader's whiteboard in the shed.</p></div>
-      <div class="ph-section"><h3>Today's Schedule</h3><p>Visual of daily schedule (from current "club times" page, shown when clicking "today's hours").</p></div>
+      <div class="ph-section"><h3>Forecast</h3><p>Daily/hourly forecast.</p></div>
+      <div class="ph-section"><h3>Open/Closed Status</h3><p>"Open until __(time)", "Closed", etc. — from Nicho's widget.</p></div>
       <div class="ph-section"><h3>Today's Calendar Info</h3><p>Pulled from the monthly Google Calendar.</p><div class="ph-links"><a href="#" onclick="showPage('calendar-events');return false;">→ Calendar</a></div></div>
-      <div class="ph-section"><h3>Current Wind</h3><p>Speed, direction, gusts — smaller version of Nicho's wind indicator.</p></div>
       <div class="ph-section"><h3>Tide Now</h3><p>From Nicho's widget.</p></div>
-      <div class="ph-section"><h3>Tide Graph with Club Times</h3><p>Suggestion: make the "now" flag taller/bigger than the rest.</p></div>
       <div class="ph-section"><h3>Next Times</h3><p>Open time, dock time, sunset, close time, high/low tides — from Nicho's widget. Hide times that have already passed.</p></div>
-    </div>
-  </section>
-</div>
-
-<div id="page-weather" class="page">
-  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
-    <div class="container">
-      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
-      <h1 style="font-size:2rem;">Weather</h1>
-    </div>
-  </div>
-  <section>
-    <div class="container" style="max-width:900px;">
-      <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Weather</div>
-      <div class="ph-section"><h3>Current Conditions</h3><p>Wind indicator (Nicho's), temperature, sky, pressure, UV index.</p></div>
-      <div class="ph-section"><h3>Wind/Gust Speed Graph (12h)</h3><p>Make horizontal gridlines correspond to Y-axis numbers.</p></div>
-      <div class="ph-section"><h3>Forecast</h3><p>Daily/hourly — move up from its current lower position on the page.</p></div>
       <div class="ph-section"><h3>Historical Weather</h3><p>Easy way to see yesterday / last 24h, etc.</p></div>
       <div class="ph-section"><h3>Wind Direction Graph</h3><p>Update Y-axis to standard compass points.</p></div>
       <div class="ph-section"><h3>Circular Wind Direction Visual</h3><p>Note: currently doesn't correlate with the wind graphs above — needs reconciling.</p></div>
@@ -3946,6 +3987,7 @@
       <div class="ph-section"><h3>Code of Conduct</h3><p>Code of conduct goes here.</p></div>
       <div class="ph-section"><h3>Meeting Minutes &amp; Financial Reports</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Insurance &amp; 990 Filing</h3><p>TBD</p></div>
+      <div class="ph-section"><h3>Privacy Policy</h3><p>Privacy policy goes here.</p><p style="margin-top:8px;font-style:italic;color:var(--muted);">Does this need to be on the footer of every page as it is currently?</p></div>
     </div>
   </section>
 </div>
@@ -4039,6 +4081,15 @@ function applyUserState() {
     const d = memberData[currentUser];
     // greeting
     document.querySelectorAll('.member-greeting h2').forEach(el => el.textContent = `Great to see you, ${d.name}!`);
+    // status message
+    const statusMsg = document.querySelector('.member-status-msg');
+    if (statusMsg) {
+      if (currentUser === 'expired') {
+        statusMsg.innerHTML = `Your membership has expired. Please <a href="#" onclick="showPage('join');return false;" style="color:var(--bay);">renew your membership</a> to Cal Sailing Club!`;
+      } else {
+        statusMsg.textContent = `Thanks for being an active member of Cal Sailing Club!`;
+      }
+    }
     // status badge
     const badgeEl = document.getElementById('member-status-badge');
     if (badgeEl) {
@@ -4109,7 +4160,7 @@ function showPage(p) {
     if (b) b.classList.remove('open');
   });
 
-  const memberGated = ['ratings', 'membership', 'volunteer-hours', 'my-profile', 'slack-comms', 'photo-gallery', 'expense-reimbursement', 'incident-report', 'governance-policies', 'dayleader-portal', 'excomm-portal', 'test-admin-portal'];
+  const memberGated = ['ratings', 'membership', 'volunteer-hours', 'my-profile', 'slack-comms', 'photo-gallery', 'expense-reimbursement', 'incident-report', 'governance-policies', 'dayleader-portal', 'excomm-portal', 'test-admin-portal', 'boat-status'];
   if (memberGated.includes(p) && currentUser === 'guest') {
     alert('Please log in to view this page.');
     return;
@@ -4168,6 +4219,26 @@ document.addEventListener('click', function(e) {
 });
 
 // ── Mobile nav ──
+function toggleSearch() {
+  const input = document.getElementById('search-input');
+  const btn = document.getElementById('search-icon-btn');
+  if (input.style.display === 'none') {
+    input.style.display = 'block';
+    input.focus();
+    btn.style.display = 'none';
+  } else {
+    input.style.display = 'none';
+    btn.style.display = '';
+  }
+}
+
+function collapseSearch(input) {
+  if (!input.value) {
+    input.style.display = 'none';
+    document.getElementById('search-icon-btn').style.display = '';
+  }
+}
+
 function toggleMobileNav() {
   const nav = document.getElementById('mobile-nav');
   const ham = document.getElementById('hamburger');
@@ -4192,10 +4263,23 @@ function closeMobileNav() {
 function toggleMobileSection(btn) {
   const sub = btn.nextElementSibling;
   const isOpen = sub.classList.contains('open');
-  // Collapse all
+  // Collapse all top-level sections and their nested ratings too
   document.querySelectorAll('.mobile-sub').forEach(s => s.classList.remove('open'));
-  document.querySelectorAll('.mobile-section-btn').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.mobile-section-btn, .m-ratings-btn').forEach(b => b.classList.remove('open'));
   // Toggle this one
+  if (!isOpen) {
+    sub.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
+function toggleRatings(btn) {
+  const sub = btn.nextElementSibling;
+  const isOpen = sub.classList.contains('open');
+  // Collapse any other open ratings within the same parent
+  const parent = btn.closest('.mobile-sub');
+  parent.querySelectorAll('.m-ratings-sub').forEach(s => s.classList.remove('open'));
+  parent.querySelectorAll('.m-ratings-btn').forEach(b => b.classList.remove('open'));
   if (!isOpen) {
     sub.classList.add('open');
     btn.classList.add('open');
