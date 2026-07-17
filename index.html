@@ -219,6 +219,11 @@
     .nav-links { display: none !important; }
     .hamburger { display: flex; }
     .nav-right .btn { display: none; }
+    .nav-right .guest-only, .nav-right .member-only { display: none !important; }
+    .nav-status-pill { display: none; }
+  }
+  @media (min-width: 821px) {
+    .hamburger { display: none !important; }
   }
   .btn { display: inline-block; padding: 8px 18px; border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
   .btn-primary { background: var(--gold); color: var(--white); }
@@ -383,8 +388,8 @@
   .ph-section .ph-links a { font-size: 0.8rem; background: var(--foam); color: var(--navy); padding: 5px 12px; border-radius: 20px; text-decoration: none; }
   .ph-section .ph-links a:hover { background: var(--sky); color: var(--white); }
   .ph-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--foam); padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; }
-  .ai-banner { background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 8px; padding: 12px 18px; font-size: 0.85rem; color: #78350F; margin-bottom: 20px; display: flex; gap: 10px; align-items: flex-start; }
-  .ai-banner strong { color: #78350F; }
+  .ai-banner { background: #fffde7; border: 1px solid #f9a825; border-radius: 8px; padding: 10px 16px; font-size: 0.85rem; color: #5d4037; margin-bottom: 20px; }
+  .ai-banner strong { color: #5d4037; }
   .mem-card-header { background: var(--navy); color: var(--white); padding: 14px 24px; text-align: center; }
   .mem-card-body { padding: 20px 24px; }
   .mem-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
@@ -492,7 +497,7 @@
           <button onclick="showPage('getting-started')">Getting Started <span style="color:#D32F2F;">★</span></button>
           <button onclick="showPage('open-house')">Open House</button>
           <button onclick="showPage('history-mission')">History &amp; Mission</button>
-          <button onclick="showPage('store')">Store / Merch</button>
+          <button onclick="showPage('store')">Store</button>
           <button onclick="showPage('donations')">Donations</button>
           <button onclick="showPage('faqs')">FAQs</button>
           <button onclick="showPage('contact')">Contact</button>
@@ -574,7 +579,7 @@
         <button class="nav-btn" onclick="toggleDropdown('nav-status')">Status <span class="arrow">▾</span></button>
         <div class="dropdown">
           <button onclick="showPage('club-status')">Club Status &amp; Weather</button>
-          <button onclick="showPage('boat-status')">Boat Status</button>
+          <div class="member-only" style="display:none"><button onclick="showPage('boat-status')">Boat Status</button></div>
         </div>
       </div>
 
@@ -627,7 +632,7 @@
       <button class="m-item" onclick="navTo('getting-started')">Getting Started <span style="color:#D32F2F;">★</span></button>
       <button class="m-item" onclick="navTo('open-house')">Open House</button>
       <button class="m-item" onclick="navTo('history-mission')">History &amp; Mission</button>
-      <button class="m-item" onclick="navTo('store')">Store / Merch</button>
+      <button class="m-item" onclick="navTo('store')">Store</button>
       <button class="m-item" onclick="navTo('donations')">Donations</button>
       <button class="m-item" onclick="navTo('faqs')">FAQs</button>
       <button class="m-item" onclick="navTo('contact')">Contact</button>
@@ -699,7 +704,7 @@
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Status <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
       <button class="m-item" onclick="navTo('club-status')">Club Status &amp; Weather</button>
-      <button class="m-item" onclick="navTo('boat-status')">Boat Status</button>
+      <div class="member-only" style="display:none"><button class="m-item" onclick="navTo('boat-status')">Boat Status</button></div>
     </div>
   </div>
   <div class="mobile-section member-only" style="display:none">
@@ -761,42 +766,9 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="alt" id="how-it-works">
-      <div class="container" style="text-align:center;">
-        <div class="section-label">How it works</div>
-        <h2 class="section-title">Getting Started is Simple</h2>
-        <p class="section-sub" style="margin:0 auto 32px;">No prior experience needed. Learn at your own pace in a supportive community.</p>
-        <div class="steps">
-          <div class="step"><div class="step-num">1</div><h4>Join &amp; Show Up</h4><p>Join online, then come to a lesson. No reservation needed for dinghy lessons.</p></div>
-          <div class="step"><div class="step-num">2</div><h4>Take Lessons</h4><p>Learn from experienced volunteer members. Go at your own pace.</p></div>
-          <div class="step"><div class="step-num">3</div><h4>Earn Ratings</h4><p>Ratings unlock solo sailing, advanced boats, outside lesson times, and more.</p></div>
-          <div class="step"><div class="step-num">4</div><h4>Get Involved</h4><p>Volunteer, teach, race, cruise, and make friends for life on the water.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHAT RATINGS UNLOCK -->
-    <section>
-      <div class="container" style="text-align:center;">
-        <div class="section-label">As you progress</div>
-        <h2 class="section-title">What Ratings Unlock</h2>
-        <p class="section-sub" style="margin:0 auto 24px;">Earning ratings opens up more of what the club has to offer:</p>
-        <div style="display:grid;gap:8px;max-width:480px;margin:0 auto;text-align:left;">
-          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Sail or windsurf independently</div>
-          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Cover a wider area on the water</div>
-          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Sail or windsurf outside of lesson times</div>
-          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Use advanced sailboats and windsurfing gear</div>
-          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Teach lessons</div>
-          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Bring guests</div>
-        </div>
-      </div>
-    </section>
-
     <!-- WHAT WE OFFER -->
     <section class="alt">
       <div class="container" style="text-align:center;">
-        <div class="section-label">What we offer</div>
         <h2 class="section-title">Two Ways to Get Started</h2>
         <div class="cards" style="margin-top:8px;text-align:left;">
           <div class="card">
@@ -823,10 +795,79 @@
       </div>
     </section>
 
+    <!-- OPEN HOUSE -->
+    <section>
+      <div class="container" style="text-align:center;max-width:760px;">
+        <h2 class="section-title">🎉 Open House — Free Sailboat Rides!</h2>
+        <p class="section-sub" style="margin:0 auto 20px;">Once a month in summer, Cal Sailing Club throws open its doors to the public. Hundreds of people come down to the Berkeley Marina for free sailboat rides with our instructors, live music, food, and a party on the water. No membership needed — it's open to everyone, completely free.</p>
+        <p class="section-sub" style="margin:0 auto 24px;">Whether you're curious about sailing or just looking for a fun afternoon on the Bay, Open House is the perfect introduction to the club.</p>
+        <a href="#" onclick="showPage('open-house');return false;" class="btn btn-primary">See upcoming Open House dates →</a>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="alt" id="how-it-works">
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub" style="margin:0 auto 32px;">No prior experience needed. Learn at your own pace in a supportive community.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><h4>Join &amp; Show Up</h4><p>Join online or at the clubhouse. Sign-up takes just a few minutes. Members are usually happy to show you around anytime we're open.</p></div>
+          <div class="step"><div class="step-num">2</div><h4>Take Lessons</h4><p>Learn from experienced volunteer members. Go at your own pace. Windsurfing lessons require sign-up. No reservation is needed for dinghy lessons — just drop in and put your name on the list.</p></div>
+          <div class="step"><div class="step-num">3</div><h4>Earn Ratings</h4><p>Ratings unlock solo sailing, advanced boats, sailing or windsurfing outside of lesson times, and more.</p></div>
+          <div class="step"><div class="step-num">4</div><h4>Get Involved</h4><p>Volunteer, teach, race, cruise, and make friends for life on the water.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT RATINGS UNLOCK -->
+    <section>
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">As You Progress, Ratings Unlock More</h2>
+        <p class="section-sub" style="margin:0 auto 24px;">Earning ratings opens up more of what the club has to offer:</p>
+        <div style="display:grid;gap:8px;max-width:480px;margin:0 auto;text-align:left;">
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Sail or windsurf independently</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Cover a wider area on the water</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Sail or windsurf outside of lesson times</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Use advanced sailboats and windsurfing gear</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Teach lessons</div>
+          <div style="font-size:0.95rem;color:var(--muted);display:flex;gap:12px;"><span style="color:var(--bay);flex-shrink:0;">·</span>Bring guests</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS -->
+    <section class="alt">
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="cal-strip" style="max-width:680px;margin:20px auto 0;text-align:left;">
+          <div class="cal-strip-header"><span>Upcoming</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">29</div><div class="wd">Mon</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('open-house');return false;" style="color:var(--navy);text-decoration:none;">Open House — Free Public Sailing!</a></h4><p>Public event · Get on the water with an instructor</p></div>
+            <span class="cal-pill pill-social">Open House</span>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm · Drop-in welcome</p></div>
+            <span class="cal-pill pill-lessons">Lessons</span>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('windsurf-lessons');return false;" style="color:var(--navy);text-decoration:none;">Novice 1 + Refresher: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
+            <span class="cal-pill pill-wind">Windsurfing</span>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">5</div><div class="wd">Sun</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm · All welcome</p></div>
+            <span class="cal-pill pill-racing">Racing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MEMBERSHIP & COST -->
     <section class="sand">
       <div class="container" style="text-align:center;">
-        <div class="section-label">Membership &amp; cost</div>
         <h2 class="section-title">An Affordable Way to Sail the Bay</h2>
         <p class="section-sub" style="margin:0 auto 28px;">Membership includes lessons, use of all boats and gear, social events, cruising, women's sailing, youth programs, and more — all for one low fee.</p>
 
@@ -856,15 +897,14 @@
     <!-- VOLUNTEER CULTURE -->
     <section class="alt">
       <div class="container" style="text-align:center;max-width:760px;">
-        <div class="section-label">Volunteer culture</div>
-        <h2 class="section-title">Powered by Volunteer Energy</h2>
+        <h2 class="section-title">Volunteer Culture</h2>
         <p class="section-sub" style="margin:0 auto 14px;">Cal Sailing Club runs on volunteer energy. Teaching, fixing boats, supporting Open Houses, and helping at events are all part of what makes the club affordable, welcoming, and hands-on.</p>
         <p class="section-sub" style="margin:0 auto 28px;">Most members find volunteering is one of the best parts of the club — it's how people learn faster, meet friends, and become part of the community.</p>
 
         <div style="overflow-x:auto;text-align:left;">
           <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.88rem;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);">
             <thead>
-              <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:12px 16px;text-align:center;font-size:1.05rem;font-weight:700;">Additional requirement for all members<br>(must be completed in order to renew membership)</th></tr>
+              <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:12px 16px;text-align:center;font-size:1.05rem;font-weight:700;">Volunteer Requirement for All Members</th></tr>
               <tr style="background:var(--navy);">
                 <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Rating type</th>
                 <th style="padding:9px 16px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.8rem;">Quarterly</th>
@@ -883,86 +923,9 @@
     <!-- COMMUNITY -->
     <section>
       <div class="container" style="text-align:center;max-width:760px;">
-        <div class="section-label">More than lessons</div>
-        <h2 class="section-title">A Community on the Water</h2>
+        <h2 class="section-title">More Than Lessons: A Community on the Water</h2>
         <p class="section-sub" style="margin:0 auto 28px;">Members teach each other, sail together, volunteer together, and share meals in the boat yard. Whether you're brand new or have years of experience, you'll find people glad to help you learn and get involved.</p>
         <div class="img-placeholder" style="height:220px;"><span class="img-icon">🖼️</span>Photo: club community / social slideshow</div>
-      </div>
-    </section>
-
-    <!-- GET STARTED -->
-    <section class="alt">
-      <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;" class="col-layout">
-          <div>
-            <div class="section-label">Get on the water</div>
-            <h2 class="section-title" style="font-size:1.6rem;">The Easiest Way to Start</h2>
-            <div style="display:grid;gap:20px;margin-top:20px;">
-              <div style="display:flex;align-items:flex-start;gap:16px;">
-                <div class="step-num-inline">1</div>
-                <div style="padding-top:4px;"><h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Join online or at the clubhouse</h4><p style="font-size:0.85rem;color:var(--muted);margin:0;">Sign up takes just a few minutes.</p></div>
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:16px;">
-                <div class="step-num-inline">2</div>
-                <div style="padding-top:4px;"><h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Show up for a lesson</h4><p style="font-size:0.85rem;color:var(--muted);margin:0;">No reservation needed for dinghy lessons — just put your name on the list.</p></div>
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:16px;">
-                <div class="step-num-inline">3</div>
-                <div style="padding-top:4px;"><h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Start sailing or windsurfing!</h4><p style="font-size:0.85rem;color:var(--muted);margin:0;">Members are usually happy to show you around anytime we're open.</p></div>
-              </div>
-            </div>
-            <a href="#" onclick="showPage('join');return false;" class="btn btn-sky" style="display:inline-block;margin-top:28px;">Join today →</a>
-          </div>
-          <div>
-            <div class="section-label">Typical hours</div>
-            <h3 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:16px;font-size:1.15rem;">When we're open</h3>
-            <div class="status-box">
-              <div class="status-body" style="padding:16px 20px;">
-                <div class="status-row"><span>Mon–Fri</span><span class="value">Noon → Sunset</span></div>
-                <div class="status-row"><span>Sat–Sun</span><span class="value">9am → Sunset</span></div>
-                <div class="status-row" style="border:none;font-size:0.8rem;color:var(--muted);">Hours depend on tides. <a href="#" onclick="showPage('calendar-events');return false;">Check the calendar</a> for exact times.</div>
-              </div>
-            </div>
-            <div style="margin-top:20px;">
-              <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:10px;">Typical lesson times</h4>
-              <div style="font-size:0.85rem;color:var(--muted);display:grid;gap:10px;">
-                <div><strong style="color:var(--navy);">Dinghy Sailing</strong> — Year-round, drop-in<br>Sat 10am–1pm · Mon &amp; Thu 1–4pm (1–5pm DST)</div>
-                <div><strong style="color:var(--navy);">Windsurfing</strong> — April–October, sign-up required<br>Sat &amp; Sun (times vary) · <a href="#" onclick="showPage('calendar-events');return false;">Check the calendar</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- UPCOMING EVENTS -->
-    <section>
-      <div class="container" style="text-align:center;">
-        <div class="section-label">What's coming up</div>
-        <h2 class="section-title">Upcoming Events</h2>
-        <div class="cal-strip" style="max-width:680px;margin:20px auto 0;text-align:left;">
-          <div class="cal-strip-header"><span>Upcoming</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">29</div><div class="wd">Mon</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('open-house');return false;" style="color:var(--navy);text-decoration:none;">Open House — Free Public Sailing!</a></h4><p>Public event · Get on the water with an instructor</p></div>
-            <span class="cal-pill pill-social">Open House</span>
-          </div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm · Drop-in welcome</p></div>
-            <span class="cal-pill pill-lessons">Lessons</span>
-          </div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('windsurf-lessons');return false;" style="color:var(--navy);text-decoration:none;">Novice 1 + Refresher: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
-            <span class="cal-pill pill-wind">Windsurfing</span>
-          </div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">5</div><div class="wd">Sun</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm · All welcome</p></div>
-            <span class="cal-pill pill-racing">Racing</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -993,9 +956,11 @@
         <div class="quick-links" style="margin-top:0;">
           <span class="section-label" style="color:var(--muted);margin:0;align-self:center;font-size:0.7rem;">Quick links:</span>
           <a href="#" onclick="showPage('club-status');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">🟢 Club Status &amp; Weather</a>
+          <a href="#" onclick="showPage('boat-status');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">⛵ Boat Status</a>
           <a href="#" onclick="showPage('calendar-events');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">📅 Calendar</a>
           <a href="#" onclick="showPage('ratings');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">📋 My Ratings</a>
           <a href="#" onclick="showPage('volunteer-hours');return false;" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">🛠 Volunteer Hours</a>
+          <a href="#" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">✅ Approve Volunteer Hours</a>
           <a href="#" class="quick-link" style="background:rgba(0,0,0,0.06);border-color:var(--border);color:var(--navy);">💬 Slack</a>
         </div>
       </div>
@@ -1003,6 +968,7 @@
 
     <div style="padding:32px 0;">
       <div class="container" style="max-width:760px;">
+        <div class="ai-banner"><strong>Note:</strong> The quick link for "Approve Volunteer Hours" should only be visible for people who are qualified to do so. The page itself could be located in the menu under Volunteer Hours or under Test Administrator Portal, and that menu item should only be visible to people with the right credentials.</div>
 
         <!-- CLUB STATUS -->
         <h2 style="font-family:'Bitter',serif;color:var(--navy);margin-bottom:14px;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:8px;">Club Status</h2>
@@ -1031,6 +997,7 @@
         <div class="status-box" style="margin-bottom:12px;padding:14px 18px;">
           <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;">Today's open/close times</div>
           <div class="img-placeholder" style="height:80px;"><span class="img-icon">🖼️</span>Today's open/close times (1 line from the club open/close times page, as shown when clicking "today's hours")</div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:10px;">Note that current low tides are around 0.4 feet higher than predicted. Open/close times may change slightly based on low tides as measured by the Day Leader.</p>
         </div>
 
         <!-- Whiteboard webcam -->
@@ -1151,9 +1118,7 @@
 
   <section>
     <div class="container" style="max-width:700px;">
-      <div style="background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:12px 18px;font-size:0.85rem;color:var(--muted);margin-bottom:20px;">
-        <strong style="color:var(--navy);">Note:</strong> This page needs to be reviewed and edited by a human.
-      </div>
+      <div class="ai-banner"><strong>Note:</strong> This page needs to be reviewed and edited by a human.</div>
 
       <p style="margin-bottom:24px;">Welcome to the club! Here's what to do next.</p>
 
@@ -1195,7 +1160,6 @@
       <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.05rem;margin-bottom:10px;">Optional additional reading: Gear</h3>
       <ul style="display:grid;gap:8px;margin-bottom:28px;">
         <li><a href="#" onclick="showPage('wetsuit-howto');return false;">Wetsuit instructions</a> — how to put on, how to put away</li>
-        <li><a href="#" onclick="showPage('pfd-foulie-howto');return false;">PFD (life jacket) and foulie (foul weather gear)</a> — how to put on, how to put away</li>
         <li><a href="#" onclick="showPage('gear-guide');return false;">Gear to purchase</a> (optional)</li>
       </ul>
 
@@ -1223,8 +1187,28 @@
       <div class="ph-section"><h3>Membership Types &amp; Prices</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Volunteer Hours Requirement</h3><p>TBD</p></div>
       <div class="ph-section"><h3>PayPal Info</h3><p>Needs editing.</p></div>
-      <div class="ph-section"><h3>Renew Existing or Expired Membership</h3><p>TBD</p></div>
+      <div class="ph-section"><h3>Renew Existing or Expired Membership</h3><p>See the <a href="#" onclick="showPage('renew-membership');return false;">Renew Membership</a> page.</p></div>
       <div class="ph-section"><h3>Sign-Up Portal</h3><p>The actual sign-up form goes here.</p></div>
+    </div>
+  </section>
+</div>
+
+<div id="page-renew-membership" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">About</div>
+      <h1 style="font-size:2rem;">Renew Membership</h1>
+    </div>
+  </div>
+  <section>
+    <div class="container" style="max-width:760px;">
+      <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+      <div class="ph-section">
+        <h3>Renew Your Membership</h3>
+        <p>Your membership is active through September 30, 2026.</p>
+        <div class="ai-banner" style="margin-top:12px;"><strong>Note:</strong> If you are changing your membership type, duration, or form of payment (volunteer hours or money), please wait until the expiration date to renew your membership. If you renew early, your membership will extend from the time of renewal, NOT from the expiration date, as you would expect. This is a limitation of the subscription software we use. To be sure you get the full time you deserve, wait until _______ (date) to renew your membership.<br><br>There is no penalty for renewing an expired membership.</div>
+      </div>
+      <div class="ph-section"><h3>Renewal Portal</h3><p>Renewal form / PayPal link goes here.</p></div>
     </div>
   </section>
 </div>
@@ -1707,9 +1691,9 @@
               <td class="empty">—</td>
             </tr>
             <tr><td>Saturday Lessons Chairperson approval</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">ExComm Member</td><td style="color:var(--muted);font-style:italic;">Hidden unless applicable (show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label">Committee Chair</td><td style="color:var(--muted);font-style:italic;">Hidden unless applicable (show/hide based on role)</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
-            <tr><td class="cat-label" style="color:var(--muted);font-style:italic;">Add other possible attributes here</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+            <tr><td class="cat-label">ExComm Member</td><td style="color:var(--muted);font-style:italic;">Hidden unless applicable (show/hide based on role)</td><td></td><td></td><td></td></tr>
+            <tr><td class="cat-label">Committee Chair</td><td style="color:var(--muted);font-style:italic;">Hidden unless applicable (show/hide based on role)</td><td></td><td></td><td></td></tr>
+            <tr><td class="cat-label" style="color:var(--muted);font-style:italic;">Add other possible attributes here</td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
         </div>
@@ -1786,7 +1770,7 @@
       <div style="overflow-x:auto;margin-bottom:28px;">
         <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.85rem;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);">
           <thead>
-            <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:10px 14px;text-align:center;font-size:0.85rem;font-weight:600;">Additional requirement for all members<br>(must be completed in order to renew membership)</th></tr>
+            <tr><th colspan="3" style="background:#c8a84b;color:var(--white);padding:10px 14px;text-align:center;font-size:0.85rem;font-weight:600;">Volunteer Requirement for All Members</th></tr>
             <tr style="background:var(--navy);">
               <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Rating type</th>
               <th style="padding:8px 14px;text-align:left;color:rgba(255,255,255,0.85);font-weight:500;font-size:0.78rem;">Quarterly</th>
@@ -1855,7 +1839,8 @@
           <h3 style="font-family:'Bitter',serif;font-size:1.05rem;">Renew Membership</h3>
         </div>
         <div class="mem-card-body">
-          <p id="renew-msg" style="font-size:0.9rem;color:var(--muted);margin-bottom:16px;"></p>
+          <p style="font-size:0.9rem;color:var(--muted);margin-bottom:16px;">Your membership is active through September 30, 2026.</p>
+          <div class="ai-banner" style="margin-bottom:16px;"><strong>Note:</strong> If you are changing your membership type, duration, or form of payment (volunteer hours or money), please wait until the expiration date to renew your membership. If you renew early, your membership will extend from the time of renewal, NOT from the expiration date, as you would expect. This is a limitation of the subscription software we use. To be sure you get the full time you deserve, wait until _______ (date) to renew your membership.<br><br>There is no penalty for renewing an expired membership.</div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <a href="#" class="btn btn-primary">Renew with payment</a>
             <a href="#" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);">Renew with volunteer hours</a>
@@ -1937,21 +1922,11 @@
         </div>
       </div>
 
-      <!-- APPROVE HOURS LINK -->
-      <div class="mem-card">
-        <div class="mem-card-body" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-          <div>
-            <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:4px;">Approve Volunteer Hours</h4>
-            <p style="font-size:0.83rem;color:var(--muted);">For Day Leaders and ExComm: review and approve hours submitted by other members.</p>
-          </div>
-          <a href="#" class="btn btn-sky" style="font-size:0.83rem;white-space:nowrap;">Approve hours →</a>
-        </div>
-      </div>
-
       <!-- HISTORY OF VOLUNTEER HOURS -->
       <div class="mem-card">
-        <div class="mem-card-header">
+        <div class="mem-card-header" style="display:flex;justify-content:space-between;align-items:center;">
           <h3 style="font-family:'Bitter',serif;font-size:1.05rem;">History of Volunteer Hours</h3>
+          <a href="#" onclick="exportVolunteerCSV();return false;" class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;border-color:rgba(255,255,255,0.4);">Export CSV</a>
         </div>
         <div class="mem-card-body">
           <div style="overflow-x:auto;">
@@ -3023,6 +2998,8 @@
       <div class="ph-section">
         <h3>Scope &amp; Neighbors</h3>
         <p>Mention other unaffiliated organizations that might suit some people better.</p>
+        <p><strong>Nearby sailing organizations:</strong> <a href="https://www.berkeleyyc.org/" target="_blank">Berkeley Yacht Club</a>, <a href="https://www.tiyc.org/" target="_blank">Treasure Island Yacht Club</a>, <a href="https://www.cyc.org/" target="_blank">Corinthian Yacht Club</a></p>
+        <p><strong>Marine suppliers and services:</strong> <a href="https://llewellynmarine.com/" target="_blank">Llewellyn Marine</a> (Alameda — marine hardware), <a href="https://www.westmarine.com/" target="_blank">West Marine</a> (Oakland, Richmond, Alameda — general marine supplies), <a href="https://www.berkeleymarine.com/" target="_blank">Berkeley Marine Center</a> (keelboat haulouts at Berkeley Marina)</p>
         <p style="font-size:0.85rem;color:var(--muted);border-left:3px solid var(--border);padding-left:12px;margin-top:8px;">"The most important and potentially useful one is Cal Adventures. I think they're a better fit for people who need a more structured program of instruction. We might (or might not) want to go into why something like Modern Sailing would be better for some people. They do the ASA program, which is useful if you want to charter, they teach stuff we don't (related to chartering, mainly), our skill expectations are higher, and they don't require you to learn on a dinghy." -- jjbongio, GitHub issue #1</p>
       </div>
       <div class="ph-section">
@@ -3092,13 +3069,13 @@
   <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
     <div class="container">
       <div class="section-label" style="color:var(--bay);">About</div>
-      <h1 style="font-size:2rem;">Store / Merch</h1>
+      <h1 style="font-size:2rem;">Store</h1>
     </div>
   </div>
   <section>
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Store / Merch</div>
+      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Store</div>
       <div class="ph-section">
         <h3>CSC Logo Gear</h3>
         <p>Store / merch catalog goes here.</p>
@@ -3117,18 +3094,17 @@
   <section>
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Donations</div>
       <div class="ph-section">
         <h3>Donate</h3>
-        <p>Donation form / info goes here.</p>
+        <p>Monetary donation form / info goes here.</p>
       </div>
       <div class="ph-section">
         <h3>Donation Receipt</h3>
-        <p>Receipt lookup / request goes here.</p>
+        <p>Link to donation receipt (currently on <a href="https://www.cal-sailing.org/resources/csc-files" target="_blank">csc-files</a>).</p>
       </div>
       <div class="ph-section">
         <h3>Non-Monetary Donations</h3>
-        <p>Info on donating items (gear, equipment, etc). Source: csc-files resources page.</p>
+        <p>Info on donating items (e.g. gear, equipment). Source: <a href="https://www.cal-sailing.org/resources/csc-files" target="_blank">csc-files resources page</a>.</p>
       </div>
     </div>
   </section>
@@ -3210,6 +3186,28 @@
         <p>Junior Dinghy rating is a prerequisite for all keelboat sailing.</p>
         <div class="ph-links"><a href="#" onclick="showPage('junior-dinghy');return false;">→ Junior Dinghy Rating</a></div>
       </div>
+      <div class="ph-section">
+        <h3>What to Bring and Wear</h3>
+        <p>All gear is included, including wetsuit and life jacket (PFD). Bring sunglasses with a strap, shoes that can get wet, clothes (minimum required: underwear) to wear under your wetsuit, and a change of clothes for after. Highly recommend bringing gloves — TBD (info).</p>
+      </div>
+      <div class="ph-section">
+        <h3>How to Put On a PFD</h3>
+        <p>Instructions TBD.</p>
+        <div class="ph-links"><a href="#" onclick="showPage('pfd-foulie-howto');return false;">→ PFD &amp; Foulie How-To</a></div>
+      </div>
+      <div class="ph-section">
+        <h3>How to Put Away a PFD</h3>
+        <p>Instructions TBD.</p>
+      </div>
+      <div class="ph-section">
+        <h3>How to Put On Foulies</h3>
+        <p>Instructions TBD.</p>
+        <div class="ph-links"><a href="#" onclick="showPage('pfd-foulie-howto');return false;">→ PFD &amp; Foulie How-To</a></div>
+      </div>
+      <div class="ph-section">
+        <h3>How to Put Away Foulies</h3>
+        <p>Instructions TBD.</p>
+      </div>
     </div>
   </section>
 </div>
@@ -3226,8 +3224,6 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Unrated</div>
       <div class="ph-section"><h3>Skills Required</h3><p>Points of sail, basic sailing concepts, rigging information, terminology.</p></div>
-      <div class="ph-section"><h3>How to Put On a Wetsuit</h3><p>Link to standalone wetsuit how-to (shared across Dinghy/Keelboat/Windsurf).</p><div class="ph-links"><a href="#" onclick="showPage('wetsuit-howto');return false;">→ Wetsuit How-To</a></div></div>
-      <div class="ph-section"><h3>PFD &amp; Foulie How-To</h3><p>How to put on/put away a PFD and Foulie.</p><div class="ph-links"><a href="#" onclick="showPage('pfd-foulie-howto');return false;">→ PFD &amp; Foulie How-To</a></div></div>
       <div class="ph-section"><h3>Process to Get This Rating</h3><p>(N/A — Unrated is the starting tier.)</p></div>
       <div class="ph-section"><h3>Allowed Activities</h3><p>What an unrated member can do at the club.</p></div>
       <div class="ph-section"><h3>Educational Resources</h3><p>Links to relevant guides.</p></div>
@@ -3268,7 +3264,7 @@
       <div class="ph-section"><h3>Skills Required</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Process to Get This Rating</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Allowed Activities</h3><p>TBD</p></div>
-      <div class="ph-section"><h3>Educational Resources</h3><p>TBD</p></div>
+      <div class="ph-section"><h3>Educational Resources</h3><p><a href="https://www.cal-sailing.org/resources/csc-files" target="_blank">Sample Senior/Cruise Written Test</a> — study guide for the Senior written test. Source: csc-files.</p></div>
     </div>
   </section>
 </div>
@@ -3285,7 +3281,19 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Cruising Senior</div>
       <div class="ph-section"><h3>Process to Get This Rating</h3><p>Written test is offline — email the cruising chair, who emails the test back. Essay/open format, no time limit.</p></div>
-      <div class="ph-section"><h3>Cruise Planning Resources</h3><p>Pull everything from "Resources for Cruising Skippers" section of the old Other Links page.</p></div>
+      <div class="ph-section"><h3>Educational Resources</h3><p><a href="https://www.cal-sailing.org/resources/csc-files" target="_blank">Sample Senior/Cruise Written Test</a> — study guide for the Cruising Senior written test. Source: csc-files.</p></div>
+      <div class="ph-section"><h3>Cruise Planning Resources</h3>
+        <p>Everything from the "Resources for Cruising Skippers" section of the <a href="https://www.cal-sailing.org/resources/other-links" target="_blank">current Other Links page</a>, including:</p>
+        <ul style="font-size:0.88rem;color:var(--muted);display:grid;gap:6px;padding-left:20px;margin-top:8px;">
+          <li><a href="https://www.bask.org/trip-planner" target="_blank">Bay Area Sea Kayakers (BASK) Trip Planner</a> — interactive map of Bay currents by date, very useful for trip planning</li>
+          <li><a href="https://www.nauticalcharts.noaa.gov/charts/noaa-raster-charts.html" target="_blank">NOAA Chart Locator</a></li>
+          <li><a href="https://www.nauticalcharts.noaa.gov/publications/docs/1-final/chart1.pdf" target="_blank">Chart No 1</a> (how to read a nautical chart)</li>
+          <li><a href="https://www.charts.noaa.gov/PDFs/18649.pdf" target="_blank">Chart No 18649</a> (SF Bay PDF)</li>
+          <li><a href="https://www.uscgboating.org/regulations/fed-require.pdf" target="_blank">Boaters Guide to Federal Requirements</a></li>
+          <li><a href="https://www.navcen.uscg.gov/pdf/navRules/navrules.pdf" target="_blank">Navigation Rules of the Road</a></li>
+          <li><a href="https://www.navcen.uscg.gov/?pageName=AtoNMain" target="_blank">Aids to Navigation cheat sheet</a></li>
+          <li><a href="https://msi.nga.mil/Publications/APN" target="_blank">Bowditch (American Practical Navigator)</a></li>
+        </ul><p>Pull everything from "Resources for Cruising Skippers" section of the old Other Links page.</p></div>
       <div class="ph-section"><h3>Scheduled Commercial Traffic</h3><p>Link to SF Bar Pilots dispatch site; VHF Channel 14 info.</p><div class="ph-links"><a href="https://dispatch.sfbp.org/Industry-List" target="_blank">→ SF Bar Pilots Dispatch</a></div></div>
       <p style="font-size:0.78rem;color:var(--muted);margin-top:8px;">Note: this same content may also be listed under Keelboat Ratings &gt; Cruising Senior, kept as one shared page linked from both menu locations.</p>
     </div>
@@ -3304,7 +3312,7 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Advanced Dinghies</div>
       <div class="ph-section"><h3>Advanced Boats</h3><p>Toura/Venture, Venture SE, JY-15, Laser, UFO, Symmetric Spinnaker, C420, RS500, RS800, i420 — each with its own sign-off requirement.</p></div>
-      <div class="ph-section"><h3>Manuals</h3><p>Linked manuals as applicable, from csc-files resources page.</p></div>
+      <div class="ph-section"><h3>Manuals</h3><p>Linked manuals as applicable, from csc-files resources page. Specifically: Venture SE manual, JY-15 manual, 420 manual, Rigging and Sailing a Symmetric Spinnaker.</p></div>
     </div>
   </section>
 </div>
@@ -3334,12 +3342,12 @@
         <p>Repair instructions.</p>
       </div>
       <div class="ph-section">
-        <h3>4. Gear and Equipment</h3>
+        <h3>4. Gear and Equipment Recommendations</h3>
         <p>TBD</p>
       </div>
       <div class="ph-section">
         <h3>5. Instructor Resources</h3>
-        <p>Current "dinghy instructor resources" page; Paul Kamen's 1994 fast-track guide.</p>
+        <p>Current "dinghy instructor resources" page; Paul Kamen's 1994 fast-track guide. Note: this section should link to a new unlisted dinghy instructor resources page.</p>
       </div>
     </div>
   </section>
@@ -3379,6 +3387,7 @@
       <div class="ph-section"><h3>Skills Required</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Process to Get This Rating</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Allowed Activities</h3><p>TBD</p></div>
+      <div class="ph-section"><h3>Educational Resources</h3><p><a href="https://www.cal-sailing.org/resources/csc-files" target="_blank">Sample Senior/Cruise Written Test</a> — study guide for the Senior written test. Source: csc-files.</p></div>
     </div>
   </section>
 </div>
@@ -3443,11 +3452,15 @@
       </div>
       <div class="ph-section">
         <h3>4. Instructor Resources</h3>
+        <p>Note: this section should link to a new unlisted keelboat instructor resources page.</p>
+      </div>
+      <div class="ph-section">
+        <h3>6. Gear and Equipment Recommendations</h3>
         <p>TBD</p>
       </div>
       <div class="ph-section">
         <h3>5. Paperwork</h3>
-        <p>CA registration cards for CSC keelboats. Manuals: 7 from csc-files, plus "Motors and Motoring" and the keelboat outboard motor owner's manual.</p>
+        <p>CA registration cards for CSC keelboats. Manuals: Keelboat Manual, Do's and Don'ts: Rigging Down the Keelboats, DSC Tutorial, Outboard Motor Guide, J80 Electric Outboard Motor Guide, Keelboat Pre-Sail Checklist, Motor Hoisting, Motors and Motoring, Owner's Manual for Keelboat Outboard Motors — all from csc-files resources page.</p>
       </div>
     </div>
   </section>
@@ -3519,6 +3532,7 @@
       <div class="ph-section"><h3>Calendar (filtered) + Sign-Up Links</h3><p>Sign-up links within each event.</p></div>
       <div class="ph-section"><h3>Lesson List for Coordinators</h3><p>Requires login.</p></div>
       <div class="ph-section"><h3>Cruise Report Form</h3><p>For cruising skippers, before and after a cruise. Source: csc-files.</p></div>
+      <div class="ph-section"><h3>Cruise Planning Resources</h3><p>Cruise planning resources (charts, navigation guides, BASK trip planner, etc.) are located on the <a href="#" onclick="showPage('dinghy-cruising-senior');return false;">Dinghy Cruising Senior rating page</a>.</p></div>
     </div>
   </section>
 </div>
@@ -3557,6 +3571,10 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Overview</div>
       <div class="ph-section"><h3>What is Windsurfing at CSC</h3><p>TBD</p></div>
+      <div class="ph-section">
+        <h3>What to Bring and Wear</h3>
+        <p>All gear is included, including wetsuit and life jacket (PFD). Bring sunglasses with a strap, shoes that can get wet, clothes (minimum required: underwear) to wear under your wetsuit, and a change of clothes for after. Highly recommend bringing gloves — TBD (info). Note: windsurfing does not use PFDs.</p>
+      </div>
     </div>
   </section>
 </div>
@@ -3592,7 +3610,6 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Unrated</div>
       <div class="ph-section"><h3>Skills Required</h3><p>TBD</p></div>
-      <div class="ph-section"><h3>How to Put On a Wetsuit</h3><p>Link to standalone Wetsuit How-To.</p><div class="ph-links"><a href="#" onclick="showPage('wetsuit-howto');return false;">→ Wetsuit How-To</a></div></div>
       <p style="font-size:0.78rem;color:var(--muted);margin-top:8px;">Note: windsurfing does not use PFDs.</p>
     </div>
   </section>
@@ -3608,6 +3625,7 @@
   <section>
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+      <div class="ai-banner"><strong>Note:</strong> Randi said: pull the Novice written test info from the <a href="https://static.cal-sailing.org/images/official_files/windsurf_0409.pdf" target="_blank">Introductory Handbook for Windsurfing</a>.</div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Novice</div>
       <div class="ph-section"><h3>Skills Required</h3><p>TBD — Introductory Handbook covers written test; also pull CSC 10-step guide.</p></div>
       <div class="ph-section"><h3>Process to Get This Rating</h3><p>Pull Novice written test info from Introductory Handbook.</p></div>
@@ -3678,11 +3696,15 @@
   <section>
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+      <div class="ai-banner"><strong>Note:</strong> Do not use or link to the old Windsurf Board Ding Repair Tutorial (wsboard_dingrepair.pdf) — Randi said not to use it.</div>
+      <div class="ai-banner"><strong>Note:</strong> Do not link to cal-sailing.org/ratings-menu/rating-for-windsurf — Randi and Eric Lee are updating that content.</div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Resources</div>
+      <div class="ph-section"><h3>Gear and Equipment Recommendations</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Locker Map &amp; Info</h3><p>Source: csc-files.</p></div>
       <div class="ph-section"><h3>Board Repair Tutorial</h3><p>Relevant primarily to Juniors seeking Junior+, useful for everyone.</p></div>
       <div class="ph-section"><h3>Legacy Guides</h3><p>Bill Prinzmetal 10-step guide (different from CSC 10-step guide) — relevant to Junior, Junior+, Senior. Water starting document — largely superseded by YouTube videos, optional to keep for J+ seekers.</p></div>
-      <div class="ph-section"><h3>External Resources (Paid)</h3><p>Windsurf destinations guide; iWindsurf subscription.</p></div>
+      <div class="ph-section"><h3>External Resources (Paid)</h3><p>Windsurf destinations guide (<a href="https://www.kite-and-windsurfing-guide.com/en/" target="_blank">kite-and-windsurfing-guide.com</a>); iWindsurf subscription.</p></div>
+      <div class="ph-section"><h3>Instructor Resources</h3><p>Note: this section should link to a new unlisted windsurf instructor resources page.</p></div>
       <div class="ph-section"><h3>San Francisco Boardsailing Association</h3><p>Non-profit addressing Bay Area boardsailing community concerns.</p><div class="ph-links"><a href="https://www.sfba.org/" target="_blank">→ SFBA.org</a></div></div>
     </div>
   </section>
@@ -3849,22 +3871,38 @@
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="ph-section"><h3>Wind Speed Indicator</h3><p>Nicho's wind speed indicator — current speed, direction, gusts.</p></div>
       <div class="ph-section"><h3>Nicho's Graph (Hours/Schedule)</h3><p>Tide graph overlaid with club open/close times. Suggestion: make the "now" flag taller/bigger than the rest.</p></div>
-      <div class="ph-section"><h3>12-Hour Wind/Gust Speed Graph</h3><p>Make horizontal gridlines correspond to Y-axis numbers.</p></div>
+      <div class="ph-section"><h3>12-Hour Wind/Gust Speed Graph</h3><p>Ideally make the horizontal lines correspond to numbers on the Y axis.</p></div>
       <div class="ph-section"><h3>Whiteboard Webcam</h3><p>Webcam of the day leader's whiteboard in the shed.</p></div>
       <div class="ph-section"><h3>Forecast</h3><p>Daily/hourly forecast.</p></div>
       <div class="ph-section"><h3>Open/Closed Status</h3><p>"Open until __(time)", "Closed", etc. — from Nicho's widget.</p></div>
       <div class="ph-section"><h3>Today's Calendar Info</h3><p>Pulled from the monthly Google Calendar.</p><div class="ph-links"><a href="#" onclick="showPage('calendar-events');return false;">→ Calendar</a></div></div>
       <div class="ph-section"><h3>Tide Now</h3><p>From Nicho's widget.</p></div>
-      <div class="ph-section"><h3>Next Times</h3><p>Open time, dock time, sunset, close time, high/low tides — from Nicho's widget. Hide times that have already passed.</p></div>
-      <div class="ph-section"><h3>Historical Weather</h3><p>Easy way to see yesterday / last 24h, etc.</p></div>
-      <div class="ph-section"><h3>Wind Direction Graph</h3><p>Update Y-axis to standard compass points.</p></div>
-      <div class="ph-section"><h3>Circular Wind Direction Visual</h3><p>Note: currently doesn't correlate with the wind graphs above — needs reconciling.</p></div>
+      <div class="ph-section"><h3>Next Times</h3><p>Open time, dock time, sunset, close time, high/low tides — from Nicho's widget. Hide times that have already passed (e.g. it is currently 3pm so hide or gray background for everything before 3pm).</p></div>
+      <div class="ph-section"><h3>Historical Weather</h3><p>Easy way to see historical weather data or change the timeframe (e.g. see yesterday, see last 24h)?</p></div>
+      <div class="ph-section"><h3>Wind Direction Graph</h3><p>Ideally update the Y axis to be more standard compass reference points.</p></div>
+      <div class="ph-section"><h3>Circular Wind Direction Visual</h3><p>Doesn't seem to correlate with the wind graphs above; e.g. currently the graph shows mostly hovering around 250-260 degrees, but the circular wind direction visual shows most of the wind from SW.</p></div>
       <div class="ph-section"><h3>Temperature &amp; Dewpoint Graph</h3><p>TBD</p></div>
-      <div class="ph-section"><h3>Barometric Pressure Graph</h3><p>Consider renaming from "Barometer."</p></div>
+      <div class="ph-section"><h3>Barometric Pressure Graph</h3><p>Rename from barometer?</p></div>
       <div class="ph-section"><h3>UV Index Graph</h3><p>TBD</p></div>
       <div class="ph-section"><h3>Webcams</h3><p>Dock webcam, Emeryville webcam.</p></div>
       <div class="ph-section"><h3>Radar Map</h3><p>TBD</p></div>
-      <div class="ph-section"><h3>External Weather Links</h3><p>Windguru, NOAA Tides &amp; Currents (Berkeley), Berkeley Tides (predicted), Actual vs. Predicted Tides (Richmond), other tide sites, Beaufort scale reference, iWindsurf.</p></div>
+      <div class="ph-section"><h3>External Weather Links</h3><ul style="font-size:0.88rem;color:var(--muted);display:grid;gap:6px;padding-left:20px;margin-top:8px;">
+          <li><a href="https://bit.ly/38RvjVj" target="_blank">Windguru</a></li>
+          <li><a href="https://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9414816" target="_blank">NOAA Tides and Currents for Berkeley</a></li>
+          <li><a href="http://www.dairiki.org/tides/daily.php/bky" target="_blank">Berkeley Tides (predicted)</a></li>
+          <li><a href="https://tidesandcurrents.noaa.gov/waterlevels.html?id=9414863&name=Richmond&state=CA" target="_blank">Actual vs Predicted Tides (Richmond)</a></li>
+          <li><a href="https://www.usharbors.com/harbor/california/san-francisco-ca/tides/" target="_blank">Tide data (usharbors.com)</a></li>
+          <li><a href="https://www.spc.noaa.gov/faq/tornado/beaufort.html" target="_blank">Beaufort Scale definitions</a></li>
+          <li><a href="https://www.iwindsurf.com/" target="_blank">iWindsurf</a> (paid subscription)</li>
+          <li><a href="https://www.wunderground.com" target="_blank">Weather Underground</a></li>
+          <li><a href="https://www.wunderground.com/dashboard/pws/KCABERKE32" target="_blank">Current Conditions in South Basin (Wunderground PWS)</a></li>
+          <li><a href="https://forecast.weather.gov/MapClick.php?CityName=Berkeley&state=CA&site=MTR" target="_blank">NWS Bay Area Weather</a></li>
+          <li><a href="https://www.windy.com/" target="_blank">Windy.com</a></li>
+          <li><a href="https://forecast.weather.gov/MapClick.php?CityName=San+Francisco&state=CA&site=MTR" target="_blank">NWS Bay Area/Monterey Forecast</a></li>
+          <li><a href="https://tidesandcurrents.noaa.gov/ports/index.html?port=sf" target="_blank">San Francisco Bay PORTS</a></li>
+          <li><a href="https://www.boatingsf.com/" target="_blank">BoatingSF.com</a></li>
+          <li><a href="https://www.cal-sailing.org/resources/other-links" target="_blank">All links under "weather links" on the current Other Links page</a></li>
+        </ul></div>
     </div>
   </section>
 </div>
@@ -3879,10 +3917,37 @@
   <section>
     <div class="container" style="max-width:900px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Boat Status</div>
-      <div class="ph-section"><h3>Current Sign-Outs</h3><p>Who has signed out which boat / current availability.</p></div>
-      <div class="ph-section"><h3>Dinghy Log</h3><p>Link to report a boat issue.</p></div>
-      <div class="ph-section"><h3>Keelboat Log</h3><p>Link to report a boat issue.</p></div>
+      <div class="ai-banner"><strong>Note:</strong> This page is hidden from the menu if the user is not logged in.</div>
+      <div class="ai-banner"><strong>Note:</strong> Can members see current dinghy/keelboat sign-outs? What is the procedure for signing out keelboats?</div>
+
+      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
+        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Sign Out and Return Equipment</h3>
+        <div class="ph-section" style="border:none;padding:0;margin:0;"><p>Same as on the iPads in the club.</p></div>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
+        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Current Sign-Outs</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="col-layout">
+          <div class="ph-section" style="margin:0;"><h3>Dinghy</h3><p>Who has signed out which dinghy / current dinghy availability.</p></div>
+          <div class="ph-section" style="margin:0;"><h3>Keelboat</h3><p>Who has signed out which keelboat / current keelboat availability.</p></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
+        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Boat Log</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="col-layout">
+          <div class="ph-section" style="margin:0;"><h3>Dinghy</h3><p>Log of dinghy activity.</p></div>
+          <div class="ph-section" style="margin:0;"><h3>Keelboat</h3><p>Log of keelboat activity.</p></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
+        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Report a Boat Issue</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="col-layout">
+          <div class="ph-section" style="margin:0;"><h3>Dinghy</h3><p>Link to report a dinghy issue.</p></div>
+          <div class="ph-section" style="margin:0;"><h3>Keelboat</h3><p>Link to report a keelboat issue.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
@@ -3915,9 +3980,9 @@
   <section>
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Slack &amp; Communications</div>
-      <div class="ph-section"><h3>Join Slack</h3><p>Official announcements (general, dinghy, keelboat, windsurf) plus discussion channels.</p></div>
+      <div class="ph-section"><h3>Join Slack</h3><p>Official announcements (general, dinghy, keelboat, windsurf) plus discussion channels. Add notes on which channels to recommend to new members (e.g. the bench).</p></div>
       <div class="ph-section"><h3>Join Google Groups</h3><p>Alternative to Slack for announcements, separated by category.</p></div>
+      <div class="ph-section"><h3>Blog</h3><p>Include the contents of the current blog. Also make a post about <a href="http://fishmeal.no-ip.com/" target="_blank">Fishmeal's website</a> as a fun piece of CSC-related history.</p></div>
     </div>
   </section>
 </div>
@@ -3947,9 +4012,72 @@
   </div>
   <section>
     <div class="container" style="max-width:760px;">
-      <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Expense Reimbursement</div>
-      <div class="ph-section"><h3>Submit a Reimbursement Request</h3><p>TBD</p></div>
+
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.2rem;margin-bottom:8px;">1. Get approval before making a purchase</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Before spending money on club expenses, contact the ExComm member or chair or coordinator who can approve your purchase or provide a better alternative:</p>
+
+      <table style="width:100%;border-collapse:collapse;font-size:0.88rem;margin-bottom:16px;">
+        <thead>
+          <tr style="background:var(--navy);color:var(--white);">
+            <th style="padding:10px 14px;text-align:left;border-radius:6px 0 0 0;">Category</th>
+            <th style="padding:10px 14px;text-align:left;border-radius:0 6px 0 0;">Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--foam);">
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Kitchen supplies</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:banquet@cal-sailing.org">Banquet chair</a></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Food for general club events/parties</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:vicecommodore@cal-sailing.org">Vice Commodore</a>, <a href="mailto:banquet@cal-sailing.org">Banquet chair</a></td>
+          </tr>
+          <tr style="background:var(--foam);">
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Food for Fast Tracks, seminars, other teaching events</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:rearcommodore@cal-sailing.org">Rear Commodore</a> (sailing or windsurfing), <a href="mailto:fasttrack@cal-sailing.org">Fast Track coordinator</a></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Clubhouse or yard supplies, equipment, accessories</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:portcaptain@cal-sailing.org">Port Captain</a></td>
+          </tr>
+          <tr style="background:var(--foam);">
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Construction projects</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:commodore@cal-sailing.org">Commodore</a></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Skiff maintenance supplies, gas, oil, etc.</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:portcaptain@cal-sailing.org">Port Captain</a></td>
+          </tr>
+          <tr style="background:var(--foam);">
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Dinghy parts, maintenance supplies, tools</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:firstvice@cal-sailing.org">First Vice Commodore</a></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Windsurf parts, maintenance supplies, tools</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:secondvice@cal-sailing.org">Second Vice Commodore</a></td>
+          </tr>
+          <tr style="background:var(--foam);">
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);">Keelboat parts, maintenance supplies, tools</td>
+            <td style="padding:9px 14px;border-bottom:1px solid var(--border);"><a href="mailto:thirdvice@cal-sailing.org">Third Vice Commodore</a></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px;">Any of the above or other expenses</td>
+            <td style="padding:9px 14px;"><a href="mailto:treasurer@cal-sailing.org">Treasurer</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:32px;">The club has wholesale accounts or other purchasing arrangements that can be much less expensive and time-consuming than it would be for you to go to a store (even Costco). Contacting the Treasurer as well as the person(s) in charge will ensure that CSC gets the best deal and that you don't waste your time.</p>
+
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.2rem;margin-bottom:8px;">2. Get reimbursed</h2>
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:12px;">To get reimbursement for your approved purchases, email the treasurer at <a href="mailto:treasurer@cal-sailing.org">treasurer@cal-sailing.org</a> and be sure to include:</p>
+      <ul style="font-size:0.88rem;color:var(--muted);margin-bottom:12px;display:grid;gap:6px;padding-left:20px;">
+        <li>Who approved it</li>
+        <li>Your PayPal, Venmo, or Zelle address for reimbursement (sorry, no checks or cash)</li>
+        <li>Pictures of your receipts (.jpg preferred) showing items and the total</li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--muted);">Reimbursement usually takes a day or two, but sometimes the Treasurer falls asleep early, or something, so be ready to remind. Thanks!</p>
+
     </div>
   </section>
 </div>
@@ -3986,7 +4114,11 @@
       <div class="ph-section"><h3>Operating Rules</h3><p>Operating rules go here.</p></div>
       <div class="ph-section"><h3>Code of Conduct</h3><p>Code of conduct goes here.</p></div>
       <div class="ph-section"><h3>Meeting Minutes &amp; Financial Reports</h3><p>TBD</p></div>
-      <div class="ph-section"><h3>Insurance &amp; 990 Filing</h3><p>TBD</p></div>
+      <div class="ph-section"><h3>Medical Info Form</h3><p>Required for youth memberships. Source: csc-files.</p></div>
+      <div class="ph-section"><h3>Liability Release Form</h3><p>Required for minors at Open House. Source: csc-files.</p></div>
+      <div class="ph-section"><h3>City of Berkeley License</h3><p>License for use of yard and clubhouse area. Source: csc-files.</p></div>
+      <div class="ph-section"><h3>Marine General Liability Insurance</h3><p>Source: csc-files.</p></div>
+      <div class="ph-section"><h3>Form 990 / Annual Report</h3><p>Annual IRS filing. Source: csc-files.</p></div>
       <div class="ph-section"><h3>Privacy Policy</h3><p>Privacy policy goes here.</p><p style="margin-top:8px;font-style:italic;color:var(--muted);">Does this need to be on the footer of every page as it is currently?</p></div>
     </div>
   </section>
@@ -4003,6 +4135,7 @@
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Day Leader Portal</div>
+      <div class="ph-section"><h3>Day Leader's Manual</h3><p>Currently located at <a href="https://www.cal-sailing.org/resources/csc-files" target="_blank">cal-sailing.org/resources/csc-files</a> under "Dayleader's Manual."</p></div>
       <div class="ph-section"><h3>Day Leader Tools</h3><p>TBD — requires Day Leader designation.</p></div>
     </div>
   </section>
@@ -4219,6 +4352,19 @@ document.addEventListener('click', function(e) {
 });
 
 // ── Mobile nav ──
+function exportVolunteerCSV() {
+  const rows = [['Date','Category','Hours','Credit','Approved by'],
+    ['Jun 7, 2026','Repair boat / equipment','2','2','J. Smith'],
+    ['May 17, 2026','Dinghy instruction - weekday lessons','2','4','M. Torres'],
+    ['Apr 5, 2026','Cleaning and upkeep','1','1','J. Smith']
+  ];
+  const csv = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'volunteer-hours.csv';
+  a.click();
+}
+
 function toggleSearch() {
   const input = document.getElementById('search-input');
   const btn = document.getElementById('search-icon-btn');
