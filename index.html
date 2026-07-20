@@ -514,7 +514,7 @@
             <div class="flyout">
               <button onclick="showPage('dinghy-unrated')">Unrated</button>
               <button onclick="showPage('dinghy-novice')">Novice</button>
-              <button onclick="showPage('junior-dinghy')" class="current">Junior</button>
+              <button onclick="showPage('junior-dinghy')">Junior</button>
               <button onclick="showPage('dinghy-senior')">Senior</button>
               <button onclick="showPage('dinghy-cruising-senior')">Cruising Senior</button>
               <button onclick="showPage('dinghy-advanced')">Advanced Dinghies</button>
@@ -526,7 +526,7 @@
           <div class="has-flyout">
             <a href="#">Keelboat Ratings</a>
             <div class="flyout">
-              <button onclick="showPage('keelboat-unrated')" class="current">Unrated</button>
+              <button onclick="showPage('keelboat-unrated')">Unrated</button>
               <button onclick="showPage('keelboat-senior')">Senior</button>
               <button onclick="showPage('keelboat-cruising-senior')">Cruising Senior</button>
               <button onclick="showPage('keelboat-advanced')">Advanced Keelboats</button>
@@ -555,7 +555,7 @@
               <button onclick="showPage('windsurf-novice')">Novice</button>
               <button onclick="showPage('windsurf-junior')">Junior</button>
               <button onclick="showPage('windsurf-juniorplus')">Junior+</button>
-              <button onclick="showPage('windsurf-senior')" class="current">Senior</button>
+              <button onclick="showPage('windsurf-senior')">Senior</button>
               <button onclick="showPage('windsurf-addons')">Advanced Add-Ons</button>
             </div>
           </div>
@@ -578,7 +578,7 @@
         <button class="nav-btn" onclick="toggleDropdown('nav-status')">Status <span class="arrow">▾</span></button>
         <div class="dropdown">
           <button onclick="showPage('club-status')">Club Status &amp; Weather</button>
-          <div class="member-only" style="display:none"><button onclick="showPage('boat-status')">Boat Status</button></div>
+          <button onclick="showPage('boat-status')">Boat Status</button>
         </div>
       </div>
 
@@ -703,7 +703,7 @@
     <button class="mobile-section-btn" onclick="toggleMobileSection(this)">Status <span class="m-arrow">▾</span></button>
     <div class="mobile-sub">
       <button class="m-item" onclick="navTo('club-status')">Club Status &amp; Weather</button>
-      <div class="member-only" style="display:none"><button class="m-item" onclick="navTo('boat-status')">Boat Status</button></div>
+      <button class="m-item" onclick="navTo('boat-status')">Boat Status</button>
     </div>
   </div>
   <div class="mobile-section member-only" style="display:none">
@@ -4161,43 +4161,150 @@
   </div>
   <section>
     <div class="container" style="max-width:900px;">
-      <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="ai-banner"><strong>Note:</strong> This page is hidden from the menu if the user is not logged in.</div>
       <div class="ai-banner"><strong>Note:</strong> Can members see current dinghy/keelboat sign-outs? What is the procedure for signing out keelboats?</div>
 
-      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Sign Out and Return Equipment</h3>
-        <div class="ph-section" style="border:none;padding:0;margin:0;"><p>Same as on the iPads in the club.</p></div>
-      </div>
+      <div style="display:grid;gap:16px;">
 
-      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Current Sign-Outs</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="col-layout">
-          <div class="ph-section" style="margin:0;"><h3>Dinghy</h3><p>Who has signed out which dinghy / current dinghy availability.</p></div>
-          <div class="ph-section" style="margin:0;"><h3>Keelboat</h3><p>Who has signed out which keelboat / current keelboat availability.</p></div>
-        </div>
-      </div>
+        <a href="#" onclick="showPage('dinghy-log');return false;" style="display:flex;align-items:center;justify-content:space-between;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;text-decoration:none;transition:box-shadow 0.15s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(27,58,92,0.10)'" onmouseout="this.style.boxShadow=''">
+          <div>
+            <div style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;font-weight:600;margin-bottom:4px;">Sign Out and Return Equipment</div>
+            <div style="font-size:0.83rem;color:var(--muted);">Same as on the iPads in the club.</div>
+          </div>
+          <span style="color:var(--sky);font-size:0.85rem;white-space:nowrap;margin-left:16px;">Open →</span>
+        </a>
 
-      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Boat Log</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="col-layout">
-          <div class="ph-section" style="margin:0;"><h3>Dinghy</h3><p>Log of dinghy activity.</p></div>
-          <div class="ph-section" style="margin:0;"><h3>Keelboat</h3><p>Log of keelboat activity.</p></div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+          <div style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;font-weight:600;margin-bottom:14px;">Boat Log</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="col-layout">
+            <a href="#" onclick="showPage('keelboat-log');return false;" style="display:flex;align-items:center;justify-content:space-between;background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:12px 16px;text-decoration:none;">
+              <span style="font-size:0.88rem;color:var(--navy);font-weight:500;">⛵ Dinghy Log</span>
+              <span style="color:var(--sky);font-size:0.82rem;">Open →</span>
+            </a>
+            <a href="#" onclick="showPage('dinghy-signouts');return false;" style="display:flex;align-items:center;justify-content:space-between;background:var(--sand);border:1px solid #d4b896;border-radius:8px;padding:12px 16px;text-decoration:none;">
+              <span style="font-size:0.88rem;color:var(--navy);font-weight:500;">🚢 Keelboat Log</span>
+              <span style="color:var(--sky);font-size:0.82rem;">Open →</span>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div style="border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;">
-        <h3 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:12px;">Report a Boat Issue</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="col-layout">
-          <div class="ph-section" style="margin:0;"><h3>Dinghy</h3><p>Link to report a dinghy issue.</p></div>
-          <div class="ph-section" style="margin:0;"><h3>Keelboat</h3><p>Link to report a keelboat issue.</p></div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+          <div style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;font-weight:600;margin-bottom:14px;">Current Sign-Outs</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="col-layout">
+            <a href="#" onclick="showPage('keelboat-signouts');return false;" style="display:flex;align-items:center;justify-content:space-between;background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:12px 16px;text-decoration:none;">
+              <span style="font-size:0.88rem;color:var(--navy);font-weight:500;">⛵ Dinghy Sign-Outs</span>
+              <span style="color:var(--sky);font-size:0.82rem;">View →</span>
+            </a>
+            <a href="#" onclick="showPage('report-dinghy-issue');return false;" style="display:flex;align-items:center;justify-content:space-between;background:var(--sand);border:1px solid #d4b896;border-radius:8px;padding:12px 16px;text-decoration:none;">
+              <span style="font-size:0.88rem;color:var(--navy);font-weight:500;">🚢 Keelboat Sign-Outs</span>
+              <span style="color:var(--sky);font-size:0.82rem;">View →</span>
+            </a>
+          </div>
         </div>
+
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+          <div style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;font-weight:600;margin-bottom:14px;">Report a Boat Issue</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="col-layout">
+            <a href="#" onclick="showPage('report-keelboat-issue');return false;" style="display:flex;align-items:center;justify-content:space-between;background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:12px 16px;text-decoration:none;">
+              <span style="font-size:0.88rem;color:var(--navy);font-weight:500;">⛵ Report a Dinghy Issue</span>
+              <span style="color:var(--sky);font-size:0.82rem;">Report →</span>
+            </a>
+            <a href="#" style="display:flex;align-items:center;justify-content:space-between;background:var(--sand);border:1px solid #d4b896;border-radius:8px;padding:12px 16px;text-decoration:none;">
+              <span style="font-size:0.88rem;color:var(--navy);font-weight:500;">🚢 Report a Keelboat Issue</span>
+              <span style="color:var(--sky);font-size:0.82rem;">Report →</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 </div>
 
-<!-- ═══════════════════════════════════ MEMBER TOOLS PAGES ═══════════════════════════════════ -->
+<!-- Unlisted — linked from Boat Status only -->
+<div id="page-dinghy-log" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
+      <h1 style="font-size:2rem;">Dinghy Log</h1>
+    </div>
+  </div>
+  <section><div class="container" style="max-width:900px;">
+    <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+    <div class="ph-section"><h3>Dinghy Log</h3><p>TBD</p></div>
+  </div></section>
+</div>
+
+<!-- Unlisted — linked from Boat Status only -->
+<div id="page-keelboat-log" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
+      <h1 style="font-size:2rem;">Keelboat Log</h1>
+    </div>
+  </div>
+  <section><div class="container" style="max-width:900px;">
+    <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+    <div class="ph-section"><h3>Keelboat Log</h3><p>TBD</p></div>
+  </div></section>
+</div>
+
+<!-- Unlisted — linked from Boat Status only -->
+<div id="page-dinghy-signouts" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
+      <h1 style="font-size:2rem;">Current Dinghy Sign-Outs</h1>
+    </div>
+  </div>
+  <section><div class="container" style="max-width:900px;">
+    <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+    <div class="ph-section"><h3>Current Dinghy Sign-Outs</h3><p>TBD — who has signed out which dinghy; current availability.</p></div>
+  </div></section>
+</div>
+
+<!-- Unlisted — linked from Boat Status only -->
+<div id="page-keelboat-signouts" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
+      <h1 style="font-size:2rem;">Current Keelboat Sign-Outs</h1>
+    </div>
+  </div>
+  <section><div class="container" style="max-width:900px;">
+    <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+    <div class="ph-section"><h3>Current Keelboat Sign-Outs</h3><p>TBD — who has signed out which keelboat; current availability.</p></div>
+  </div></section>
+</div>
+
+<!-- Unlisted — linked from Boat Status only -->
+<div id="page-report-dinghy-issue" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
+      <h1 style="font-size:2rem;">Report a Dinghy Issue</h1>
+    </div>
+  </div>
+  <section><div class="container" style="max-width:900px;">
+    <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+    <div class="ph-section"><h3>Report a Dinghy Issue</h3><p>TBD</p></div>
+  </div></section>
+</div>
+
+<!-- Unlisted — linked from Boat Status only -->
+<div id="page-report-keelboat-issue" class="page">
+  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+    <div class="container">
+      <div class="section-label" style="color:var(--bay);">Status &amp; Conditions</div>
+      <h1 style="font-size:2rem;">Report a Keelboat Issue</h1>
+    </div>
+  </div>
+  <section><div class="container" style="max-width:900px;">
+    <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
+    <div class="ph-section"><h3>Report a Keelboat Issue</h3><p>TBD</p></div>
+  </div></section>
+</div>
+
+
 
 <div id="page-my-profile" class="page">
   <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
@@ -4547,7 +4654,7 @@ function showPage(p) {
     if (b) b.classList.remove('open');
   });
 
-  const memberGated = ['ratings', 'membership', 'volunteer-hours', 'my-profile', 'slack-comms', 'photo-gallery', 'expense-reimbursement', 'incident-report', 'governance-policies', 'dayleader-portal', 'excomm-portal', 'test-admin-portal', 'boat-status'];
+  const memberGated = ['ratings', 'membership', 'volunteer-hours', 'my-profile', 'slack-comms', 'photo-gallery', 'expense-reimbursement', 'incident-report', 'governance-policies', 'dayleader-portal', 'excomm-portal', 'test-admin-portal'];
   if (memberGated.includes(p) && currentUser === 'guest') {
     alert('Please log in to view this page.');
     return;
