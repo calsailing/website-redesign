@@ -4084,22 +4084,159 @@
 </div>
 
 <div id="page-windsurf-lessons" class="page">
-  <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
+  <div style="background:var(--navy);color:var(--white);padding:40px 0 36px;">
     <div class="container">
+      <div style="font-size:0.78rem;opacity:0.6;margin-bottom:10px;">
+        <span onclick="showPage('home')" style="cursor:pointer;color:var(--bay);">Home</span>
+        &nbsp;›&nbsp; Windsurfing
+        &nbsp;›&nbsp; <strong style="opacity:1;color:var(--white);">Windsurfing Lessons</strong>
+      </div>
       <div class="section-label" style="color:var(--bay);">Windsurfing</div>
-      <h1 style="font-size:2rem;">Lessons</h1>
+      <h1 style="font-size:2rem;margin-bottom:8px;">Windsurfing Lessons</h1>
     </div>
   </div>
-  <section>
+
+  <div style="padding:40px 0 64px;">
     <div class="container" style="max-width:760px;">
-      <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
-      <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Lessons</div>
-      <div class="ph-section"><h3>Getting Started</h3><p>What to bring, what to wear, what to expect when you show up.</p><div class="ph-links"><a href="#" onclick="showPage('wetsuit-howto');return false;">→ Wetsuit How-To</a><a href="#" onclick="showPage('gear-guide');return false;">→ Gear Buying Guide</a></div></div>
-      <div class="ph-section"><h3>Calendar (filtered) + Sign-Up Links</h3><p>Sign-up links within each event.</p></div>
-      <div class="ph-section"><h3>Lesson List for Coordinators</h3><p>Requires login.</p></div>
-      <div class="ph-section"><h3>Lessons on Demand</h3><p>TBD</p></div>
+
+      <!-- ABOUT -->
+      <div style="margin-bottom:40px;">
+        <h2 class="section-title" style="font-size:1.4rem;">About Windsurfing Lessons</h2>
+        <p style="color:var(--muted);font-size:0.9rem;">Learn to windsurf on San Francisco Bay with instruction from experienced volunteer members. No prior experience is needed — lessons welcome complete beginners and experienced sailors alike. Unlike dinghy lessons, windsurfing lessons require sign-up in advance.</p>
+      </div>
+
+      <!-- LESSON TIMES -->
+      <div style="margin-bottom:40px;">
+        <h2 class="section-title" style="font-size:1.4rem;">Lesson Times</h2>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Windsurfing lessons are seasonal, typically running spring through fall. Typical lesson times:</p>
+        <ul style="display:grid;gap:8px;padding-left:20px;font-size:0.88rem;color:var(--muted);margin-bottom:14px;">
+          <li><strong style="color:var(--navy);">Saturdays</strong> — 11:00am – 2:00pm (seasonal)</li>
+          <li><strong style="color:var(--navy);">Sundays</strong> — 11:00am – 2:00pm (seasonal)</li>
+        </ul>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:8px;">Lesson times may vary based on tides. Always check the <a href="#" onclick="showPage('calendar-events');return false;">calendar</a> before coming down.</p>
+
+        <!-- CALENDAR SUBSET -->
+        <div style="margin-top:16px;">
+          <div class="cal-strip">
+            <div class="cal-strip-header">
+              <span>July 2026</span>
+              <div style="display:flex;gap:6px;">
+                <button style="font-size:0.75rem;padding:3px 10px;border-radius:14px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;">Week</button>
+                <button style="font-size:0.75rem;padding:3px 10px;border-radius:14px;border:1px solid var(--sky);background:var(--sky);color:var(--white);cursor:pointer;">Month</button>
+              </div>
+            </div>
+            <div class="cal-event">
+              <div class="cal-date"><div class="day">19</div><div class="wd">Sat</div></div>
+              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Novice 1: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
+              <span class="cal-pill pill-wind">Windsurf Lessons</span>
+            </div>
+            <div class="cal-event">
+              <div class="cal-date"><div class="day">20</div><div class="wd">Sun</div></div>
+              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Novice 2: On the Water</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
+              <span class="cal-pill pill-wind">Windsurf Lessons</span>
+            </div>
+            <div class="cal-event">
+              <div class="cal-date"><div class="day">26</div><div class="wd">Sat</div></div>
+              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Novice 3: Tacking and Steering</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
+              <span class="cal-pill pill-wind">Windsurf Lessons</span>
+            </div>
+            <div style="padding:10px 16px;font-size:0.78rem;color:var(--muted);text-align:right;border-top:1px solid var(--border);">
+              <a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--sky);">View full calendar →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT TO EXPECT -->
+      <div style="margin-bottom:40px;">
+        <h2 class="section-title" style="font-size:1.4rem;">Your First Lesson</h2>
+        <div style="display:grid;gap:16px;margin-top:8px;">
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div class="step-num-inline">1</div>
+            <div style="padding-top:6px;">
+              <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Sign up in advance</h4>
+              <p style="font-size:0.85rem;color:var(--muted);">Find a lesson in the calendar and use the sign-up link within the event. You'll be notified if there are more students than spots.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div class="step-num-inline">2</div>
+            <div style="padding-top:6px;">
+              <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Check out gear</h4>
+              <p style="font-size:0.85rem;color:var(--muted);">Arrive at the clubhouse and check out your gear — board, rig, wetsuit. Your instructor will show you how to inspect equipment and check for damage.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div class="step-num-inline">3</div>
+            <div style="padding-top:6px;">
+              <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Shore orientation</h4>
+              <p style="font-size:0.85rem;color:var(--muted);">Your instructor will cover safety, basic technique, and what to expect on the water before you launch.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div class="step-num-inline">4</div>
+            <div style="padding-top:6px;">
+              <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Get on the water</h4>
+              <p style="font-size:0.85rem;color:var(--muted);">Your instructor will be nearby to coach you and assist. Expect to fall in — it's part of learning, and you'll be shown self-rescue technique.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT TO BRING -->
+      <div style="margin-bottom:40px;">
+        <h2 class="section-title" style="font-size:1.4rem;">What to Bring and Wear</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px;">
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
+            <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.95rem;margin-bottom:10px;">What to Wear</h4>
+            <ul style="list-style:none;display:grid;gap:5px;">
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Clothes you don't mind getting wet</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Non-slip, closed-toe shoes</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Sunscreen and sunglasses with a strap</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Wetsuits available to borrow</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Note: windsurfing does not use PFDs</li>
+            </ul>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
+            <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.95rem;margin-bottom:10px;">What to Bring</h4>
+            <ul style="list-style:none;display:grid;gap:5px;">
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Your CSC member number</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Water and snacks</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>A change of clothes</li>
+              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>A towel</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <a href="#" onclick="showPage('wetsuit-howto');return false;" class="btn btn-sky" style="font-size:0.82rem;">Wetsuit How-To →</a>
+        </div>
+      </div>
+
+      <!-- NOT A MEMBER YET -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:16px;">
+        <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:10px;">Not a member yet?</h4>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:14px;">You need to be a CSC member to take lessons. Membership starts at $90/quarter for youth and $150/quarter for adults.</p>
+        <a href="#" onclick="showPage('join');return false;" class="btn btn-sky" style="font-size:0.85rem;">Join the club →</a>
+      </div>
+
+      <!-- READY TO START -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:16px;">
+        <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:8px;">Ready to start?</h4>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:14px;">Find an upcoming lesson in the calendar and use the sign-up link within the event.</p>
+        <a href="#" onclick="showPage('calendar-events');return false;" class="btn btn-sky" style="font-size:0.85rem;">Check the calendar →</a>
+      </div>
+
+      <!-- QUESTIONS -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;">
+        <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:1rem;margin-bottom:8px;">Questions?</h4>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:14px;">Stop by any time we're open and someone will be happy to help, or reach out on Slack.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#" onclick="showPage('contact');return false;" class="btn btn-sky" style="font-size:0.85rem;">Contacts →</a>
+          <a href="#" onclick="showPage('slack-comms');return false;" class="btn btn-sky" style="font-size:0.85rem;">Slack &amp; Communications →</a>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
 </div>
 
 <div id="page-windsurf-unrated" class="page">
