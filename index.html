@@ -785,13 +785,13 @@
             <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: dinghy sailing</div>
             <h3>Dinghy Sailing</h3>
             <p>Small, responsive sailboats — fast, athletic, and hands-on. The best way to build strong sailing skills. Great for beginners and experienced sailors alike.</p>
-            <a href="#" onclick="showPage('dinghy-lessons');return false;" class="card-link">Learn about dinghy sailing →</a>
+            <a href="#" onclick="showPage('sailing-overview');return false;" class="card-link">Learn about dinghy sailing →</a>
           </div>
           <div class="card" style="background:var(--foam);">
             <div class="img-placeholder" style="margin-bottom:14px;"><span class="img-icon">🖼️</span>Photo: windsurfing</div>
             <h3>Windsurfing</h3>
             <p>Stand on a board and control a sail in the wind. Athletic and exhilarating — best April through October when the Bay winds are strongest.</p>
-            <a href="#" onclick="showPage('windsurf-lessons');return false;" class="card-link">Learn about windsurfing →</a>
+            <a href="#" onclick="showPage('windsurf-overview');return false;" class="card-link">Learn about windsurfing →</a>
           </div>
         </div>
         <div style="margin-top:32px;text-align:left;max-width:560px;margin-left:auto;margin-right:auto;">
@@ -808,15 +808,15 @@
     <section class="alt">
       <div class="container" style="max-width:600px;">
         <h2 class="section-title" style="text-align:center;">How It Works</h2>
-        <p class="section-sub" style="text-align:center;margin:0 auto 28px;">No prior experience needed.</p>
+        <p class="section-sub" style="text-align:center;margin:0 auto 28px;">All experience levels are welcome, from zero to advanced.</p>
         <div style="display:grid;gap:0;">
           <div style="display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);">
             <div style="width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);font-family:'Bitter',serif;font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div><strong style="color:var(--navy);">Try it or join</strong> <span style="color:var(--muted);">— Attend a free Open House, stop by the clubhouse any time, or join online.</span></div>
+            <div><strong style="color:var(--navy);">Join the club</strong> <span style="color:var(--muted);">— Join online or stop by the clubhouse any time we're open and the Day Leader will assist you.</span></div>
           </div>
           <div style="display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);">
             <div style="width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);font-family:'Bitter',serif;font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-            <div><strong style="color:var(--navy);">Take lessons</strong> <span style="color:var(--muted);">— Dinghy lessons are drop-in, no reservation needed. Windsurfing lessons require sign-up.</span></div>
+            <div><strong style="color:var(--navy);">Take lessons</strong> <span style="color:var(--muted);">— Dinghy lessons are drop-in, no reservation needed: Saturdays 10am–1pm, Mondays and Thursdays 1–4pm (1–5pm during Daylight Saving Time). Windsurfing lessons require sign-up: Saturdays and Sundays 11am–2pm, seasonal. Always check the <a href="#" onclick="showPage('calendar-events');return false;">calendar</a> before coming down.</span></div>
           </div>
           <div style="display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);">
             <div style="width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);font-family:'Bitter',serif;font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
@@ -834,8 +834,38 @@
       </div>
     </section>
 
-    <!-- WHAT RATINGS UNLOCK -->
+    <!-- UPCOMING EVENTS -->
     <section>
+      <div class="container" style="text-align:center;">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="cal-strip" style="max-width:680px;margin:20px auto 0;text-align:left;">
+          <div class="cal-strip-header"><span>Upcoming</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">29</div><div class="wd">Mon</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('open-house');return false;" style="color:var(--navy);text-decoration:none;">Open House — Free Public Sailing!</a></h4><p>Public event · Get on the water with an instructor</p></div>
+            <span class="cal-pill pill-social">Open House</span>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm · Drop-in welcome</p></div>
+            <span class="cal-pill pill-lessons">Lessons</span>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('windsurf-lessons');return false;" style="color:var(--navy);text-decoration:none;">Novice 1 + Refresher: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
+            <span class="cal-pill pill-wind">Windsurfing</span>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><div class="day">5</div><div class="wd">Sun</div></div>
+            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm · All welcome</p></div>
+            <span class="cal-pill pill-racing">Racing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT RATINGS UNLOCK -->
+    <section class="alt">
       <div class="container" style="text-align:center;">
         <h2 class="section-title">As You Progress, Ratings Unlock More</h2>
         <p class="section-sub" style="margin:0 auto 24px;">Earning ratings opens up more of what the club has to offer:</p>
@@ -883,7 +913,7 @@
     </section>
 
     <!-- MEMBERSHIP & COST -->
-    <section class="alt">
+    <section>
       <div class="container" style="text-align:center;">
         <h2 class="section-title">An Affordable Way to Sail the Bay</h2>
         <p class="section-sub" style="margin:0 auto 28px;">Membership includes lessons, use of all boats and gear, social events, cruising, women's sailing, youth programs, and more — all for one low fee.</p>
@@ -919,41 +949,11 @@
     </section>
 
     <!-- COMMUNITY -->
-    <section>
+    <section class="alt">
       <div class="container" style="text-align:center;max-width:760px;">
         <h2 class="section-title">More Than Lessons: A Community on the Water</h2>
         <p class="section-sub" style="margin:0 auto 28px;">Members teach each other, sail together, volunteer together, and share meals in the boat yard. Whether you're brand new or have years of experience, you'll find people glad to help you learn and get involved.</p>
         <div class="img-placeholder" style="height:220px;"><span class="img-icon">🖼️</span>Photo: club community / social slideshow</div>
-      </div>
-    </section>
-
-    <!-- UPCOMING EVENTS -->
-    <section class="alt">
-      <div class="container" style="text-align:center;">
-        <h2 class="section-title">Upcoming Events</h2>
-        <div class="cal-strip" style="max-width:680px;margin:20px auto 0;text-align:left;">
-          <div class="cal-strip-header"><span>Upcoming</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">29</div><div class="wd">Mon</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('open-house');return false;" style="color:var(--navy);text-decoration:none;">Open House — Free Public Sailing!</a></h4><p>Public event · Get on the water with an instructor</p></div>
-            <span class="cal-pill pill-social">Open House</span>
-          </div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('dinghy-lessons');return false;" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm · Drop-in welcome</p></div>
-            <span class="cal-pill pill-lessons">Lessons</span>
-          </div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">4</div><div class="wd">Sat</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('windsurf-lessons');return false;" style="color:var(--navy);text-decoration:none;">Novice 1 + Refresher: Intro to Windsurfing</a></h4><p>11:00am – 2:00pm · Sign-up required</p></div>
-            <span class="cal-pill pill-wind">Windsurfing</span>
-          </div>
-          <div class="cal-event">
-            <div class="cal-date"><div class="day">5</div><div class="wd">Sun</div></div>
-            <div class="cal-info"><h4><a href="#" onclick="showPage('racing');return false;" style="color:var(--navy);text-decoration:none;">Sunday Dinghy Racing</a></h4><p>10:00am – 2:00pm · All welcome</p></div>
-            <span class="cal-pill pill-racing">Racing</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -3143,21 +3143,21 @@
 
       <!-- ABOUT -->
       <div style="margin-bottom:40px;">
-        <h2 class="section-title" style="font-size:1.4rem;">About Drop-In Dinghy Lessons</h2>
-        <p style="color:var(--muted);font-size:0.9rem;">Learn to sail on San Francisco Bay in our small, responsive dinghies. Lessons are drop-in, year-round, and taught by experienced volunteer members. No prior experience is needed — lessons welcome complete beginners and experienced sailors alike. No sign-up required; just show up and put your name on the list.</p>
+        <h2 class="section-title" style="font-size:1.4rem;">About Dinghy Sailing Lessons</h2>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:10px;">Learn to sail on San Francisco Bay in our small, responsive sailboats. Lessons are drop-in, year-round, and taught by experienced volunteer members. Unlimited lessons are included with membership. Lessons on Demand are also available if the scheduled times don't work for you or you want extra practice.</p>
+        <p style="color:var(--muted);font-size:0.9rem;">No prior experience is needed — lessons welcome complete beginners and experienced sailors alike. There is no online sign-up for drop-in sailing lessons; just show up and put your name on the list! Expect to sail for about an hour, sharing the lesson with another student.</p>
       </div>
 
       <!-- LESSON TIMES -->
       <div style="margin-bottom:40px;">
         <h2 class="section-title" style="font-size:1.4rem;">Drop-In Lesson Times</h2>
-        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Typical lesson times:</p>
-        <ul style="display:grid;gap:8px;padding-left:20px;font-size:0.88rem;color:var(--muted);margin-bottom:14px;">
-          <li><strong style="color:var(--navy);">Saturdays</strong> — 10:00am – 1:00pm, year-round</li>
-          <li><strong style="color:var(--navy);">Mondays</strong> — 1:00pm – 4:00pm (1:00pm – 5:00pm during Daylight Saving Time)</li>
-          <li><strong style="color:var(--navy);">Thursdays</strong> — 1:00pm – 4:00pm (1:00pm – 5:00pm during Daylight Saving Time)</li>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:12px;">Typical* drop-in lesson times are:</p>
+        <ul style="display:grid;gap:8px;padding-left:20px;font-size:0.88rem;color:var(--muted);margin-bottom:16px;">
+          <li><strong style="color:var(--navy);">Saturdays</strong> — lessons begin at 10:00am; the waiting list closes at 11:45am; lessons end at 1:00pm</li>
+          <li><strong style="color:var(--navy);">Mondays</strong> — 1:00pm – 5:00pm during Daylight Saving Time (1:00pm – 4:00pm in winter)</li>
+          <li><strong style="color:var(--navy);">Thursdays</strong> — 1:00pm – 5:00pm during Daylight Saving Time (1:00pm – 4:00pm in winter)</li>
         </ul>
-        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:8px;">Lesson times may vary based on tides. Always check the <a href="#" onclick="showPage('calendar-events');return false;">calendar</a> before coming down.</p>
-        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:20px;">If these times don't work, or you want to take additional lessons outside these times, you can take lessons on demand — just coordinate on <a href="#" onclick="showPage('slack-comms');return false;">Slack</a>!</p>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:8px;">*Lesson times may vary based on tides. Always check the <a href="#" onclick="showPage('calendar-events');return false;">calendar</a> before coming down. Upcoming lesson times are:</p>
 
         <!-- CALENDAR SUBSET -->
         <div style="margin-top:4px;">
@@ -3171,7 +3171,7 @@
             </div>
             <div class="cal-event">
               <div class="cal-date"><div class="day">19</div><div class="wd">Sat</div></div>
-              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm</p></div>
+              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Dinghy Lessons (waiting list closes at 11:45am)</a></h4><p>10:00am – 1:00pm</p></div>
               <span class="cal-pill pill-lessons">Dinghy Lessons</span>
             </div>
             <div class="cal-event">
@@ -3186,47 +3186,58 @@
             </div>
             <div class="cal-event">
               <div class="cal-date"><div class="day">26</div><div class="wd">Sat</div></div>
-              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Dinghy Lessons</a></h4><p>10:00am – 1:00pm</p></div>
+              <div class="cal-info"><h4><a href="#" style="color:var(--navy);text-decoration:none;">Dinghy Lessons (waiting list closes at 11:45am)</a></h4><p>10:00am – 1:00pm</p></div>
               <span class="cal-pill pill-lessons">Dinghy Lessons</span>
-            </div>
-            <div style="padding:10px 16px;font-size:0.78rem;color:var(--muted);text-align:right;border-top:1px solid var(--border);">
-              <a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--sky);">View full calendar →</a>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- LESSONS ON DEMAND -->
+      <div style="margin-bottom:40px;">
+        <h2 class="section-title" style="font-size:1.4rem;">Lessons on Demand</h2>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:10px;">If the scheduled lesson times don't work for you, or you want extra practice outside of lesson times, you can arrange a Lesson on Demand with an instructor — just post on <a href="#" onclick="showPage('slack-comms');return false;">Slack</a> to coordinate. Lessons on Demand are completely free and available to any club member.</p>
+        <p style="color:var(--muted);font-size:0.9rem;">Lessons on demand are also a great option for members who want to focus on a specific skill, prepare for a rating, or get more time on a particular boat.</p>
+        <p style="color:var(--muted);font-size:0.9rem;margin-top:10px;">Slack channel: <a href="#" onclick="showPage('slack-comms');return false;">#dinghy-lessons-on-demand</a></p>
+      </div>
+
       <!-- WHAT TO EXPECT -->
       <div style="margin-bottom:40px;">
-        <div class="section-label">What to Expect</div>
-        <h2 class="section-title" style="font-size:1.4rem;">Your First Lesson</h2>
+        <h2 class="section-title" style="font-size:1.4rem;">How to Take Lessons</h2>
         <div style="display:grid;gap:16px;margin-top:8px;">
           <div style="display:flex;align-items:flex-start;gap:16px;">
             <div class="step-num-inline">1</div>
             <div style="padding-top:6px;">
               <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Show up and sign in</h4>
-              <p style="font-size:0.85rem;color:var(--muted);">Arrive at the clubhouse before the lesson starts. Sign in at the front desk and add your name to the waiting list. Have your member number ready.</p>
+              <p style="font-size:0.85rem;color:var(--muted);">Arrive at the clubhouse and put your name on the waiting list. Have your member number ready — you can find it on your <a href="#" onclick="showPage('my-profile');return false;">My Profile</a> page.</p>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;">
             <div class="step-num-inline">2</div>
+            <div style="padding-top:6px;">
+              <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">While you wait</h4>
+              <p style="font-size:0.85rem;color:var(--muted);">While you wait your turn for a sailing lesson, these are highly recommended: (a) participate in Land Lessons, (b) practice rigging and knot-tying, (c) volunteer by cleaning or helping around the club in any other way (self-directed; earn volunteer hours!), and (d) get to know other club members and enjoy the community!</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div class="step-num-inline">3</div>
             <div style="padding-top:6px;">
               <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Shore orientation</h4>
               <p style="font-size:0.85rem;color:var(--muted);">Your instructor will give a brief shore-side introduction covering safety, boat parts, and what you'll be doing on the water.</p>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;">
-            <div class="step-num-inline">3</div>
+            <div class="step-num-inline">4</div>
             <div style="padding-top:6px;">
               <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Get on the water</h4>
-              <p style="font-size:0.85rem;color:var(--muted);">You'll sail with your instructor. Expect to capsize — it's part of learning, and you'll be shown how to right the boat.</p>
+              <p style="font-size:0.85rem;color:var(--muted);">Your instructor will meet you at your level and teach you how to sail, hands-on. You'll be on the water learning the basics of steering, sail trim, and how to work with the wind. Your lesson will probably last about an hour, shared with other students on the boat.</p>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;">
-            <div class="step-num-inline">4</div>
+            <div class="step-num-inline">5</div>
             <div style="padding-top:6px;">
               <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.97rem;margin-bottom:3px;">Debrief and next steps</h4>
-              <p style="font-size:0.85rem;color:var(--muted);">After the lesson, your instructor will give feedback and suggest what to focus on next time. Ask about ratings and what to work toward.</p>
+              <p style="font-size:0.85rem;color:var(--muted);">After the lesson, your instructor will give feedback and suggest what to focus on next time.</p>
             </div>
           </div>
         </div>
@@ -3234,32 +3245,27 @@
 
       <!-- WHAT TO BRING -->
       <div style="margin-bottom:40px;">
-        <div class="section-label">Be Prepared</div>
         <h2 class="section-title" style="font-size:1.4rem;">What to Bring and Wear</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px;">
-          <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
-            <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.95rem;margin-bottom:10px;">What to Wear</h4>
-            <ul style="list-style:none;display:grid;gap:5px;">
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Clothes you don't mind getting wet</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Non-slip, closed-toe shoes</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Sunscreen and sunglasses</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Hat with a chin strap</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Wetsuits available to borrow</li>
-            </ul>
-          </div>
-          <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
-            <h4 style="font-family:'Bitter',serif;color:var(--navy);font-size:0.95rem;margin-bottom:10px;">What to Bring</h4>
-            <ul style="list-style:none;display:grid;gap:5px;">
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Your CSC member number</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>Water and snacks</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>A change of clothes</li>
-              <li style="font-size:0.84rem;color:var(--muted);display:flex;gap:8px;"><span style="color:var(--bay);">→</span>A towel</li>
-            </ul>
-          </div>
-        </div>
-        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="#" onclick="showPage('wetsuit-howto');return false;" class="btn btn-sky" style="font-size:0.82rem;">Wetsuit How-To →</a>
-          <a href="#" onclick="showPage('pfd-foulie-howto');return false;" class="btn btn-sky" style="font-size:0.82rem;">PFD &amp; Foulie How-To →</a>
+        <ul style="list-style:none;display:grid;gap:8px;margin-top:12px;margin-bottom:20px;">
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Your member number (find it on your <a href="#" onclick="showPage('my-profile');return false;">My Profile</a> page)</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Non-slip, closed-toe shoes that can get wet</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Sunscreen</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Sunglasses with strap</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Hat with chin strap</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Water and snacks</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Clothes to wear under a wetsuit: underwear (required), shorts, sports bra, t-shirt, and/or swimsuit (optional)</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>A change of clothes for after sailing</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--sky);font-size:1rem;">☐</span>Gloves to protect your hands (a limited selection is available to borrow)</li>
+        </ul>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:8px;">You don't need to bring these because the club supplies them:</p>
+        <ul style="list-style:none;display:grid;gap:8px;margin-bottom:16px;">
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--green);font-size:1rem;">✓</span>Wetsuit</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--green);font-size:1rem;">✓</span>Foul-weather gear ("foulies")</li>
+          <li style="font-size:0.88rem;color:var(--muted);display:flex;gap:10px;align-items:baseline;"><span style="color:var(--green);font-size:1rem;">✓</span>Life jacket (PFD)</li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#" onclick="showPage('wetsuit-howto');return false;" class="btn btn-sky" style="font-size:0.82rem;">Learn about wetsuits →</a>
+          <a href="#" onclick="showPage('pfd-foulie-howto');return false;" class="btn btn-sky" style="font-size:0.82rem;">Learn about PFDs and Foulies →</a>
         </div>
       </div>
 
@@ -3493,75 +3499,49 @@
   <div style="background:var(--navy);color:var(--white);padding:48px 0 36px;">
     <div class="container">
       <div class="section-label" style="color:var(--bay);">About</div>
-      <h1 style="font-size:2rem;">Contact</h1>
+      <h1 style="font-size:2rem;">Contacts</h1>
     </div>
   </div>
   <section>
     <div class="container" style="max-width:760px;">
-      <div class="ai-banner"><strong>Note:</strong> Contact Windsurfing Vices is currently a form separate from the regular "contact" page – instead (as per Randi and Sofi) combined and added a note to submit damage reports to the windsurfing vice-commodores on the regular contacts page. Note: Windsurfing pages should include instructions to submit damage reports this way.</div>
-      <div class="ai-banner"><strong>Note:</strong> This page needs to be edited.</div>
+      <div class="ai-banner">Note: This page needs to be edited to keep names and emails up to date.</div>
 
-      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.3rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">ExComm</h2>
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:20px;">Cal Sailing Club's <a href="mailto:excom@cal-sailing.org">Executive Committee</a> is the board of directors for the club. Each officer has responsibility for one aspect of the club's operations and gets a vote in ExComm decisions. The ExCommies are elected at General Membership Meetings in November and May. Note: if you really need to communicate with someone on the list below, come to the club and contact them in person — don't just send an email.</p>
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.4rem;margin:32px 0 12px;">ExComm</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:20px;">Cal Sailing Club's <a href="mailto:excom@cal-sailing.org">Executive Committee</a> is the board of directors for the club. Each officer has responsibility for one aspect of the club's operations and gets a vote in ExComm decisions on buying stuff, scheduling club activities, etc. The ExCommies are elected at General Membership Meetings in November and May.</p>
 
-      <div style="display:grid;gap:12px;margin-bottom:32px;">
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:commodore@cal-sailing.org">Commodore</a>: Shreyas Chand</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">Oversees operation of the club, and acts as official spokesperson and representative.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:vice_commodore@cal-sailing.org">Vice Commodore</a>: Isha Mishra, Dennis Tai</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">Coordinates memberships, publicity, and events.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:first_vice@cal-sailing.org">First Vice Commodore</a>: Mehmet Gunay, Robert Spark</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">In charge of the club's fleet of dinghies.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:second_vice@cal-sailing.org">Second Vice Commodore</a>: Ted DeBonis, Sofien Sehiri</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">In charge of windsurfing equipment. Also the contact for windsurfing damage reports.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:third_vice@cal-sailing.org">Third Vice Commodore</a>: Ryan Alder</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">In charge of keelboats.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:rear_commodore@cal-sailing.org">Rear Commodore</a>: Stephanie Evans (Sailing), Randi Shapiro (Windsurfing), David Gadarian (Windsurfing)</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">Board of Education for the club's training of members.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:port_captain@cal-sailing.org">Port Captain</a>: Birk Huber, Audrey Yen</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">Human resources department.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:secretary@cal-sailing.org">Secretary</a>: Marco Falcioni, Sara Zimmerman</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">Wins swordfights with keyboard.</div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
-          <div style="font-weight:600;color:var(--navy);font-size:0.9rem;"><a href="mailto:Treasurer@cal-sailing.org">Treasurer</a>: Fluffy, assisted by Peter Kuhn and Scott Snow</div>
-          <div style="font-size:0.82rem;color:var(--muted);margin-top:3px;">Moneycat.</div>
-        </div>
+      <div style="display:grid;gap:16px;margin-bottom:32px;">
+        <div><strong><a href="mailto:commodore@cal-sailing.org">Commodore</a>: Shreyas Chand</strong><br><span style="color:var(--muted);font-size:0.88rem;">Oversees operation of the club, and acts as official spokesperson and representative.</span></div>
+        <div><strong><a href="mailto:vice_commodore@cal-sailing.org">Vice Commodore</a>: Isha Mishra, Dennis Tai</strong><br><span style="color:var(--muted);font-size:0.88rem;">Coordinate publicity and events!</span></div>
+        <div><strong><a href="mailto:first_vice@cal-sailing.org">First Vice Commodore</a>: Mehmet Gunay, Robert Spark</strong><br><span style="color:var(--muted);font-size:0.88rem;">In charge of the club's fleet of dinghies.</span></div>
+        <div><strong><a href="mailto:second_vice@cal-sailing.org">Second Vice Commodore</a>: Ted DeBonis, Sofien Sehiri</strong><br><span style="color:var(--muted);font-size:0.88rem;">CEOs regarding windsurfing equipment. Submit windsurfing damage reports here as well.</span></div>
+        <div><strong><a href="mailto:third_vice@cal-sailing.org">Third Vice Commodore</a>: Ryan Alder</strong><br><span style="color:var(--muted);font-size:0.88rem;">In charge of keelboats.</span></div>
+        <div><strong><a href="mailto:rear_commodore@cal-sailing.org">Rear Commodore</a>: Stephanie Evans (Sailing), Randi Shapiro (Windsurfing), David Gadarian (Windsurfing)</strong><br><span style="color:var(--muted);font-size:0.88rem;">Board of Education for the club's training of members.</span></div>
+        <div><strong><a href="mailto:port_captain@cal-sailing.org">Port Captain</a>: Birk Huber, Audrey Yen</strong><br><span style="color:var(--muted);font-size:0.88rem;">Human resources department.</span></div>
+        <div><strong><a href="mailto:secretary@cal-sailing.org">Secretary</a>: Marco Falcioni, Sara Zimmerman</strong><br><span style="color:var(--muted);font-size:0.88rem;">Wins swordfights with keyboard.</span></div>
+        <div><strong><a href="mailto:Treasurer@cal-sailing.org">Treasurer</a>: Fluffy, assisted by Peter Kuhn and Scott Snow</strong><br><span style="color:var(--muted);font-size:0.88rem;">Moneycat.</span></div>
       </div>
 
-      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.3rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Committee Chairs</h2>
-      <div style="display:grid;gap:10px;margin-bottom:32px;font-size:0.85rem;">
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.4rem;margin:0 0 12px;">Committee Chairs</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:20px;">The club has a number of committees (usually of one) that take care of certain activities. The committee chairs are designated by the Commodore.</p>
+
+      <div style="display:grid;gap:12px;margin-bottom:32px;font-size:0.9rem;">
         <div><a href="mailto:banquets@cal-sailing.org">Banquet Chair</a>: Dawson Verley — Feast organizer</div>
         <div><a href="mailto:cruising@cal-sailing.org">Cruising Chair</a>: Allan Champion — Really gets around</div>
         <div><a href="mailto:social_media@cal-sailing.org">Communications/Social Media Chair</a>: Joy Chen — Spreads the word about the Club far and wide into the digital eco-system.</div>
-        <div><a href="mailto:sail_mantenance@cal-sailing.org">Sail Maintenance Chair</a>: Sheldon Coad — Lower that jib at the dock, or else...</div>
-        <div><a href="mailto:sailing_examiner@cal-sailing.org">Sailing Examiner Chair</a>: Jack Chen — Chief grader of knotty questions and salty reasonings. Contact to take a Senior or Cruise written test.</div>
+        <div><a href="mailto:sail_maintenance@cal-sailing.org">Sail Maintenance Chair</a>: Sheldon Coad — Lower that jib at the dock, or else...</div>
+        <div><a href="mailto:sailing_examiner@cal-sailing.org">Sailing Examiner Chair</a>: Jack Chen — Chief grader of knotty questions and salty reasonings. Contact him to take a Senior or Cruise written test.</div>
         <div><a href="mailto:sat_am_lessons@cal-sailing.org">Saturday Morning Teaching Chair</a>: Owen Shea — Appoints the clipboard carrier who will hook up teachers and students.</div>
-        <div><a href="mailto:racing@cal-sailing.org">Dinghy Racing Chair</a>: James Codega, Penny Wieser — Administer race rules test, run Sunday morning races and Thursday evening races.</div>
+        <div><a href="mailto:racing@cal-sailing.org">Dinghy Racing Chair</a>: James Codega, Penny Wieser — Administer race rules test, run Sunday morning races and Thursday evening races (we only do these during Daylight Saving Time).</div>
         <div><a href="mailto:board_repair@cal-sailing.org">Windsurfing Board Repair Chair</a>: Ivan Bankov — Resin Master</div>
-        <div><a href="mailto:lockers@cal-sailing.org">Windsurfing Locker Chair</a>: Cindoll — Rents lockers for storing your own windsurf gear at the club.</div>
+        <div><a href="mailto:lockers@cal-sailing.org">Windsurfing Locker Chair</a>: Cindoll! — Rents lockers for storing your own windsurf gear at the club.</div>
         <div><a href="mailto:windsurfing_sail_repair@cal-sailing.org">Windsurfing Sail Repair Chair</a>: Mitsu Ozaki, Fabian Valli — Keeps the Club's windsurfing sails in top condition.</div>
         <div><a href="mailto:rate_windsurfing@cal-sailing.org">Windsurfing Rating Chair</a>: Eric Lee — Who to contact for your Senior Windsurfing rating.</div>
         <div><a href="mailto:youth_windsurfing@cal-sailing.org">Youth Windsurfing Chair</a>: James Peroulas and Julien Traisnel — Coordinates youth windsurfing lessons.</div>
-        <div><a href="mailto:windsurf_racing@cal-sailing.org">Windsurf Racing Chair</a>: Anton Serputko — Organizes and monitors the weekly windsurfing regatta and speed challenge.</div>
-        <div><a href="mailto:womens_sailing@cal-sailing.org">Women's+ Sailing Chair</a>: Alyssa Lichtenstein — Coordinates teaching programs by and for women sailors.</div>
-        <div><a href="mailto:youth_rides@cal-sailing.org">Youth Ride Chair</a>: David Elias, Deepti Karandur — Organizes skippers and crew for summer youth introductory sail programs.</div>
+        <div><a href="mailto:windsurf_racing@cal-sailing.org">Windsurf Racing Chair</a>: Anton Serputko — In charge of organizing and monitoring the weekly windsurfing regatta and speed challenge.</div>
+        <div><a href="mailto:womens_sailing@cal-sailing.org">Women's Sailing Chair</a>: Alyssa Lichtenstein — Coordinates teaching programs by and for women sailors.</div>
+        <div><a href="mailto:youth_rides@cal-sailing.org">Youth Ride Chair</a>: David Elias, Deepti Karandur — Organizes skippers and crew for our summer youth introductory sail programs.</div>
         <div><a href="mailto:membership@cal-sailing.org">Membership Chair</a>: Nicholas Waton, Sarah Lindsey Anderson — Brings in new members to keep the Club young and fresh.</div>
-        <div><a href="mailto:safety_gear@cal-sailing.org">Safety Gear Chair</a>: AnnaLise Hoopes — CEO of Nautical Fashion (foulies, wetsuits, and PFDs).</div>
+        <div><a href="mailto:safety_gear@cal-sailing.org">Safety Gear Chair</a>: AnnaLise Hoopes — CEO of Nautical Fashion (Foulies, wetsuits, and PFDs).</div>
         <div><a href="mailto:fast_track@cal-sailing.org">Fast Track Chair</a>: Lucian Beebe — Making our Dinghy Fast Track program a wild success.</div>
         <div><a href="mailto:pedagogy@cal-sailing.org">Pedagogy Chair</a>: Mo Johnson León, Emma Chrismann — Organizes teach-alongs and other events related to dinghy instructor training.</div>
         <div><a href="mailto:marina_planning@cal-sailing.org">Marina Planning Chair</a>: Camille Antinori — Influencer in city planning meetings to freshen up the Marina.</div>
@@ -3569,15 +3549,17 @@
         <div><a href="mailto:donations@cal-sailing.org">Donation Chair</a>: Adriana Fracchia — Finds and promotes generosity and philanthropy towards the Club.</div>
       </div>
 
-      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.3rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Email Discussion Lists</h2>
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:32px;">Members and anyone interested can communicate by email through the <a href="https://www.cal-sailing.org/resources/email-lists" target="_blank">Email Discussion Lists</a> — a lively forum for topics relevant to sailing and Cal Sailing Club.</p>
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.4rem;margin:0 0 12px;">Email Discussion Lists</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:32px;">Members of CSC and anyone interested can communicate with each other by e-mail through the <a href="https://www.cal-sailing.org/resources/email-lists">Email Discussion Lists</a>, which are a lively and informative forum for discussing topics relevant to sailing and Cal Sailing Club.</p>
 
-      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.3rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Mailing Address</h2>
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:4px;">Cal Sailing Club<br>124 University Avenue<br>Berkeley, California 94710</p>
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:32px;">The Cal Sailing Club does not have a phone. You can contact officers and chairpersons through email, or find them at the club (usually on windy weekends!).</p>
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.4rem;margin:0 0 12px;">Address and Phone Number</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:8px;">The club's mailing address is:</p>
+      <p style="font-size:0.9rem;margin-bottom:12px;">Cal Sailing Club<br>124 University Avenue<br>Berkeley, California 94710</p>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:32px;">The Cal Sailing Club does not have a phone. You can contact any of the above officers and chairpersons through e-mail, or you can find them down at the club (usually on windy weekends!).</p>
 
-      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.3rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);">Website Administration</h2>
-      <p style="font-size:0.85rem;color:var(--muted);"><a href="mailto:admin@cal-sailing.org">Website Admin</a>: John Bongiovanni</p>
+      <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.4rem;margin:0 0 12px;">Website Administration</h2>
+      <p style="font-size:0.9rem;"><a href="mailto:admin@cal-sailing.org">Website Admin</a>: John Bongiovanni</p>
+
     </div>
   </section>
 </div>
@@ -3595,6 +3577,7 @@
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Overview</div>
+
       <div class="ph-section">
         <h3>Dinghy Sailing vs. Keelboat Sailing</h3>
         <p>Explain the two tracks and how they relate.</p>
@@ -3620,6 +3603,9 @@
           <li><a href="#" onclick="showPage('pfd-foulie-howto');return false;">How to put on foulies</a></li>
           <li><a href="#" onclick="showPage('pfd-foulie-howto');return false;">How to put away foulies</a></li>
         </ul>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+        <a href="#" onclick="showPage('dinghy-lessons');return false;" class="btn btn-primary" style="font-size:0.88rem;">Dinghy Lessons →</a>
       </div>
       <div class="ph-section">
         <h3>Fast-Track Program</h3>
@@ -4091,6 +4077,9 @@
     <div class="container" style="max-width:760px;">
       <div class="ai-banner"><div>These are just place-holders; this page needs to be compiled by a human.</div></div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Overview</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+        <a href="#" onclick="showPage('windsurf-lessons');return false;" class="btn btn-primary" style="font-size:0.88rem;">Windsurfing Lessons →</a>
+      </div>
       <div class="ph-section"><h3>What is Windsurfing at CSC</h3><p>TBD</p></div>
       <div class="ph-section">
         <h3>What to Bring and Wear</h3>
