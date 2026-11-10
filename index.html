@@ -1105,7 +1105,7 @@
   </div>
   <section>
     <div class="container" style="max-width:760px;">
-      <div class="ai-banner"><strong>Note:</strong> Copy from <a href="https://cal-sailing.org/memberships-menu/memberships-registration" target="_blank">https://cal-sailing.org/memberships-menu/memberships-registration</a>. Currently includes outgoing links (6) to:<br>1) Join and pay with volunteer hours: cal-sailing.org/join-and-pay-with-hours<br>2) Gift membership: cal-sailing.org/gift-membership<br>3) Family memberships: cal-sailing.org/family-membership<br>4) Minor (under-18) memberships: cal-sailing.org/minor-membership<br>5) Waiver: cal-sailing.org/csc-waiver<br>6) Code of Conduct: cal-sailing.org/codeofconduct<br><br>Suggested sections for future edit:<br>1) Membership Types &amp; Prices<br>2) Volunteer Hours Requirement<br>3) PayPal Info<br>4) Renew Existing or Expired Membership<br>5) Sign-Up Portal</div>
+      <div class="ai-banner"><strong>Note:</strong> Copy from <a href="https://cal-sailing.org/memberships-menu/memberships-registration" target="_blank">https://cal-sailing.org/memberships-menu/memberships-registration</a>. Keep these outgoing links:<br>1) Family memberships: cal-sailing.org/family-membership<br>2) Minor (under-18) memberships: cal-sailing.org/minor-membership<br>3) Waiver: cal-sailing.org/csc-waiver<br>4) Code of Conduct: cal-sailing.org/codeofconduct<br><br><strong>How joining works in the app:</strong> create an account, choose a plan, then pay by card (Stripe). Paying with volunteer hours needs hours already banked, so a new member pays by card. There is no gift membership yet.<br><br>Suggested sections for future edit:<br>1) Membership Types &amp; Prices<br>2) Volunteer Hours Requirement<br>3) Paying by Card<br>4) Renew Existing or Expired Membership<br>5) Sign-Up Portal</div>
     </div>
   </section>
 </div>
@@ -1126,7 +1126,7 @@
           <li>When any membership combination other than the member's current one is selected, show a note saying to wait until the expiration date to renew (as shown in the form below).</li>
           <li>Show or hide the PayPal section based on which form of payment is selected.</li>
           <li>Display edit checks based on selection — e.g. "You do not have enough approved volunteer hours for this option," or warnings for membership types that require special approval (minor, family), or "Annual subscription is not available for Student, Senior age 65+, Minor, or Family membership types."</li>
-          <li>When Family is selected, show a link telling the member to email the treasurer (<a href="mailto:treasurer@cal-sailing.org">treasurer@cal-sailing.org</a>) to renew a family membership.</li>
+          <li>Family memberships renew here like any other plan, by card or with volunteer hours. <em>(Matches the app.)</em></li>
         </ul>
       </div>
 
@@ -1289,10 +1289,6 @@
                 </div>
               </div>
 
-              <div id="renewal-family-note" style="display:none;background:var(--foam);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.85rem;color:var(--navy);">
-                To renew a family membership, <a href="mailto:treasurer@cal-sailing.org?subject=Family%20membership%20renewal">email the treasurer at treasurer@cal-sailing.org</a>.
-              </div>
-
               <div id="renewal-change-note" style="display:none;background:#fffde7;border:1px solid #f9a825;border-radius:8px;padding:10px 14px;font-size:0.83rem;color:#5d4037;">
                 <strong>Note:</strong> To be sure you get the full time you deserve, wait until _______ (date) to renew your membership.
               </div>
@@ -1381,8 +1377,6 @@
 
         // Show/hide PayPal section
         document.getElementById('renew-paypal-section').style.display = (p === 'money') ? 'block' : 'none';
-        // Family renewals go through the treasurer
-        document.getElementById('renewal-family-note').style.display = (t === 'family') ? 'block' : 'none';
         var isSame = (d === 'annual' && t === 'adult' && p === 'hours');
         document.getElementById('renewal-change-note').style.display = isSame ? 'none' : 'block';
       }
@@ -2222,11 +2216,11 @@
               <a href="#" class="card-link">Learn more →</a>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 16px;">
-              <div><strong style="font-size:0.88rem;color:var(--navy);">Open House support</strong><div style="font-size:0.8rem;color:var(--muted);">Next Open House — sign up from the calendar event</div></div>
+              <div><strong style="font-size:0.88rem;color:var(--navy);">Open House support</strong><div style="font-size:0.8rem;color:var(--muted);">Next Open House — see the calendar for the date</div></div>
               <a href="#" class="card-link">View calendar →</a>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 16px;">
-              <div><strong style="font-size:0.88rem;color:var(--navy);">Fast-Track instructor support</strong><div style="font-size:0.8rem;color:var(--muted);">Sign up from the relevant Fast-Track calendar event</div></div>
+              <div><strong style="font-size:0.88rem;color:var(--navy);">Fast-Track instructor support</strong><div style="font-size:0.8rem;color:var(--muted);">Sign up for an instructor role on the Fast-Track page</div></div>
               <a href="#" class="card-link">View calendar →</a>
             </div>
           </div>
@@ -3171,7 +3165,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to Open House events)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming Open House events from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>See the calendar entry for details.</strong></p>
       </div>
       <div>
 <h2 style="font-family:'Bitter',serif;color:var(--navy);font-size:1.3rem;margin:24px 0 8px;">Open House: Introductory Sails at the Cal Sailing Club</h2>
@@ -3649,7 +3643,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to keelboat lessons)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming keelboat lessons from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up within the calendar event.</strong> Each event includes a short description and any prerequisites (for example, Level 1 or Level 2).</p>
+        <p style="margin-top:10px;"><strong>Sign up on the Lessons page.</strong> Each calendar entry links there, with a short description and any prerequisites (for example, Level 1 or Level 2). <em>(Matches the app.)</em></p>
       </div>
       <div class="ph-section">
         <h3>What to Bring, What to Wear</h3>
@@ -3657,7 +3651,7 @@
       </div>
       <div class="ph-section">
         <h3>Keelboat Lesson Process</h3>
-        <p>When a Keelboat Senior decides to give lessons, they create a calendar event and send an announcement email, which also shows up in the Slack Announcements channel. Use the link in the email or Slack post to sign up. If more students sign up than there are spots, there’s usually a lottery, and you’ll be told if you’re selected. The announcement may also list prerequisites (Level 1, Level 2, and so on).</p>
+        <p>When a Keelboat Senior decides to give lessons, the lesson is added to the Lessons page (which also puts it on the calendar) and an announcement email goes out, which also shows up in the Slack Announcements channel. Use the link in the email or Slack post to sign up. If more students sign up than there are spots, there’s usually a lottery, and you’ll be told if you’re selected. The announcement may also list prerequisites (Level 1, Level 2, and so on).</p>
         <p style="font-size:0.82rem;">From Gopal.</p>
       </div>
       <div class="ph-section">
@@ -3791,7 +3785,7 @@
       <div class="ph-section">
         <h3>Sign-Up Process</h3>
         <p>Sign-ups open 6 weeks before each session. Each week has room for 16 students, who are accepted in the order they <strong>finish both signing up and completing the prerequisites</strong>. So sign up, then get your prerequisites done as soon as you can.</p>
-        <p>Instructors and volunteers also sign up within the calendar event. Coordinating a Fast-Track week is a great Senior project.</p>
+        <p>Instructors and volunteers sign up for a role on the Fast-Track page. <em>(Matches the app.)</em> Coordinating a Fast-Track week is a great Senior project.</p>
       </div>
       <div class="ph-section">
         <h3>Upcoming Fast-Track Sessions</h3>
@@ -3800,7 +3794,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to Fast-Track sessions)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming Fast-Track sessions and sign-up windows from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>Sign up on the Fast-Track page.</strong> Each calendar entry links there. <em>(Matches the app.)</em></p>
       </div>
     </div>
   </section>
@@ -3841,7 +3835,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to advanced dinghy clinic events)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming advanced dinghy clinic events from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>See the calendar entry for details.</strong></p>
       </div>
     </div>
   </section>
@@ -3864,7 +3858,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to racing events)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming racing events from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>See the calendar entry for details.</strong></p>
       </div>
       <div style="margin-bottom:24px;">
 <p style="color:var(--muted);font-size:0.92rem;line-height:1.6;margin-bottom:10px;">Cal Sailing Club members enjoy numerous opportunities to race club dinghies. The competition is friendly but not lax. Racing at CSC is an excellent way for new sailors to learn some of the finer points of sailing and for experienced sailors to hone their skills.</p>
@@ -3924,7 +3918,7 @@
   <section>
     <div class="container" style="max-width:760px;">
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Cruising</div>
-      <div class="ai-banner"><div><strong>Note:</strong> Compiled from the current <a href="https://cal-sailing.org/activities/cruising" target="_blank">Cruising</a>, <a href="https://cal-sailing.org/activities/cruising/how-cruise-signup-works" target="_blank">How Cruise Signup Works</a> and <a href="https://cal-sailing.org/activities/cruising/cruise-field-info-for-skippers" target="_blank">Cruise Info for Skippers</a> pages, the FAQ, and the Operating Rules (N.5, N.6). Sign-up now happens within the calendar event, so the step-by-step instructions for the old cruise sign-up tool were left out. <strong>Note for builders:</strong> the calendar sign-up needs to keep the lottery, waiting list, one guest per member, and emergency contact fields.</div></div>
+      <div class="ai-banner"><div><strong>Note:</strong> Compiled from the current <a href="https://cal-sailing.org/activities/cruising" target="_blank">Cruising</a>, <a href="https://cal-sailing.org/activities/cruising/how-cruise-signup-works" target="_blank">How Cruise Signup Works</a> and <a href="https://cal-sailing.org/activities/cruising/cruise-field-info-for-skippers" target="_blank">Cruise Info for Skippers</a> pages, the FAQ, and the Operating Rules (N.5, N.6). Sign-up happens on each cruise’s own page, which keeps the lottery, waiting list, one guest per member and emergency contact fields. Each calendar entry links there. <em>(Matches the app.)</em></div></div>
       <div class="ph-section">
         <h3>Overview</h3>
         <p>CSC skippers lead cruises to places around the Bay, such as the Golden Gate Bridge, Angel Island, Sausalito, Pier 39 and the Oakland Estuary. Almost all cruises are day trips, usually on the club’s keelboats, and sometimes on dinghies.</p>
@@ -3938,7 +3932,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to cruises)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming cruises from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>Sign up on the cruise’s page.</strong> Each calendar entry links there.</p>
       </div>
       <div class="ph-section">
         <h3>How Sign-Up Works</h3>
@@ -3986,7 +3980,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to women’s+ sailing events)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming women’s+ sailing events from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>See the calendar entry for details.</strong></p>
       </div>
     </div>
   </section>
@@ -4327,7 +4321,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to advanced windsurfing events)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming advanced windsurfing events from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>See the calendar entry for details.</strong></p>
       </div>
     </div>
   </section>
@@ -4380,7 +4374,7 @@
   </div>
   <section>
     <div class="container" style="max-width:760px;">
-      <div class="ai-banner"><strong>Note:</strong> Copy from the existing page (<a href="https://cal-sailing.org/lessons-menu/windsurfing/youth-windsurfing-program" target="_blank">https://cal-sailing.org/lessons-menu/windsurfing/youth-windsurfing-program</a>). Remove the “Sign-Up” section because sign-up will be done from within the calendar event. Need to update the family-membership info. Add “Lessons List for Coordinators” and the calendar as shown below.</div>
+      <div class="ai-banner"><strong>Note:</strong> Copy from the existing page (<a href="https://cal-sailing.org/lessons-menu/windsurfing/youth-windsurfing-program" target="_blank">https://cal-sailing.org/lessons-menu/windsurfing/youth-windsurfing-program</a>). Keep the “Sign-Up” section: the app’s calendar links to each event’s page but doesn’t take sign-ups itself. <em>(Matches the app.)</em> Need to update the family-membership info. Add “Lessons List for Coordinators” and the calendar as shown below.</div>
       <div class="img-placeholder" style="height:160px;margin-bottom:18px;"><span class="img-icon">🖼️</span>Photo: Youth Windsurfing</div>
       <div class="ph-section"><h3>Lesson List for Coordinators</h3><p>Requires login.</p></div>
       <div class="ph-section">
@@ -4389,7 +4383,7 @@
           <div class="cal-strip-header"><span>Calendar (filtered to youth windsurfing events)</span><a href="#" onclick="showPage('calendar-events');return false;" style="color:var(--bay);font-size:0.8rem;">View full calendar →</a></div>
           <div class="img-placeholder" style="height:110px;border:none;border-radius:0;"><span class="img-icon">📅</span>Upcoming youth windsurfing events from the main calendar</div>
         </div>
-        <p style="margin-top:10px;"><strong>Sign up to participate or volunteer within the calendar event.</strong></p>
+        <p style="margin-top:10px;"><strong>See the calendar entry for details.</strong></p>
       </div>
     </div>
   </section>
@@ -4492,12 +4486,12 @@
   </div>
   <section>
     <div class="container" style="max-width:900px;">
-      <div class="ai-banner"><div><strong>Note:</strong> The Events Calendar and Open/Close Times pages are now combined on this page. My recommendation is to switch to Google Calendar instead of using the Joomla calendar equivalent. See discussion on Github.</div></div>
+      <div class="ai-banner"><div><strong>Note:</strong> The Events Calendar and Open/Close Times pages are now combined on this page. The app builds this calendar (public, at /calendar) from its own lessons, Fast-Track sessions, cruises and club events, so nothing is kept twice. Each entry links to the page where you sign up. <em>(Matches the app.)</em></div></div>
       <div class="ph-links" style="margin-bottom:18px;display:flex;flex-wrap:wrap;gap:8px;"><a href="#" onclick="goSection('calendar-events-section');return false;" style="font-size:0.8rem;background:var(--foam);color:var(--navy);padding:5px 12px;border-radius:20px;text-decoration:none;">Events calendar</a><a href="#" onclick="goSection('calendar-times');return false;" style="font-size:0.8rem;background:var(--foam);color:var(--navy);padding:5px 12px;border-radius:20px;text-decoration:none;">Open/close times by tide</a></div>
       <div class="ph-section" id="calendar-events-section" style="scroll-margin-top:72px;">
         <h3>Events Calendar</h3>
         <div class="ai-banner" style="margin-top:8px;"><div><strong>Note:</strong> Anything with a date attached: lessons, races, parties, events, clinics, meetings, and club open/close times. Each event includes a brief description, a link to its info page, and any sign-up or volunteer sign-up links. Each event is tagged (dinghy, keelboat, racing, fasttrack, etc.) for filtering. See the current <a href="https://www.cal-sailing.org/resources/calendar" target="_blank">Calendar</a> page.</div></div>
-        <p style="margin-top:8px;">Sign up to participate or volunteer within the calendar event.</p>
+        <p style="margin-top:8px;">Click an entry to open its page, where you sign up.</p>
         <div class="ai-banner" style="margin-top:8px;"><div><strong>Important:</strong> calendar events must accurately reflect low-tide closures and reduced lesson times, not just the “typical” schedule.</div></div>
         <div class="img-placeholder" style="height:220px;margin-top:8px;"><span class="img-icon">🖼️</span>Events calendar (month/week view, with filters)</div>
       </div>
@@ -4913,7 +4907,7 @@
   </div>
   <section>
     <div class="container" style="max-width:760px;">
-      <div class="ph-section"><h3>Report an Incident</h3><p>Use the incident report form to report harassment, safety concerns, or Code of Conduct violations. You need to be logged in to submit it.</p><p><a href="https://cal-sailing.org/resources/incident-report-form" target="_blank" class="btn btn-sky" style="font-size:0.88rem;">Open the incident report form →</a></p><p style="margin-top:10px;">In an emergency, call 911.</p></div>
+      <div class="ph-section"><h3>Report an Incident</h3><p>Use the incident report form to report harassment, safety concerns, or Code of Conduct violations. Anyone can submit it, member or not; you don’t need to log in.</p><p><a href="https://cal-sailing.org/resources/incident-report-form" target="_blank" class="btn btn-sky" style="font-size:0.88rem;">Open the incident report form →</a></p><p style="margin-top:10px;">In an emergency, call 911.</p></div>
     </div>
   </section>
 </div>
